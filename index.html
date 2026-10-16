@@ -188,6 +188,12 @@ tr.keyrow td{background:#fdf9ef}
 footer{background:#0b2a22;color:rgba(255,255,255,.62);padding:26px 0 30px;font-size:12.5px;margin-top:26px}
 footer .fb{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-start}
 footer strong{color:#fff;display:block;margin-bottom:5px;font-size:13.5px}
+/* 页脚浏览数据条（由不蒜子填充；取不到数据时整条隐藏） */
+.statbar{display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;align-items:center;
+  margin-top:16px;padding-top:14px;border-top:1px solid rgba(255,255,255,.12);
+  font-size:12.5px;color:rgba(255,255,255,.62);line-height:1.6}
+.statbar b{color:#8fd8bf;font-weight:500;font-variant-numeric:tabular-nums}
+.statbar .statbar-tip{color:rgba(255,255,255,.38)}
 .empty{text-align:center;padding:36px;color:var(--ink-3);font-size:14px}
 .count-line{font-size:13px;color:var(--ink-3);margin:0 0 12px}
 .hint{font-size:12.5px;color:var(--ink-3);margin-top:14px}
@@ -294,6 +300,29 @@ footer strong{color:#fff;display:block;margin-bottom:5px;font-size:13.5px}
   .vcard .dims,.vcard .vbody{border-bottom-left-radius:13px;border-bottom-right-radius:13px}
 }
 </style>
+
+<!-- =========================================================================
+     浏览数据统计（百度统计 + 不蒜子）
+     ─ 百度统计：到 https://tongji.baidu.com 新增网站，复制形如 hm.js?xxxxxxxxxxxx
+       的代码，把下面 BAIDU_TONGJI_ID 换成那串 32 位 ID 即可生效。
+       留空 / 填错格式时会自动跳过，不会产生 404 请求，也不影响页面。
+     ─ 不蒜子：无需注册、无需 ID，前台展示累计查阅次数用（见页脚 statbar）。
+       计数按「域名」分别累计，换域名会重新起算。
+     ========================================================================= -->
+<script>
+window.BAIDU_TONGJI_ID = "";
+</script>
+<script>
+(function(){
+  var id = String(window.BAIDU_TONGJI_ID || "").trim();
+  if(!/^[0-9a-f]{32}$/i.test(id)) return;
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?" + id;
+  hm.async = true;
+  var first = document.getElementsByTagName("script")[0];
+  first.parentNode.insertBefore(hm, first);
+})();
+</script>
 </head>
 <body>
 
@@ -653,6 +682,29 @@ footer strong{color:#fff;display:block;margin-bottom:5px;font-size:13.5px}
     免责声明：本网站所有公开资讯仅作行业参考，不构成法规 / 项目法律承诺。<br>
     ②法规模块为欧盟官方原文与其链接，中文编译为非官方译文；④实操经验为行业经验分享，非官方文件，不能替代法规；①机构榜单的信息以各发证 NAB 官方公示为准，最终以认可证书原件为准。
   </div>
+  <div class="wrap statbar" id="statbar" style="display:none">
+    <span>本榜累计查阅 <b id="busuanzi_value_site_pv">—</b> 次 · 独立访客 <b id="busuanzi_value_site_uv">—</b> 人</span>
+    <span class="statbar-tip">统计自本站启用计数之日起累计 · 按域名分别统计</span>
+  </div>
+  <script>
+  /* 不蒜子前台计数：取不到数据时整条隐藏，避免出现「— 次」的空壳 */
+  (function(){
+    var bar = document.getElementById("statbar");
+    if(!bar) return;
+    function show(){
+      var pv = document.getElementById("busuanzi_value_site_pv");
+      var n = pv ? String(pv.textContent || "").trim() : "";
+      if(/^\d+$/.test(n) && Number(n) > 0){ bar.style.display = "flex"; }
+    }
+    var s = document.createElement("script");
+    s.src = "https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js";
+    s.async = true;
+    s.onload  = function(){ setTimeout(show, 600); setTimeout(show, 2200); };
+    s.onerror = function(){ bar.remove(); };
+    document.body.appendChild(s);
+    setTimeout(show, 5000);
+  })();
+  </script>
 </footer>
 
 </div><!-- /maincol -->
