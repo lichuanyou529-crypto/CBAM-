@@ -1,0 +1,2165 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>CBAM 核查机构信息披露榜单 V2 | 每周一更新</title>
+<meta name="description" content="欧盟 CBAM 核查机构信息披露榜单。按发证 NAB 官方公示渠道可核验程度排名，并提供 11 个 CBAM 活动组的机构覆盖对照矩阵。">
+<meta name="theme-color" content="#0b6b52">
+<style>
+:root{
+  --green:#0b6b52; --green-2:#128464; --green-soft:#e8f4ef;
+  --ink:#12211c; --ink-2:#3c4f49; --ink-3:#6b7d76;
+  --line:#e2e9e6; --line-2:#cfdbd6;
+  --bg:#f6f8f7; --card:#ffffff;
+  --amber:#b7791f; --amber-soft:#fdf6e7;
+  --red:#b03a48; --red-soft:#fdeef0;
+  --blue:#1f5fa8; --blue-soft:#eef3fb;
+  --r:14px; --r-sm:9px;
+  --sh:0 1px 2px rgba(16,40,32,.05), 0 6px 20px -8px rgba(16,40,32,.10);
+}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+html,body{margin:0;padding:0}
+body{background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","Hiragino Sans GB","Helvetica Neue",Arial,sans-serif;
+  font-size:15px;line-height:1.72;-webkit-font-smoothing:antialiased}
+a{color:var(--green-2);text-decoration:none}
+.wrap{max-width:1240px;margin:0 auto;padding:0 20px}
+
+.hero{background:linear-gradient(155deg,#0b6b52 0%,#0e5b49 55%,#08402f 100%);color:#fff;padding:32px 0 24px;position:relative;overflow:hidden}
+.hero:after{content:"";position:absolute;right:-70px;top:-70px;width:260px;height:260px;border-radius:50%;background:rgba(255,255,255,.055)}
+.hero .wrap{position:relative;z-index:1}
+.eyebrow{display:inline-block;font-size:12px;letter-spacing:.16em;background:rgba(255,255,255,.16);border:1px solid rgba(255,255,255,.24);padding:4px 11px;border-radius:999px;margin-bottom:11px}
+h1{font-size:26px;line-height:1.34;margin:0 0 9px;font-weight:800;letter-spacing:-.4px}
+.sub{font-size:14.5px;color:rgba(255,255,255,.86);margin:0 0 16px;max-width:680px}
+.metaline{display:flex;flex-wrap:wrap;gap:8px;font-size:12.5px}
+.metaline span{background:rgba(255,255,255,.13);border:1px solid rgba(255,255,255,.2);padding:4px 10px;border-radius:7px}
+
+.alert{background:var(--amber-soft);border:1px solid #f0e0bd;border-left:4px solid var(--amber);border-radius:var(--r-sm);padding:14px 16px;margin:20px 0;font-size:14px;color:#5c4611}
+.alert b{color:#7d5a10}
+.alert .a-title{font-weight:800;display:block;margin-bottom:4px;font-size:14.5px}
+.alert.v2{background:var(--blue-soft);border-color:#cddff2;border-left-color:var(--blue);color:#17395f}
+.alert.v2 b{color:#12365f}
+
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:22px 0}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:15px 14px;box-shadow:var(--sh)}
+.stat .n{font-size:29px;font-weight:800;line-height:1.1;letter-spacing:-1px}
+.stat .l{font-size:12.5px;color:var(--ink-3);margin-top:5px;line-height:1.5}
+.stat.a .n{color:var(--red)} .stat.b .n{color:var(--amber)} .stat.c .n{color:var(--green-2)} .stat.d .n{color:var(--blue)}
+
+.tabs{position:sticky;top:0;z-index:30;background:rgba(246,248,247,.93);backdrop-filter:blur(10px);border-bottom:1px solid var(--line-2);margin-top:22px}
+.tabscroll{display:flex;gap:6px;overflow-x:auto;padding:9px 0;scrollbar-width:none}
+.tabscroll::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto;background:var(--card);border:1px solid var(--line-2);border-radius:999px;padding:7px 15px;font-size:13.5px;font-weight:600;color:var(--ink-2);cursor:pointer;transition:.16s;white-space:nowrap}
+.tab:hover{border-color:var(--green-2);color:var(--green-2)}
+.tab.on{background:var(--green);border-color:var(--green);color:#fff;box-shadow:0 3px 10px -3px rgba(11,107,82,.5)}
+.panel{display:none;padding:22px 0 8px}
+.panel.on{display:block;animation:fade .3s ease}
+@keyframes fade{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+
+.sh{margin:0 0 6px;font-size:20px;font-weight:800;letter-spacing:-.3px}
+.sd{margin:0 0 18px;font-size:14px;color:var(--ink-3);max-width:790px}
+
+.filters{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:13px;margin-bottom:16px;display:flex;flex-wrap:wrap;gap:9px;box-shadow:var(--sh)}
+.filters input,.filters select{flex:1 1 150px;min-width:0;font:inherit;font-size:13.5px;padding:8px 11px;border:1px solid var(--line-2);border-radius:var(--r-sm);background:#fff;color:var(--ink);outline:none}
+.filters input:focus,.filters select:focus{border-color:var(--green-2);box-shadow:0 0 0 3px rgba(18,132,100,.12)}
+.filters input{flex:2 1 220px}
+
+.vlist{display:flex;flex-direction:column;gap:14px}
+.vcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh);transition:.18s}
+.vcard:hover{border-color:var(--line-2);box-shadow:0 2px 4px rgba(16,40,32,.06),0 12px 28px -12px rgba(16,40,32,.16)}
+.vhead{display:flex;gap:14px;padding:16px}
+.vrank{flex:0 0 46px;text-align:center}
+.vrank .rk{width:46px;height:46px;border-radius:12px;display:flex;align-items:center;justify-content:center;font-size:19px;font-weight:800;background:var(--green-soft);color:var(--green);border:1px solid #cfe6dd}
+.vrank .rk.t1{background:var(--green);color:#fff;border-color:var(--green)}
+.vrank .rk.t2{background:#2f8f6d;color:#fff;border-color:#2f8f6d}
+.vmain{flex:1;min-width:0}
+.vname{font-size:17px;font-weight:800;line-height:1.35;margin:0 0 3px;display:flex;align-items:center;gap:8px;flex-wrap:wrap}
+.vname .en{font-size:12.5px;font-weight:600;color:var(--ink-3)}
+.vgroup{font-size:13px;color:var(--ink-3);margin:0 0 10px}
+.badges{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:11px}
+.bd{font-size:11.5px;padding:3px 9px;border-radius:6px;font-weight:600;border:1px solid}
+.bd-nab{background:var(--blue-soft);color:var(--blue);border-color:#cddff2}
+.bd-date{background:#f2f5f4;color:var(--ink-2);border-color:var(--line-2)}
+.bd-warn{background:var(--red-soft);color:var(--red);border-color:#f3d4d9}
+.bd-ok{background:var(--green-soft);color:var(--green);border-color:#cfe6dd}
+.bd-cn{background:var(--amber-soft);color:var(--amber);border-color:#f0e0bd}
+
+.score{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.scorebar{flex:1;height:9px;background:#eef2f0;border-radius:999px;overflow:hidden;border:1px solid var(--line)}
+.scorebar i{display:block;height:100%;border-radius:999px;background:linear-gradient(90deg,#2f8f6d,#0b6b52)}
+.scorebar i.mid{background:linear-gradient(90deg,#e0b25c,#b7791f)}
+.scorebar i.low{background:linear-gradient(90deg,#d98a97,#b03a48)}
+.scoreval{flex:0 0 auto;font-size:20px;font-weight:800;letter-spacing:-.5px}
+.scoreval small{font-size:11px;font-weight:600;color:var(--ink-3)}
+.stars{font-size:12px;color:var(--amber);letter-spacing:1px;flex:0 0 auto}
+
+.dims{display:grid;grid-template-columns:repeat(6,1fr);gap:0;border-top:1px solid var(--line);background:#fbfcfc}
+.dim{padding:10px 6px;text-align:center;border-right:1px solid var(--line)}
+.dim:last-child{border-right:none}
+.dim .ic{font-size:15px;font-weight:800;line-height:1.2}
+.dim .lb{font-size:10.5px;color:var(--ink-3);margin-top:3px;line-height:1.3}
+.dim .wt{font-size:9.5px;color:#9aa8a3;margin-top:1px}
+.dim.y .ic{color:var(--green-2)} .dim.p .ic{color:var(--amber)} .dim.n .ic{color:var(--red)}
+
+.vbody{border-top:1px solid var(--line);padding:14px 16px;background:#fbfcfc;display:none}
+.vcard.open .vbody{display:block}
+.kv{display:grid;grid-template-columns:124px 1fr;gap:7px 12px;font-size:13.5px}
+.kv dt{color:var(--ink-3);font-weight:600}
+.kv dd{margin:0;color:var(--ink)}
+.kv dd.no{color:var(--ink-3);font-style:italic}
+.kv dd.part{color:var(--amber)}
+.more{margin-top:13px;background:#fff;border:1px dashed var(--line-2);border-radius:var(--r-sm);padding:11px 13px;font-size:13px;color:var(--ink-2)}
+.more b{color:var(--ink)}
+.more.warn{border-color:#f0e0bd;background:#fdf9ef;color:#5c4611;border-style:solid}
+.more.law{border-color:#cddff2;background:#f5f8fd;color:#17395f;border-style:solid}
+.chips{display:flex;flex-wrap:wrap;gap:5px;margin-top:7px}
+.chip{font-size:11.5px;background:#fff;border:1px solid var(--line-2);border-radius:6px;padding:2px 7px;font-weight:600}
+.chip.hit{background:var(--green-soft);border-color:#cfe6dd;color:var(--green)}
+.chip.pend{background:var(--amber-soft);border-color:#f0e0bd;color:var(--amber)}
+.chip.miss{background:#f4f6f5;border-color:var(--line-2);color:#9aa8a3;text-decoration:line-through}
+.toggle{background:none;border:none;font:inherit;font-size:13px;color:var(--green-2);cursor:pointer;padding:0;font-weight:600}
+.toggle:after{content:" ▾";font-size:11px}
+.vcard.open .toggle:after{content:" ▴"}
+
+.tablewrap{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:auto;box-shadow:var(--sh);-webkit-overflow-scrolling:touch}
+table{border-collapse:collapse;width:100%;font-size:13.5px;min-width:700px}
+th{background:#f3f7f5;text-align:left;padding:11px 12px;font-weight:700;font-size:12.5px;color:var(--ink-2);border-bottom:1px solid var(--line-2);white-space:nowrap;position:sticky;top:0;z-index:2}
+td{padding:11px 12px;border-bottom:1px solid var(--line);vertical-align:top}
+tbody tr:last-child td{border-bottom:none}
+tbody tr:hover{background:#fafcfb}
+td.cnt{font-weight:700}
+td.grp{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:800;white-space:nowrap}
+.mk{font-weight:800;font-size:14px}
+.mk.y{color:var(--green-2)} .mk.n{color:var(--red)} .mk.p{color:var(--amber)}
+.nabcode{font-weight:800;color:var(--green-2)}
+.y{color:var(--green-2);font-weight:800}
+.n{color:#a9b5b0}
+.pill{display:inline-block;font-size:11px;padding:2px 8px;border-radius:5px;font-weight:700}
+.pill.tc{background:var(--amber-soft);color:var(--amber);border:1px solid #f0e0bd}
+.pill.ok{background:var(--green-soft);color:var(--green);border:1px solid #cfe6dd}
+.pill.no{background:#f4f6f5;color:var(--ink-3);border:1px solid var(--line-2)}
+tr.keyrow td{background:#fdf9ef}
+
+.ggrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:12px}
+.gcard{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:14px;box-shadow:var(--sh)}
+.gcard .gid{display:inline-block;font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13px;font-weight:800;background:var(--green);color:#fff;padding:2px 9px;border-radius:6px;margin-bottom:8px}
+.gcard h4{margin:0 0 5px;font-size:14.5px;font-weight:700}
+.gcard p{margin:0;font-size:12.5px;color:var(--ink-3);line-height:1.6}
+
+.steps{counter-reset:s;display:flex;flex-direction:column;gap:12px}
+.step{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:15px 16px 15px 58px;position:relative;box-shadow:var(--sh)}
+.step:before{counter-increment:s;content:counter(s);position:absolute;left:16px;top:15px;width:30px;height:30px;border-radius:9px;background:var(--green);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:14px}
+.step h4{margin:0 0 6px;font-size:15.5px;font-weight:800}
+.step p{margin:0 0 9px;font-size:13.5px;color:var(--ink-2)}
+.askbox{background:#fbfcfc;border:1px solid var(--line-2);border-left:3px solid var(--green-2);border-radius:7px;padding:9px 12px;font-size:13px;color:var(--ink-2)}
+.askbox b{color:var(--ink)}
+.askbox ol{margin:5px 0 0;padding-left:19px}
+.askbox li{margin:3px 0}
+.lawbox{background:#f5f8fd;border:1px solid #cddff2;border-left:3px solid var(--blue);border-radius:7px;padding:9px 12px;font-size:13px;color:#17395f;margin-top:8px}
+
+.tl{position:relative;padding-left:26px}
+.tl:before{content:"";position:absolute;left:7px;top:6px;bottom:6px;width:2px;background:linear-gradient(180deg,var(--green-2),#cfe6dd)}
+.tli{position:relative;padding:0 0 20px}
+.tli:before{content:"";position:absolute;left:-24px;top:6px;width:14px;height:14px;border-radius:50%;background:#fff;border:3px solid var(--green-2)}
+.tli.done:before{background:var(--green-2)}
+.tli.future:before{border-color:var(--line-2)}
+.tli .dt{font-size:12.5px;font-weight:800;color:var(--green-2)}
+.tli.future .dt{color:var(--ink-3)}
+.tli .tx{font-size:14px;font-weight:600;margin-top:1px}
+.tli .ds{font-size:13px;color:var(--ink-3);margin-top:2px}
+
+.log{background:var(--card);border:1px solid var(--line);border-radius:var(--r);overflow:hidden;box-shadow:var(--sh)}
+.logrow{display:grid;grid-template-columns:96px 1fr;gap:12px;padding:12px 15px;border-bottom:1px solid var(--line);font-size:13.5px}
+.logrow:last-child{border-bottom:none}
+.logrow .lg-d{font-weight:800;color:var(--green-2);font-size:12.5px}
+.logrow.errata .lg-d{color:var(--red)}
+.logrow .lg-t{color:var(--ink-2)}
+
+.card{background:var(--card);border:1px solid var(--line);border-radius:var(--r);padding:17px;box-shadow:var(--sh);margin-bottom:14px}
+.card h3{margin:0 0 9px;font-size:16px;font-weight:800}
+.card p{margin:0 0 9px;font-size:14px;color:var(--ink-2)}
+.card ul{margin:8px 0 0;padding-left:19px;font-size:13.5px;color:var(--ink-2)}
+.card li{margin:5px 0}
+.srcs{font-size:12.5px;color:var(--ink-3)}
+.srcs li{margin:4px 0;word-break:break-all}
+.disclaim{background:#f4f6f5;border:1px solid var(--line-2);border-radius:var(--r);padding:16px;font-size:12.5px;color:var(--ink-3);line-height:1.75;margin:24px 0}
+.disclaim b{color:var(--ink-2)}
+footer{background:#0b2a22;color:rgba(255,255,255,.62);padding:26px 0 30px;font-size:12.5px;margin-top:26px}
+footer .fb{display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:flex-start}
+footer strong{color:#fff;display:block;margin-bottom:5px;font-size:13.5px}
+.empty{text-align:center;padding:36px;color:var(--ink-3);font-size:14px}
+.count-line{font-size:13px;color:var(--ink-3);margin:0 0 12px}
+.hint{font-size:12.5px;color:var(--ink-3);margin-top:14px}
+
+@media (max-width:860px){
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .dims{grid-template-columns:repeat(3,1fr)}
+  .dim{border-bottom:1px solid var(--line)}
+}
+@media (max-width:520px){
+  h1{font-size:21px}
+  .hero{padding:24px 0 18px}
+  .stats{gap:9px}
+  .stat .n{font-size:24px}
+  .vhead{padding:13px;gap:10px}
+  .vrank{flex:0 0 38px}
+  .vrank .rk{width:38px;height:38px;font-size:16px}
+  .vname{font-size:15.5px}
+  .kv{grid-template-columns:1fr;gap:2px 0}
+  .kv dt{margin-top:8px;font-size:12.5px}
+  .dims{grid-template-columns:repeat(2,1fr)}
+  .logrow{grid-template-columns:1fr;gap:2px}
+}
+
+/* 热榜式列表（参照 aihot.news/hot：排名序号 + 细分割线行，无重卡片） */
+.rgroup{margin:0 0 30px}
+.rg-head{display:flex;align-items:baseline;gap:10px;flex-wrap:wrap;padding:2px 2px 10px;border-bottom:2px solid var(--ink)}
+.rg-no{font-size:12px;font-weight:800;color:var(--green-2);letter-spacing:.08em}
+.rg-t{font-size:18.5px;font-weight:800;letter-spacing:-.3px}
+.rg-en{font-size:12.5px;color:var(--ink-3)}
+.rg-link{margin-left:auto;font-size:12.5px;font-weight:600;white-space:nowrap}
+.rg-desc{margin:9px 2px 10px;font-size:13px;color:var(--ink-3);line-height:1.7}
+.rlist{background:#fff;border:1px solid var(--line);border-radius:14px;overflow:hidden}
+.rrow{display:grid;grid-template-columns:56px minmax(0,1fr) auto;align-items:center;gap:12px;
+  padding:13px 16px;border-bottom:1px solid var(--line);color:inherit;text-decoration:none;transition:background .14s}
+.rrow:last-child{border-bottom:none}
+.rrow:hover{background:#f6faf8}
+.rrow .no{font-size:19px;font-weight:800;color:#c6d0cc;letter-spacing:-.5px;text-align:center;transition:color .14s}
+.rrow:hover .no{color:var(--green-2)}
+.rrow .rmain{min-width:0}
+.rrow .rt{font-size:14.5px;font-weight:700;line-height:1.45;word-break:break-word}
+.rrow .rt .regno{color:var(--green-2)}
+.rrow .rz{font-size:12.5px;color:var(--ink-3);margin-top:3px;line-height:1.6}
+.rrow .rside{display:flex;align-items:center;gap:8px;flex:0 0 auto}
+.rrow .go{color:#a9b5b0;font-size:13px;transition:color .14s, transform .14s}
+.rrow:hover .go{color:var(--green-2);transform:translateX(2px)}
+.rtag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;border:1px solid;white-space:nowrap}
+.rtag-law{background:var(--blue-soft);color:var(--blue);border-color:#cddff2}
+.rtag-impl{background:#f2f5f4;color:var(--ink-2);border-color:var(--line-2)}
+.rtag-del{background:var(--green-soft);color:var(--green);border-color:#cfe6dd}
+.rtag-gd{background:var(--amber-soft);color:var(--amber);border-color:#f0e0bd}
+.rtag-case{background:var(--green-soft);color:var(--green);border-color:#cfe6dd}
+
+/* ============================================================
+   V4 布局：左栏导航 + 单列信息流（参照 aihot.news 的信息流结构）
+   ============================================================ */
+.shell{display:flex;min-height:100vh}
+.maincol{flex:1;min-width:0;display:flex;flex-direction:column}
+
+.side{display:none;position:sticky;top:0;align-self:flex-start;flex:0 0 200px;width:200px;height:100vh;
+  flex-direction:column;border-right:1px solid var(--line-2);background:#fff;padding:18px 12px 14px}
+@media(min-width:1024px){ .side{display:flex} .tabs{display:none} }
+
+.brand{display:flex;align-items:center;gap:10px;padding:2px 8px 16px;color:var(--ink)}
+.brand-mark{flex:0 0 32px;width:32px;height:32px;border-radius:10px;background:var(--green);color:#fff;
+  display:flex;align-items:center;justify-content:center;font-size:13.5px;font-weight:800;letter-spacing:-.5px;
+  box-shadow:0 3px 9px -3px rgba(11,107,82,.5)}
+.brand-txt b{display:block;font-size:14.5px;font-weight:800;line-height:1.25;letter-spacing:-.2px}
+.brand-txt span{display:block;font-size:11px;color:var(--ink-3);line-height:1.45;margin-top:1px}
+
+.side-label{padding:12px 10px 6px;font-size:11px;font-weight:700;letter-spacing:.06em;color:#9aa8a3}
+.navitem{display:flex;align-items:center;gap:9px;height:40px;width:100%;padding:0 10px;margin-bottom:2px;
+  border:none;background:transparent;border-radius:10px;font-family:inherit;font-size:14px;font-weight:600;
+  color:var(--ink-2);text-align:left;cursor:pointer;transition:.15s}
+.navitem:hover{background:#f1f5f3;color:var(--ink)}
+.navitem.on{background:var(--green-soft);color:var(--green);font-weight:700}
+.navitem .ico{flex:0 0 20px;display:flex;justify-content:center;color:#9aa8a3}
+.navitem.on .ico{color:var(--green)}
+.navitem .ico svg{width:17px;height:17px}
+.navitem .num{font-size:12px;font-weight:700;opacity:.5}
+.side-foot{margin-top:auto;padding-top:12px;border-top:1px solid var(--line);
+  font-size:11px;color:var(--ink-3);line-height:1.65;padding-left:10px;padding-right:10px}
+.side-foot b{color:var(--ink-2)}
+
+/* 筛选栏：胶囊控件 + 圆角搜索 */
+.filters{background:transparent;border:none;box-shadow:none;padding:0;gap:9px;align-items:center;margin-bottom:16px}
+.filters input,.filters select{flex:0 1 auto;height:38px;border-radius:999px;border:1px solid var(--line-2);
+  background:#fff;font-size:13px;color:var(--ink-2);padding:0 14px;min-width:0;cursor:pointer}
+.filters input{flex:1 1 240px;background:#f1f5f3;border-color:transparent;color:var(--ink);padding:0 16px}
+.filters input::placeholder{color:#9aa8a3}
+.filters input:focus,.filters select:focus{background:#fff;border-color:var(--green-2);box-shadow:0 0 0 3px rgba(18,132,100,.12)}
+
+/* 信息流：左栏排名轨道 + 卡片 */
+@media(min-width:1024px){
+  .vlist{gap:0}
+  .vcard{position:relative;overflow:visible;margin:0 0 14px 96px;transition:.18s}
+  .vcard:before{content:"";position:absolute;left:-24px;top:36px;width:8px;height:8px;border-radius:50%;
+    background:var(--green-2);box-shadow:0 0 0 4px var(--bg);transition:transform .2s}
+  .vcard:after{content:"";position:absolute;left:-20px;top:48px;bottom:-20px;width:1px;background:var(--line-2)}
+  .vcard:last-child:after{display:none}
+  .vcard:hover:before{transform:scale(1.25)}
+  .vrank{position:absolute;left:-96px;top:18px;flex:none;width:64px}
+  .vrank .rk{width:44px;height:44px;margin-left:20px;font-size:17px}
+  .vcard .dims,.vcard .vbody{border-bottom-left-radius:13px;border-bottom-right-radius:13px}
+}
+</style>
+</head>
+<body>
+
+<div class="shell">
+
+<aside class="side">
+  <div class="brand">
+    <div class="brand-mark">TF</div>
+    <div class="brand-txt">
+      <b>Trade Free HOT</b>
+      <span>你身边的合规专家</span>
+    </div>
+  </div>
+
+  <div class="side-label">板块</div>
+  <button class="navitem tab on" data-t="p1" type="button">
+    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M8 6h13M8 12h13M8 18h13"></path><circle cx="3.5" cy="6" r="1"></circle><circle cx="3.5" cy="12" r="1"></circle><circle cx="3.5" cy="18" r="1"></circle></svg></span>
+    <span class="num">①</span><span>机构榜单</span>
+  </button>
+  <button class="navitem tab" data-t="p7" type="button">
+    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5A1.5 1.5 0 015.5 4H10a2 2 0 012 2v14a2 2 0 00-2-2H5.5A1.5 1.5 0 014 16.5z"></path><path d="M20 5.5A1.5 1.5 0 0018.5 4H14a2 2 0 00-2 2v14a2 2 0 012-2h4.5a1.5 1.5 0 001.5-1.5z"></path></svg></span>
+    <span class="num">②</span><span>法规与指南</span>
+  </button>
+  <button class="navitem tab" data-t="p8" type="button">
+    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M4 20V6a2 2 0 012-2h6l8 8v8a2 2 0 01-2 2H6a2 2 0 01-2-2z"></path><path d="M14 4v6h6"></path></svg></span>
+    <span class="num">③</span><span>核查案例</span>
+  </button>
+  <button class="navitem tab" data-t="p9" type="button">
+    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6M10 21h4"></path><path d="M12 3a6 6 0 00-3.5 10.9c.5.4.8 1 .8 1.6v.5h5.4v-.5c0-.6.3-1.2.8-1.6A6 6 0 0012 3z"></path></svg></span>
+    <span class="num">④</span><span>实操经验</span>
+  </button>
+  <button class="navitem tab" data-t="p6" type="button">
+    <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"></circle><path d="M12 7v5.4l3.4 2"></path></svg></span>
+    <span>更新日志</span>
+  </button>
+
+  <div class="side-foot">
+    数据基准日 <b id="side-date">—</b><br>
+    每周一更新
+  </div>
+</aside>
+
+<div class="maincol">
+
+<header class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Trade Free HOT · 你身边的合规专家</span>
+    <h1>CBAM 信息批露榜单</h1>
+    <p class="sub">四个模块，串起 CBAM 从业者最关心的一条信息链：<b>机构库 → 规则 → 案例 → 实操经验</b>。官方一手信息排在前，行业经验排在后；所有非官方内容均已显著标注。</p>
+    <div class="metaline">
+      <span>数据基准日：<b id="m-date">—</b></span>
+      <span>欧委会状态表：<b id="m-sop">—</b></span>
+      <span id="live-chip" class="livechip"><i></i>数据加载中…</span>
+      <span>最近检查 <b id="live-checked">—</b> ｜ 自动检查 <b id="live-next">—</b></span>
+      <button id="btn-refresh" class="refreshbtn" type="button">立即检查更新</button>
+    </div>
+  </div>
+</header>
+<style>
+  .livechip i{display:inline-block;width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);margin-right:6px;vertical-align:1px}
+  .livechip.ok i{background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.24)}
+  .livechip.warn i{background:#fbbf24;box-shadow:0 0 0 4px rgba(251,191,36,.24)}
+  .refreshbtn{font:inherit;font-size:12.5px;font-weight:600;color:#0b6b52;background:#fff;border:1px solid rgba(255,255,255,.5);border-radius:7px;padding:4px 11px;cursor:pointer;transition:.16s}
+  .refreshbtn:hover{background:#eaf6f1}
+  .refreshbtn:disabled{opacity:.6;cursor:default}
+  .toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(16px);z-index:99;max-width:90vw;background:#12211c;color:#fff;font-size:13.5px;padding:11px 18px;border-radius:10px;box-shadow:0 10px 30px rgba(0,0,0,.22);opacity:0;pointer-events:none;transition:.24s}
+  .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
+  .toast.ok{background:#0b6b52}
+  .toast.warn{background:#8a5a0b}
+</style>
+
+<nav class="tabs">
+  <div class="wrap">
+    <div class="tabscroll">
+      <button class="tab on" data-t="p1">① 机构榜单</button>
+      <button class="tab" data-t="p7">② 法规与指南</button>
+      <button class="tab" data-t="p8">③ 核查案例</button>
+      <button class="tab" data-t="p9">④ 实操经验</button>
+      <button class="tab" data-t="p6">更新日志</button>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+
+  <div class="stats">
+    <div class="stat a"><div class="n" id="s-official">0</div><div class="l">欧委会官方名录<br>已刊载机构数</div></div>
+    <div class="stat b"><div class="n" id="s-announced">—</div><div class="l">可在 NAB 官方公示<br>渠道核验的机构</div></div>
+    <div class="stat c"><div class="n" id="s-nab">—</div><div class="l">已同意提供 CBAM<br>认可的 NAB</div></div>
+    <div class="stat d"><div class="n" id="s-tc">—</div><div class="l">已开放第三国申请的<br>NAB 通道</div></div>
+  </div>
+
+  <!-- ============ P1 核查机构榜 ============ -->
+  <section class="panel on" id="p1">
+    <h2 class="sh">CBAM 核查机构 · 信息披露指数排名</h2>
+    <p class="sd">按「信息披露指数（TDI）」排序，满分 100 分。评价的是：<b>在发证 NAB 的官方公示渠道（决议 / 名录 / 证书）中，能核验到什么程度</b>。完整披露记满分，仅间接来源或表述含糊记半分，未披露记 0 分。<b>本指数只评价信息披露，不代表核查能力或商业水平。</b></p>
+
+    <div class="filters">
+      <input type="search" id="f-q" placeholder="搜索机构 / 集团 / 发证 NAB…">
+      <select id="f-nab"><option value="">全部发证 NAB</option></select>
+      <select id="f-g8"><option value="">不限：第 VIII 组</option><option value="1">仅看：覆盖 VIII 组（下游钢铁铝制品）</option><option value="0">仅看：未覆盖 VIII 组</option></select>
+      <select id="f-cn"><option value="">不限：中文服务</option><option value="1">有中文/本地服务宣介</option></select>
+      <select id="f-sort">
+        <option value="score">排序：披露指数 ↓</option>
+        <option value="date">排序：官宣时间 ↓</option>
+        <option value="name">排序：机构名称 A→Z</option>
+      </select>
+    </div>
+    <p class="count-line" id="v-count"></p>
+    <div class="vlist" id="v-list"></div>
+
+    <div class="card" style="margin-top:16px">
+      <p style="margin:0 0 8px"><b style="font-size:14.5px">延伸阅读（属于本模块）</b></p>
+      <div class="chips">
+        <button class="tab" data-t="p2" type="button">11 组活动组覆盖对照</button>
+        <button class="tab" data-t="p3" type="button">NAB 受理通道</button>
+        <button class="tab" data-t="p4" type="button">四步核验法</button>
+        <button class="tab" data-t="p5" type="button">CBAM 时间表</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ P7 法规与指南 ============ -->
+  <section class="panel" id="p7">
+    <h2 class="sh">② CBAM 法规与指南</h2>
+    <p class="sd">按欧委会 CBAM 官网的三大板块组织：<b>立法和指南 → 注册 → 排放的验证</b>。全部条目抓取自欧委会官网
+      <a href="https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en" target="_blank" rel="noopener">CBAM legislation and guidance</a>
+      页面，链接直达 EUR-Lex 官方原文。<b>本模块不收录自媒体解读</b>——那部分在「④ 实操经验」。</p>
+    <div class="alert v2">
+      <span class="a-title">怎么读这一页</span>
+      <b>先看基本条例（管"要不要做"），再看实施细则（管"怎么算"），最后看认可条例（管"谁来查"）。</b>中文说明仅为便于理解，<b>凡与原文冲突，一律以欧盟官方语言原文为准</b>。
+    </div>
+    <div id="reg-list"></div>
+    <p class="hint">条目与链接以欧委会官网栏目页为准复核；若 EUR-Lex 直链失效，在 <a href="https://eur-lex.europa.eu/homepage.html" target="_blank" rel="noopener">EUR-Lex</a> 搜索法规编号（如 2025/2551）即可。</p>
+  </section>
+
+  <!-- ============ P8 核查案例 ============ -->
+  <section class="panel" id="p8">
+    <h2 class="sh">③ CBAM 核查案例集锦</h2>
+    <p class="sd">客观事实记录，不做主观评价。目前收录的是<b>公开可核查的里程碑事件</b>（全球首例证书、NAB 集中批复等）——这些决定了中国企业现在能选谁。<br>客户项目案例需脱敏后收录，正持续新增；有可公开项目的企业欢迎提供素材。</p>
+    <div class="alert">
+      <span class="a-title">为什么要看案例</span>
+      每个案例都对应一条<b>可直接复用的判断</b>：哪家 NAB 通道走得通、ETS 范围能不能转 CBAM、一篇公告背后站在哪家法人主体上。
+    </div>
+    <div id="case-list"></div>
+    <p class="more">想收录贵司的 CBAM 核查案例？脱敏后提交「背景 / 品类 / 核查模式 / 不符合项 / 整改 / 申报结果」六项即可，通过页脚联系方式联系我们。</p>
+  </section>
+
+  <!-- ============ P9 实操经验 ============ -->
+  <section class="panel" id="p9">
+    <h2 class="sh">④ CBAM 实操经验与风险避坑</h2>
+    <div class="alert">
+      <span class="a-title">⚠ 非官方声明</span>
+      本模块全部内容为<b>行业实操经验分享，不是欧盟官方文件，也不构成法律意见</b>，<b>不能替代法规与主管机关口径</b>。凡涉及金额、期限、义务的判断，请回到「② 法规与指南」核对原文。
+    </div>
+    <p class="sd">按环节排列：签约前 → 数据准备 → 现场核查 → 报告签发。每条都写清「坑在哪 / 怎么避」。</p>
+    <div id="tip-list"></div>
+  </section>
+
+  <!-- ============ P2 活动组对照 ============ -->
+  <section class="panel" id="p2">
+    <h2 class="sh">11 个活动组 · 机构覆盖对照矩阵</h2>
+    <p class="sd">这是本榜<b>最该看的一张表</b>。CBAM 核查资质不是按"钢铁""铝"这类行业名授予，而是依据授权条例 (EU) 2025/2551 <b>附件 I 切成 11 个活动组逐组批准</b>。一家机构拿到"下游钢铁制品"那一组，<b>不等于</b>它有权核查你的烧结矿、生铁、粗钢或铁合金。</p>
+
+    <div class="alert">
+      <span class="a-title">🔑 本期最实操的一条结论</span>
+      <b>第 VIII 组 = 钢铁制品与铝制品</b>，中国出口的紧固件、钢丝与线材制品、五金件、铝型材等下游制品<b>都落在这一组</b>。已公示的 5 家中，<b>没有任何两家的活动组完全一致</b>：EmiCert 与 RINA 覆盖全部 11 组；必维意大利缺 LI（进口电力）；SGS ICS 意大利缺 III（硝酸）、V（粗钢及前体）、VII（未锻轧铝）；Intertek 缺 L（CCUS）。
+      <br><b>⚠ 特别注意：</b>ACCREDIA 对 RINA 与 SGS 的<b>新闻稿与决议 Rev.01 两份文本范围不一致</b>，且均未载明认可证书编号。这两家的<b>最终范围必须索取认可附件原件确认</b>。<b>选错机构，等于报告做完了却报不上去。</b>
+    </div>
+
+    <div class="tablewrap">
+      <table id="mx-table">
+        <thead><tr>
+          <th>活动组</th><th>覆盖内容</th><th>必维意大利</th><th>SGS ICS 意大利</th><th>EmiCert</th><th>RINA Services</th>
+        </tr></thead>
+        <tbody id="mx-body"></tbody>
+      </table>
+    </div>
+    <p class="hint">✓ 已获授权　△ 官方口径称覆盖、逐组证据待补　✗ 未获授权。<b>本表依据 ESYD 证书附件（No.874-9）、Swedac 认可库条目（No.1639）、ACCREDIA 决议 Rev.01（2026-10-09 签署）整理，最终以认可证书原件为准。</b></p>
+
+    <div class="ggrid" id="g-grid" style="margin-top:18px"></div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>把你的产品映射到活动组（动手做一张 Excel）</h3>
+      <table style="min-width:0;font-size:13.5px">
+        <thead><tr><th>出口产品 / 工序</th><th>参考 CN 编码</th><th>对应活动组</th><th>候选机构是否获批该组</th></tr></thead>
+        <tbody>
+          <tr class="keyrow"><td>紧固件、钢丝与线材制品、五金件、铝型材</td><td>7318 / 7217 / 7604 等</td><td class="cnt">VIII</td><td>□ 逐家核对</td></tr>
+          <tr><td>粗钢 / 生铁 / 烧结矿 / DRI</td><td>72 章相关</td><td class="cnt">V</td><td>□ 待填</td></tr>
+          <tr><td>铁合金（FeMn/FeCr/FeNi）</td><td>7202</td><td class="cnt">VI</td><td>□ 待填</td></tr>
+          <tr><td>未锻轧铝</td><td>7601</td><td class="cnt">VII</td><td>□ 待填</td></tr>
+          <tr><td>水泥 / 熟料 / 高铝水泥</td><td>2523</td><td class="cnt">I</td><td>□ 待填</td></tr>
+          <tr><td>氢与氨 / 硝酸 / 尿素与化肥</td><td>2814/2808/3102 等</td><td class="cnt">II / III / IV</td><td>□ 待填</td></tr>
+          <tr><td>CCUS、进口电力、间接排放</td><td>—</td><td class="cnt">L / LI / LII</td><td>□ 待填</td></tr>
+        </tbody>
+      </table>
+      <p class="hint">这张表是你跟核查机构谈判的底牌。没有它，你只能听对方说一句"我们能做"。</p>
+    </div>
+  </section>
+
+  <!-- ============ P3 NAB ============ -->
+  <section class="panel" id="p3">
+    <h2 class="sh">24 国国家认可机构（NAB）受理通道全景</h2>
+    <p class="sd">CBAM 核查资质<b>不由欧盟委员会颁发</b>，而由欧盟/EEA 各成员国的 NAB 依据授权条例 (EU) 2025/2551 逐一认可。下表完整复刻欧委会《State-of-play CBAM accreditation》官方状态表。<b>「受理第三国申请」一列对中国机构最关键</b>。</p>
+
+    <div class="filters">
+      <input type="search" id="n-q" placeholder="搜索国家 / NAB 名称 / 缩写…">
+      <select id="n-tc"><option value="">全部 NAB</option><option value="tc">仅看：受理第三国申请</option><option value="ready">仅看：已受理认可申请</option><option value="notready">仅看：尚未受理申请</option></select>
+    </div>
+    <p class="count-line" id="n-count"></p>
+    <div class="tablewrap">
+      <table id="n-table">
+        <thead><tr>
+          <th>国家</th><th>认可机构 NAB</th><th>已同意提供 CBAM 认可</th><th>已受理申请</th><th>认可第三国</th><th>受理第三国申请</th><th>备注</th>
+        </tr></thead>
+        <tbody id="n-body"></tbody>
+      </table>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>法规原文怎么说：谁能向哪家 NAB 申请</h3>
+      <ul>
+        <li><b>第 3(1) 条</b>：在成员国设立的申请人，原则上须向<b>该国 NAB</b> 申请；仅在三种情形下可转向他国 NAB——(a) 该国决定不设立 NAB 且未借助他国 NAB；(b) 该国 NAB 不开展所申请的核查活动认可；(c) 该国 NAB 未通过所申请活动组的同行评审。</li>
+        <li><b>第 3(2) 条</b>：非成员国设立的申请人（含中国机构），可向<b>任何一家提供此项服务的成员国 NAB</b> 申请。</li>
+        <li><b>第 3(6) 条</b>：若 NAB 无法受理某第三国申请人，须<b>及时书面说明理由，并附上可能受理的 NAB 名单</b>；欧洲认可合作组织（EA）负责维护该名单。</li>
+        <li><b>第 4 条</b>：已依据实施条例 (EU) 2018/2067（EU ETS）取得认可、且覆盖附件 I 相应活动组的机构，<b>可申请将认可范围扩展至对应 CBAM 活动组</b>——意大利三家已公示机构走的都是这条路径。</li>
+      </ul>
+      <p class="hint">注意：第 4 条说的是"可以申请扩展"，不是"自动获得"。仍需 NAB 评估并签发新证书。</p>
+    </div>
+  </section>
+
+  <!-- ============ P4 四步核验 ============ -->
+  <section class="panel" id="p4">
+    <h2 class="sh">四步核验法：现在就自己动手</h2>
+    <p class="sd">每一步都能自己做，不需要等任何人，也不需要等欧委会名录上线。</p>
+    <div class="steps">
+      <div class="step">
+        <h4>索要认可证书，并按法规逐项核对</h4>
+        <p>授权条例 (EU) 2025/2551 <b>第 6(2) 条</b>规定，认可证书应当至少载明下列六项内容——照单核对即可，缺一项就先别往下走。</p>
+        <div class="lawbox">
+          <b>第 6(2) 条 认可证书应载明：</b>
+          <ol>
+            <li>发证国家认可机构（NAB）的身份；</li>
+            <li><b>核查机构的名称及唯一认可标识</b>；</li>
+            <li>认可范围及活动组；</li>
+            <li>NAB 与核查机构各自的设立国；</li>
+            <li>认可的生效日期与到期日期；</li>
+            <li>评审所依据的规范性文件。</li>
+          </ol>
+        </div>
+        <p class="hint">判断标准很简单：给你的是 PDF 证书，还是宣传 PPT。前者能核，后者不能。</p>
+      </div>
+      <div class="step">
+        <h4>去发证 NAB 的官方公示渠道反向检索</h4>
+        <p>给你的证书是它自己复印的。真正算数的是 NAB 官方公示里有没有它——<b>这一条正是 V2 版最关键的更正：NAB 公示是可得的。</b></p>
+        <div class="askbox">
+          <b>已验证可用的两条公示路径：</b>
+          <ul style="margin:5px 0 0;padding-left:18px">
+            <li><b>ACCREDIA（意大利）</b>：CSA CI 决议按期公开发布，在"认证延期／范围扩展"条目下<b>逐条列出持证法人全称与活动组编号</b>。本期 3 家机构即由此确认。</li>
+            <li><b>ESYD（希腊）</b>：颁发认可证书及附件（Annex to Certificate），载明证书编号、活动组与有效期。</li>
+          </ul>
+          其他 NAB：DAkkS（dakks.de）｜COFRAC（cofrac.fr）｜RvA（rva.nl）｜PCA（pca.gov.pl）｜Swedac（swedac.se）｜泛欧入口：欧洲认可合作组织 EA（european-accreditation.org）
+        </div>
+      </div>
+      <div class="step">
+        <h4>核活动组覆盖，这一步最容易被跳过</h4>
+        <p>拿自己的产品清单，对照「活动组覆盖对照矩阵」逐组比对。<b>重点先看 VIII 组</b>（下游钢铁／铝制品）与 LI 组（进口电力）——目前 5 家已公示机构的覆盖并不一致。只要有一个环节不在范围内，整份报告就有问题——不是"少报一点"，是客户那边<b>报不上去</b>。</p>
+      </div>
+      <div class="step">
+        <h4>核 CBAM 登记库注册状态</h4>
+        <p>认可 ≠ 能出报告。<b>2027 年 1 月起</b>，只有完成登记的机构才能在登记库内签发供申报人引用的正式核查报告。</p>
+        <div class="askbox">问一句就够：<b>"你们的 CBAM 登记库注册走到哪一步了？"</b> 答复若停在"正在准备""下个月递"，它就不在你的时间表里。<br><span style="color:#6b7d76">说明：登记的具体时限要求以欧委会《CBAM 登记库核查机构接入程序》及登记系统规则为准，(EU) 2025/2551 正文未作规定。</span></div>
+      </div>
+    </div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>四个坑，现在踩到的最多</h3>
+      <ul>
+        <li><b>坑一：拿"EU ETS 资质"当"CBAM 资质"。</b>第 4 条允许 EU ETS 持证机构申请范围扩展，但扩展仍需 NAB 评估并发新证书。"我们做 ETS 核查二十年"只能说明它会快一些，不能说明它已具备 CBAM 资质。</li>
+        <li><b>坑二：拿"集团有资质"当"你签的主体有资质"。</b>认可批给的是<b>法人</b>，不是品牌。本期公示的三个持证法人分别是：<b>BUREAU VERITAS ITALIA S.P.A.</b>、<b>SGS ICS ITALIA S.R.L.</b>、<b>RINA SERVICES S.A.</b>（注意不是 RINA S.p.A.）。正确的问题不是"你们有没有 CBAM 资质"，而是"<b>出报告的那个法人叫什么名字，它在证书上吗</b>"。</li>
+        <li><b>坑三：忽略活动组缺口。</b>见对照矩阵——RINA Services 无 VIII 组，必维与 SGS 无 LI 组。品牌大不等于范围全。</li>
+        <li><b>坑四：踩公正性红线。</b>附件二第 1.7.2 节：核查机构<b>或其同一法人的任何部分</b>，若提供以下服务，即构成<b>不可接受的公正性风险</b>——(a) 为制定监测计划所描述的监测与报告过程提供咨询，包括开发监测方法、起草排放报告、起草监测计划；(b) 为开发或维护排放监测与报告系统提供技术协助。第 1.7.3 节进一步规定：若运营者从<b>与核查机构存在关联的咨询机构</b>获得上述服务，同样构成利益冲突。<br><b>实务含义：做咨询的不能同时做核查，关联机构也要隔开。</b></li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>其他可直接引用的法规要点</h3>
+      <ul>
+        <li><b>第 6(3) 条</b>：认可证书有效期<b>不超过 5 年</b>，自 NAB 签发之日起算。</li>
+        <li><b>第 14 条</b>：NAB 须对每家获认可核查机构实施<b>年度监督</b>（含办公室评估与人员见证）；<b>首次监督须在发证后 12 个月内</b>完成。</li>
+        <li><b>第 5(1) 条</b>：NAB 评估时必须<b>现场访问申请人场所</b>，并<b>见证其人员执行排放报告核查的实际表现</b>。</li>
+        <li><b>第 15 条</b>：核查机构须于<b>每年 11 月 15 日前</b>向发证 NAB 报送次年核查计划，含核查时间与地点、实地或虚拟现场访问方式、受核查运营者名单、核查组成员。</li>
+        <li><b>第 3(3) 条</b>：认可申请须<b>按附件 I 的一个或多个活动组</b>提出——即资质本身就是按组授予的。</li>
+      </ul>
+    </div>
+  </section>
+
+  <!-- ============ P5 时间表 ============ -->
+  <section class="panel" id="p5">
+    <h2 class="sh">CBAM 核查与申报时间表</h2>
+    <p class="sd">三个环节串行：NAB 认可 → 登记库注册 → 欧委会开通技术权限。</p>
+    <div class="tl" id="tl-list"></div>
+    <div class="card" style="margin-top:16px">
+      <h3>窗口还剩多久</h3>
+      <p>2026 年度是首个要求现场访问的核查年度，首份 CBAM 年度申报截止 <b>2027 年 9 月 30 日</b>。核查需求会在 2027 年上半年集中爆发——排队、涨价、排期紧张几乎必然。现在到年底是锁定机构的窗口期。</p>
+    </div>
+  </section>
+
+  <!-- ============ P6 日志与勘误 ============ -->
+  <section class="panel" id="p6">
+    <h2 class="sh">更新日志与勘误</h2>
+    <p class="sd">每周一自动刷新。V1 版存在多处不准确之处，已在 V2 版逐条更正并保留记录，便于追溯。</p>
+    <div class="log" id="log-list"></div>
+
+    <div class="card" style="margin-top:16px">
+      <h3>本榜数据来源</h3>
+      <ul class="srcs">
+        <li>· <b>ACCREDIA《行业认证、认证与检验专业委员会（CSA CI）决议》2026-09-28</b>（电子签署 2026-10-06）—— 意大利 3 家机构的持证法人与活动组范围</li>
+        <li>· <b>ESYD 认可证书 No. 874-9 及附件 Annex V1/20</b>（2026-09-14）—— EmiCert 证书编号、活动组与有效期</li>
+        <li>· <b>授权条例 (EU) 2025/2551</b>（认可与核查）—— 附件 I 活动组、第 3/4/5/6/14/15 条、附件二公正性要求</li>
+        <li>· 实施条例 (EU) 2025/2546（核查原则与报告格式）／(EU) 2025/2547（排放计算方法）</li>
+        <li>· 欧委会《State-of-play CBAM accreditation》状态表（<b id="src-sop">—</b>）—— NAB 受理通道数据</li>
+        <li>· 欧盟委员会 DG TAXUD《Verification of CBAM emissions》专页 —— 官方名录状态</li>
+        <li>· 欧委会 2026-08-24《CBAM 核查及核查机构认可指南》／2026-08-28 登记库接入程序</li>
+      </ul>
+    </div>
+  </section>
+
+  <div class="disclaim">
+    <b>免责声明</b><br>
+    1. 本榜单依据截至数据基准日可公开检索的信息与欧盟官方文件整理，仅供参考，<b>不构成法律、合规、投资或商业决策建议</b>。<br>
+    2. CBAM 制度处于快速演进期，核查机构名单、认可状态、活动组范围与时间节点均可能随时变动。<b>文中提及的持证法人、认可编号、活动组范围等信息，务必以发证 NAB 的官方公示以及认可证书原件为准。</b><br>
+    3. 榜单中的"信息披露指数"仅评价机构信息在<b>官方渠道的可核验程度</b>，不代表对其资质真实性、服务质量或商业能力的评价、推荐或背书。<br>
+    4. 提及的机构名称仅用于信息说明与行业分析。企业选择核查机构前应自行开展尽职调查。
+  </div>
+</main>
+
+<footer>
+  <div class="wrap fb">
+    <div style="flex:1 1 320px">
+      <strong>CBAM 碳关税合规服务</strong>
+      服务范围：CBAM 核查对接、OB 联合审核、MRV 体系搭建、碳足迹核算、EPR/PPWR 合规咨询<br>
+      本榜四模块 · 数据基准日 <span id="f-date">—</span> · 欧委会状态表 <span id="src-sop">—</span>
+    </div>
+    <div style="flex:0 0 auto;text-align:center">
+      <img id="qr" src="qrcode.png" alt="企业微信二维码" style="width:112px;height:112px;object-fit:contain;border:1px solid var(--line-2);border-radius:10px;background:#fff">
+      <div style="font-size:12.5px;color:var(--ink-3);margin-top:5px">咨询评估 · 企业微信扫码</div>
+    </div>
+    <div style="flex:1 1 220px">
+      <strong>公众号</strong>
+      听碳的声音<br>
+      <strong>核验入口</strong><br>
+      ACCREDIA 决议 · ESYD 证书 · 欧委会核查专页
+    </div>
+  </div>
+  <div class="wrap disclaim" style="margin-top:18px">
+    免责声明：本网站所有公开资讯仅作行业参考，不构成法规 / 项目法律承诺。<br>
+    ②法规模块为欧盟官方原文与其链接，中文编译为非官方译文；④实操经验为行业经验分享，非官方文件，不能替代法规；①机构榜单的信息以各发证 NAB 官方公示为准，最终以认可证书原件为准。
+  </div>
+</footer>
+
+</div><!-- /maincol -->
+</div><!-- /shell -->
+<script>
+  document.getElementById("qr").addEventListener("error", function(){
+    var el = document.getElementById("qr");
+    el.outerHTML = '<div style="width:112px;height:112px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:12px;color:#6b7d76;border:1px dashed #cfdbd6;border-radius:10px;background:#fff;padding:6px">此处替换成<br>企业微信<br>二维码图片</div>';
+  });
+</script>
+
+<script>
+/* =========================================================================
+ *  ▼▼▼ 内置数据快照（仅作兜底）▼▼▼
+ *  真实数据源在同目录的 data.json —— 页面启动会先拉取它，成功就用线上数据，
+ *  失败（直接双击打开 file://、或 data.json 缺失/损坏）才回退到下面这份快照。
+ *  因此日常更新只需重写 data.json，不必改本文件。
+ *  需要把 data.json 同步回快照时，运行：python tools/embed-snapshot.py
+ * ========================================================================= */
+var EMBEDDED_DATA =                     {
+    "meta": {
+      "dataAsOf": "2026-10-14",
+      "sopDate": "2026-10-07",
+      "officialListCount": 0,
+      "changelog": [
+        {
+          "d": "2026-10-14",
+          "t": "【V5 法规模块重构】按欧委会 CBAM 官网三大板块重新组织：①CBAM 立法和指南（12 条法律文本）②CBAM 注册（2 条登记库实施细则）③CBAM 排放的验证（核查原则、计算方法、2025/2551 授权条例与官方核查指南）。全部条目抓取并核对自欧委会官网 cbam-legislation-and-guidance 页面，链接直达 EUR-Lex 原文；原 regs 卡片列表下线。同时②③④三个模块的列表改为热榜式行设计（排名序号 + 细分割线 + 悬停高亮）。"
+        },
+        {
+          "d": "2026-10-14",
+          "t": "【V4 布局与口径调整】①站点布局改为左侧固定导航 + 单列信息流（信息流卡片带排名轨道），筛选栏改为胶囊控件；②「信息披露指数」评分维度由 7 项调整为 6 项：删除「证书有效期」维度——CBAM 认可证书均为一年一审核，各机构有效期口径一致，该维度不构成信息披露的区分度；权重重排为 nab15 / entity15 / cert15 / scope30 / registry20 / china5，合计仍为 100，各机构指数相应重算（证书有效期信息仍在卡片详情中展示，只是不再计分）；③应读者反馈，「⑤招标与商机信息」模块下线，页面聚焦机构库、法规、案例、实操经验四模块，案例模块新增「里程碑日历」视图（案例日期 + NAB 决议 / 官宣 / 认可生效与到期节点）；④应反馈移除页面顶部「欧委会名录」横幅、案例模块的里程碑日历与案例卡的「依据」来源行，页面更聚焦榜单本身。"
+        },
+        {
+          "d": "2026-10-14",
+          "errata": true,
+          "t": "【V3 重要更正】①新增第 5 家：INTERTEK CERTIFICATION AB（瑞典 Swedac，认可号 1639，2026-10-13 授予，有效期至 2031-10-13，活动组 I–VIII、LI、LII，不含 L/CCUS）——数据源为 Swedac 官方认可库条目与官网新闻。②撤回 V2「RINA 未获第 VIII 组」的结论：ACCREDIA 决议 Rev.01（2026-10-09 签署）明确含第 VIII 组，本榜以决议为准，并将新闻稿口径并列记录。③更正 SGS ICS 意大利范围：按决议 Rev.01 为 I、II、IV、VI、VIII、L、LI、LII（缺 III／V／VII，含 LI），与新闻稿口径不一致。④更正 EmiCert：已从 ESYD 官网直接下载证书附件（No.874-9，附件 V1/20）核对，确认为 11 组全覆盖，此前标注的 LI／LII「待核验项」系误读附件中「对应 EU ETS 活动组」列的 n/a，予以更正。⑤机构卡新增「商务信息」「附加标签」「历史回溯」三块，全部缺口与未知项一律显式标注，不做估算。"
+        },
+        {
+          "d": "2026-10-14",
+          "t": "站点升级为《Trade Free HOT》五模块：①核查机构榜（新增商务信息、附加标签、每家机构的历史回溯）②核查法规与认证规则指南 ③核查案例集锦 ④实操经验与风险避坑 ⑤招标与商机信息。页头统一为 Trade Free HOT「你身边的合规专家」；页脚按规范展示本榜编制方服务范围、企业微信二维码位、公众号「听碳的声音」与免责声明。所有非官方内容已做显著标注。"
+        },
+        {
+          "d": "2026-10-13",
+          "errata": true,
+          "t": "【V2 重要更正】①V1 称必维、SGS、RINA 三家「活动组范围未公开1」——错误。ACCREDIA《CSA CI 决议》2026-09-28 已逐条公示三家持证法人与活动组范围，三家得分由 28/28/33 大幅上调至 75/75/65。②V1 误读证书附件中的「n/a」列——该列为「对应 EU ETS 活动组」列，并非「未获授权」，关于 LI／LII 的表述已更正。③更正持证法人：必维为 BUREAU VERITAS ITALIA S.P.A.、SGS 为 SGS ICS ITALIA S.R.L.、RINA 为 RINA SERVICES S.A.（非 RINA S.p.A.）。④V1 所引「LII 不可单独授予」「禁止包干价」「首席核查员 5 年轮换」三项，经核对在 (EU) 2025/2551 正文中均无依据，已删除。⑤新增「11 个活动组覆盖对照矩阵」，并首次披露：RINA SERVICES S.A. 未获第 VIII 组（下游钢铁／铝制品）授权，必维与 SGS 未获 LI 组（进口电力）授权。"
+        },
+        {
+          "d": "2026-10-12",
+          "t": "首版发布（V1）。欧委会官方名录仍为 0 家；同步欧委会 10 月 7 日版 State-of-play：受理申请的 NAB 18 家、受理第三国申请的 7 家。"
+        }
+      ],
+      "generatedAt": "2026-10-14T16:35:13+08:00"
+    },
+    "dims": [
+      {
+        "k": "nab",
+        "lb": "NAB 公示可查",
+        "w": 15,
+        "y": "能否在发证 NAB 的官方决议/名录中检索到"
+      },
+      {
+        "k": "entity",
+        "lb": "持证法人",
+        "w": 15,
+        "y": "决定报告由谁签发、能否被申报引用"
+      },
+      {
+        "k": "cert",
+        "lb": "认可编号",
+        "w": 15,
+        "y": "唯一认可标识，无编号即无从核实"
+      },
+      {
+        "k": "scope",
+        "lb": "活动组逐组",
+        "w": 30,
+        "y": "决定能不能核查你的具体产品，权重最高"
+      },
+      {
+        "k": "registry",
+        "lb": "登记库注册",
+        "w": 20,
+        "y": "无 Verifier ID 出不了正式报告"
+      },
+      {
+        "k": "china",
+        "lb": "对华服务",
+        "w": 5,
+        "y": "影响现场核查成本与沟通效率"
+      }
+    ],
+    "verifiers": [
+      {
+        "name": "Intertek 天祥（瑞典）",
+        "nameEn": "INTERTEK CERTIFICATION AB",
+        "group": "Intertek 集团（英国）",
+        "groupNote": "瑞典实体位于斯德哥尔摩 Kista",
+        "nab": "Swedac",
+        "nabCn": "瑞典",
+        "announced": "2026-10-13",
+        "nabDecided": "2026-10-13",
+        "entity": "INTERTEK CERTIFICATION AB（瑞典 Kista）",
+        "certNo": "Swedac 认可号 1639",
+        "standard": "认可库条目按 (EU) 2025/2551 附件 I 逐组列示；具体依据标准以认可证书原件为准",
+        "validFrom": "2026-10-13",
+        "validTo": "2031-10-13",
+        "scopeGroups": [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "V",
+          "VI",
+          "VII",
+          "VIII",
+          "LI",
+          "LII"
+        ],
+        "scopePending": [],
+        "scopeText": "瑞典 Swedac 认可库条目（No. 1639）按 (EU) 2025/2551 附件 I 逐组列示：I 煅烧粘土／水泥熟料／水泥／高铝水泥、II 氢／氨、III 硝酸、IV 尿素／混合肥料、V 烧结矿／生铁／DRI／粗钢、VI 铁合金、VII 未锻轧铝、VIII 钢铁及铝制品、LI 进口到欧盟关境的电力、LII 间接排放。",
+        "route": "由 Swedac 按 ISO/IEC 17029 受理并授予（瑞方当前优先处理瑞典、乌克兰、英国的申请）",
+        "registry": "未公开，须在取得认可后两个月内完成 CBAM 登记库注册",
+        "officialListed": false,
+        "china": {
+          "v": 1,
+          "t": "Intertek 集团在中国设有广泛的分支与实验室网络（集团公开宣介口径）。但本次获认可的持证主体为瑞典法人，能否由中国团队执行现场核查，须向机构书面确认。"
+        },
+        "site": "https://www.intertek.com/",
+        "srcs": [
+          "Swedac 认可库条目 No. 1639（认可日 2026-10-13，有效期至 2031-10-13）",
+          "Swedac 官网新闻《Första svenska organet ackrediterat för CBAM-verifiering》（2026-10-13）"
+        ],
+        "note": "<b>范围缺口提示：</b>所列条目<b>不含 L 组（CCUS）</b>。若你的申报涉及碳捕集、利用与封存相关的排放扣减，需在签约前书面确认。",
+        "d": {
+          "nab": 1,
+          "entity": 1,
+          "cert": 1,
+          "scope": 1,
+          "registry": 0,
+          "china": 1
+        },
+        "biz": {
+          "price": "未公开",
+          "pricing": "未公开（签约前须向机构索取书面报价）",
+          "area": "瑞典法人持证；集团口径为全球服务网络（具体国别服务能力须确认）",
+          "langs": "英文 / 瑞典文；中文服务能力须向机构确认",
+          "ob": "未公开（可否做 OB 联合现场核查须向机构确认）"
+        },
+        "tags": {
+          "sign": "有（已获 Swedac 认可，具签发资格；CBAM 登记库注册状态未公开）",
+          "remote": "未公开",
+          "annual": "待向机构确认"
+        },
+        "history": [
+          {
+            "d": "2026-10-14",
+            "t": "本榜首次收录（V3）。依据 Swedac 认可库条目 No.1639：认可日 2026-10-13，有效期至 2031-10-13，活动组 I–VIII、LI、LII。"
+          }
+        ]
+      },
+      {
+        "name": "Bureau Veritas 必维（意大利）",
+        "nameEn": "BUREAU VERITAS ITALIA S.P.A.",
+        "group": "必维集团（法国）",
+        "groupNote": "全球 140 余国服务网络",
+        "nab": "Accredia",
+        "nabCn": "意大利",
+        "announced": "2026-09-29",
+        "nabDecided": "2026-09-28",
+        "entity": "BUREAU VERITAS ITALIA S.P.A.",
+        "certNo": "ACCREDIA 决议正文未载明认可证书编号（名录中另见注册号，以认可证书原件为准）",
+        "standard": "决议未载明（以认可证书原件为准）",
+        "validFrom": null,
+        "validTo": null,
+        "scopeGroups": [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "V",
+          "VI",
+          "VII",
+          "VIII",
+          "L",
+          "LII"
+        ],
+        "scopePending": [],
+        "scopeText": "ACCREDIA 决议在 V&V 框架下列明：碳边境调节机制（CBAM），适用于活动类别 I、II、III、IV、V、VI、VII、VIII、L 及 LII。",
+        "route": "由 EU ETS（(EU) 2018/2067）认可范围扩展而来（第 4 条路径）",
+        "registry": "未公开",
+        "officialListed": false,
+        "china": {
+          "v": 1,
+          "t": "中文稿件 2026-10-08 正式发布（美通社），中国市场服务网络成熟。"
+        },
+        "site": "https://www.bureauveritas.com/",
+        "srcs": [
+          "ACCREDIA《行业认证、认证与检验专业委员会（CSA CI）决议》2026-09-28，「授信额度延长」条目（电子签署 2026-10-06）",
+          "Bureau Veritas 官网公告 2026-09-29 / 美通社中文稿 2026-10-08"
+        ],
+        "note": "<b>范围缺口提示：</b>未获 <b>LI 组（进口到欧盟关境的电力）</b>授权。必维意大利的范围在三份 ACCREDIA 文本（新闻稿 10-06、决议 Rev.00、决议 Rev.01）中表述一致，可放心按此比对。",
+        "d": {
+          "nab": 1,
+          "entity": 1,
+          "cert": 0.5,
+          "scope": 1,
+          "registry": 0,
+          "china": 1
+        },
+        "biz": {
+          "price": "未公开",
+          "pricing": "未公开（签约前须向机构索取书面报价）",
+          "area": "集团口径为全球服务网络（公开宣介，具体国别能力须确认）",
+          "langs": "中文 / 英文（2026-10-08 已发布中文稿件）",
+          "ob": "未公开（可否与中国本地机构做 OB 联合现场核查，须向机构确认）"
+        },
+        "tags": {
+          "sign": "有（已获 ACCREDIA 认可，具备签发资格；CBAM 登记库注册状态未公开）",
+          "remote": "未公开",
+          "annual": "待向机构确认"
+        },
+        "history": [
+          {
+            "d": "2026-10-14",
+            "t": "V3：三份 ACCREDIA 文本范围表述一致（I–VIII、L、LII；缺 LI）。因 ACCREDIA 未在决议正文列明认可证书编号，「认可编号」一项由满分下调为半分，披露指数由 75 调整为 68。"
+          },
+          {
+            "d": "2026-10-13",
+            "t": "本榜 V2 更正：活动组范围已在 ACCREDIA 2026-09-28 决议中逐组列明，此前标注「未公开」有误，披露指数由 28 上调至 75。"
+          },
+          {
+            "d": "2026-10-12",
+            "t": "本榜首次收录。"
+          }
+        ]
+      },
+      {
+        "name": "SGS 通标（意大利）",
+        "nameEn": "SGS ICS ITALIA S.R.L.",
+        "group": "SGS 集团（瑞士）",
+        "groupNote": "115 国、2,500 余个分支与实验室",
+        "nab": "Accredia",
+        "nabCn": "意大利",
+        "announced": "2026-10-06",
+        "nabDecided": "2026-09-28",
+        "entity": "SGS ICS ITALIA S.R.L.",
+        "certNo": "ACCREDIA 决议正文未载明认可证书编号（以认可证书原件为准）",
+        "standard": "决议未载明（以认可证书原件为准）",
+        "validFrom": null,
+        "validTo": null,
+        "scopeGroups": [
+          "I",
+          "II",
+          "IV",
+          "VI",
+          "VIII",
+          "L",
+          "LI",
+          "LII"
+        ],
+        "scopePending": [],
+        "scopeText": "ACCREDIA 决议 Rev.01（2026-10-09 签署）列明：CBAM，适用于活动组 I、II、IV、VI、VIII、L、LI、LII。新闻稿（10-06）口径为 I–VIII、L、LII。两份文本不一致，以认可证书附件为准。",
+        "route": "由 EU ETS（(EU) 2018/2067）认可范围扩展而来（第 4 条路径）",
+        "registry": "未公开",
+        "officialListed": false,
+        "china": {
+          "v": 1,
+          "t": "SGS 通标标准技术服务有限公司发布中文公告，中国市场服务网络成熟。"
+        },
+        "site": "https://www.sgs.com/",
+        "srcs": [
+          "ACCREDIA《CSA CI 决议》2026-09-28，「授信额度延长」条目（电子签署 2026-10-06）",
+          "SGS 官网新闻 2026-10《Achieving CBAM Verifier Accreditation》/ 通标中文公告"
+        ],
+        "note": "<b>⚠ 范围缺口提示（本次更正）：</b>按 ACCREDIA 决议 Rev.01，SGS ICS 意大利<b>未获 III 组（硝酸）、V 组（烧结矿／生铁／DRI／粗钢）、VII 组（未锻轧铝）</b>授权；但<b>含 LI 组（进口电力）</b>——与新闻稿口径相反。<b>硝酸、粗钢及上游铁水、未锻轧铝这类货物，签约前必须索取认可附件原件逐组核对。</b>",
+        "d": {
+          "nab": 1,
+          "entity": 1,
+          "cert": 0.5,
+          "scope": 1,
+          "registry": 0,
+          "china": 1
+        },
+        "biz": {
+          "price": "未公开",
+          "pricing": "未公开（签约前须向机构索取书面报价）",
+          "area": "集团口径为多国服务网络（公开宣介，具体国别能力须确认）",
+          "langs": "中文 / 英文（通标已发布中文公告）",
+          "ob": "未公开（可否做 OB 联合现场核查，须向机构确认）"
+        },
+        "tags": {
+          "sign": "有（已获 ACCREDIA 认可，具备签发资格；CBAM 登记库注册状态未公开）",
+          "remote": "未公开",
+          "annual": "待向机构确认"
+        },
+        "history": [
+          {
+            "d": "2026-10-14",
+            "t": "V3 更正：以 ACCREDIA 决议 Rev.01 为准，范围由「I–VIII、L、LII」更正为「I、II、IV、VI、VIII、L、LI、LII」（缺 III／V／VII，含 LI）。ACCREDIA 新闻稿与决议两版口径不一致，本榜已并列记录。"
+          },
+          {
+            "d": "2026-10-13",
+            "t": "本榜 V2 更正：活动组范围已在 ACCREDIA 决议中逐组列明；同时更正持证法人为 SGS ICS ITALIA S.R.L.，披露指数由 28 上调至 75。"
+          },
+          {
+            "d": "2026-10-12",
+            "t": "本榜首次收录。"
+          }
+        ]
+      },
+      {
+        "name": "EmiCert（华测检测控股）",
+        "nameEn": "EMICERT CERTIFICATION SERVICES S.A.",
+        "group": "CTI 华测检测集团（300012）控股",
+        "groupNote": "2025-11-24 完成股权交割",
+        "nab": "ESYD",
+        "nabCn": "希腊",
+        "announced": "2026-09-23",
+        "nabDecided": "2026-09-14",
+        "entity": "EMICERT CERTIFICATION SERVICES SOCIETE ANONYME（希腊雅典）",
+        "certNo": "874-9（附件 Annex V1/20）",
+        "standard": "ELOT EN ISO 14065:2022 + ELOT EN ISO 14064-3:2019（认可证书 No.874-9 依 ELOT EN ISO/IEC 17029:2019 签发）",
+        "validFrom": "2026-09-14",
+        "validTo": "2030-06-09",
+        "scopeGroups": [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "V",
+          "VI",
+          "VII",
+          "VIII",
+          "L",
+          "LI",
+          "LII"
+        ],
+        "scopePending": [],
+        "scopeText": "ESYD 证书 No.874-9 附件 V1/20（2026-09-14）逐组列示 CBAM 全部 11 个活动组：I–VIII 及 L、LI、LII。附件中 LI／LII 行的「n/a」仅出现在「对应 (EU) 2018/2067 活动组」列，表示 EU ETS 中无对应组，不代表未获授权。该范围附件取代 2026-03-23 的旧版。",
+        "route": "在既有 EU ETS 温室气体核查认可基础上扩展",
+        "registry": "未公开",
+        "officialListed": false,
+        "china": {
+          "v": 1,
+          "t": "CTI 华测中国碳团队执行本地现场核查，EmiCert 欧盟法人签发报告，「中国现场核查 + 欧盟签发」一体化模式，设有中文服务页。"
+        },
+        "site": "https://emicert.com/",
+        "srcs": [
+          "ESYD 认可证书 No. 874-9 及附件 Annex V1/20（2026-09-14）",
+          "EmiCert 官网公告 2026-09-23 / 华测检测认证集团公告",
+          "CTI 华测检测官方服务页《CBAM 核查/预核查服务》"
+        ],
+        "note": "<b>更正说明：</b>V2 版把 LI／LII 列为「待核验项」，系误读附件中「对应 EU ETS 活动组」列的 n/a。现已从 ESYD 官网直接下载附件核对，确认为 <b>11 组全覆盖</b>，披露指数回调至 85。<br><b>提示：</b>ESYD 在线认可名录的可访问性曾出现波动，建议以证书附件原件为最终依据。",
+        "d": {
+          "nab": 1,
+          "entity": 1,
+          "cert": 1,
+          "scope": 1,
+          "registry": 0,
+          "china": 1
+        },
+        "biz": {
+          "price": "未公开",
+          "pricing": "未公开（签约前须向机构索取书面报价）",
+          "area": "希腊法人签发，中国现场由 CTI 华测团队执行（「中国现场核查 + 欧盟签发」模式）",
+          "langs": "中文 / 英文 / 希腊文（设有中文服务页）",
+          "ob": "可与 CTI 华测中国碳团队配合执行本地现场核查"
+        },
+        "tags": {
+          "sign": "有（已获 ESYD 认可，具备签发资格；CBAM 登记库注册状态未公开）",
+          "remote": "未公开",
+          "annual": "待向机构确认"
+        },
+        "history": [
+          {
+            "d": "2026-10-14",
+            "t": "V3 更正：已从 ESYD 官网直接下载认可证书附件（No.874-9，Annex V1/20）原样核对，确认为 11 组全覆盖；V2 标注的 LI／LII「待核验项」系误读附件中「对应 EU ETS 活动组」列的 n/a，予以撤回。披露指数由 65 回调至 85。"
+          },
+          {
+            "d": "2026-10-13",
+            "t": "本榜 V2 更正：附件中的「n/a」实为「对应 EU ETS 活动组」列，并非未获授权；据此重算，披露指数由 85 调整至 65（该结论已于 V3 撤回）。"
+          },
+          {
+            "d": "2026-10-12",
+            "t": "本榜首次收录。"
+          }
+        ]
+      },
+      {
+        "name": "RINA 意大利船级社",
+        "nameEn": "RINA SERVICES S.A.",
+        "group": "RINA 集团（意大利热那亚）",
+        "groupNote": "全球 70 余国服务网络",
+        "nab": "Accredia",
+        "nabCn": "意大利",
+        "announced": "2026-09-30",
+        "nabDecided": "2026-09-28",
+        "entity": "RINA SERVICES S.A.（注意：不是 RINA S.p.A.）",
+        "certNo": "决议未列 V&V 编号（名录中仅见管理体系认证编号 00005，仅作参考）",
+        "standard": "决议未载明（以认可证书原件为准）",
+        "validFrom": null,
+        "validTo": null,
+        "scopeGroups": [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "V",
+          "VI",
+          "VII",
+          "VIII",
+          "L",
+          "LI",
+          "LII"
+        ],
+        "scopePending": [],
+        "scopeText": "ACCREDIA 决议 Rev.01（2026-10-09 签署）列明：CBAM，适用于活动组 I、II、III、IV、V、VI、VII、VIII、L、LI、LII（11 组全覆盖）。新闻稿（10-06）口径为 I–VII、L、LI、LII，不含 VIII。",
+        "route": "由 EU ETS（(EU) 2018/2067）认可范围扩展而来（第 4 条路径）",
+        "registry": "未公开",
+        "officialListed": false,
+        "china": {
+          "v": 0.5,
+          "t": "RINA 在中国设有分支机构；2025-09 与韩国生产力中心认证院（KPC Certification）签署 MOU 提供 CBAM 预核查服务。截至本期未检索到面向中国客户的中文 CBAM 服务宣介。"
+        },
+        "site": "https://www.rina.org/",
+        "srcs": [
+          "ACCREDIA《CSA CI 决议》2026-09-28，「授信额度延长」条目（电子签署 2026-10-06）",
+          "RINA 官网新闻 2026-09-30《RINA obtains ACCREDIA accreditation for CBAM verification》"
+        ],
+        "note": "<b>⚠ 更正说明：</b>V2 版依据 ACCREDIA 新闻稿判断「RINA 未获第 VIII 组授权」——<b>该结论已撤回</b>。ACCREDIA 决议 Rev.01 明确含第 VIII 组（钢铁制品与铝制品），本榜以决议为准记录为 11 组全覆盖；新闻稿口径仍缺 VIII，两份文本不一致的原因 ACCREDIA 未作说明。<b>涉及钢铁／铝下游制品的，仍建议签约前索取认可附件原件确认。</b>",
+        "d": {
+          "nab": 1,
+          "entity": 1,
+          "cert": 0.5,
+          "scope": 1,
+          "registry": 0,
+          "china": 0.5
+        },
+        "biz": {
+          "price": "未公开",
+          "pricing": "未公开（签约前须向机构索取书面报价）",
+          "area": "集团口径覆盖多国（公开宣介，具体国别能力须确认）",
+          "langs": "英文为主；截至本期未检索到面向中国客户的中文 CBAM 服务宣介",
+          "ob": "未公开（可否做 OB 联合现场核查，须向机构确认）"
+        },
+        "tags": {
+          "sign": "有（已获 ACCREDIA 认可，具备签发资格；CBAM 登记库注册状态未公开）",
+          "remote": "未公开",
+          "annual": "待向机构确认"
+        },
+        "history": [
+          {
+            "d": "2026-10-14",
+            "t": "V3 更正：撤回「未获第 VIII 组」结论，按 ACCREDIA 决议 Rev.01 更正为 11 组全覆盖（新闻稿口径仍缺 VIII，本榜并列记录）。披露指数由 65 调整为 68。"
+          },
+          {
+            "d": "2026-10-13",
+            "t": "本榜 V2 更正：持证法人更正为 RINA SERVICES S.A.（非 RINA S.p.A.）；活动组范围已在 ACCREDIA 决议中逐组列明，披露指数由 33 上调至 65。同时首次披露其未获第 VIII 组授权。"
+          },
+          {
+            "d": "2026-10-12",
+            "t": "本榜首次收录。"
+          }
+        ]
+      }
+    ],
+    "groups": [
+      {
+        "id": "I",
+        "t": "煅烧粘土 · 水泥熟料 · 水泥 · 高铝水泥",
+        "d": "对应 EU ETS 活动组 1a/1b/6/98。"
+      },
+      {
+        "id": "II",
+        "t": "氢 · 氨",
+        "d": "对应 EU ETS 活动组 1a/1b/8/98。氢与氨在法规中同属第 II 组，是同一份授权范围。"
+      },
+      {
+        "id": "III",
+        "t": "硝酸",
+        "d": "对应活动组 1a/1b/9/98。与 II 组（氢/氨）是分开的两份授权。"
+      },
+      {
+        "id": "IV",
+        "t": "尿素 · 混合肥料",
+        "d": "对应活动组 1a/1b/98。与 III 组硝酸相互独立。"
+      },
+      {
+        "id": "V",
+        "t": "烧结矿 · 生铁 · DRI（直接还原铁）· 粗钢",
+        "d": "对应活动组 1a/1b/3/98。钢铁链最上游。"
+      },
+      {
+        "id": "VI",
+        "t": "铁合金（FeMn · FeCr · FeNi）",
+        "d": "对应活动组 1a/1b/4/98。常被遗漏的一组。"
+      },
+      {
+        "id": "VII",
+        "t": "未锻轧铝",
+        "d": "对应活动组 1a/1b/4/5/98。"
+      },
+      {
+        "id": "VIII",
+        "t": "钢铁制品 · 铝制品",
+        "d": "对应活动组 1a/1b/4/98。中国出口的紧固件、线材制品、五金件、铝型材均在此组。拿到 VIII 组不等于能核查上游粗钢环节。"
+      },
+      {
+        "id": "L",
+        "t": "碳捕集、利用与封存（CCUS）",
+        "d": "对应 EU ETS 活动组 10/11。"
+      },
+      {
+        "id": "LI",
+        "t": "进口到欧盟关境的电力",
+        "d": "在 EU ETS 中无对应活动组（附件 I 该列为 n/a）。"
+      },
+      {
+        "id": "LII",
+        "t": "间接排放",
+        "d": "在 EU ETS 中无对应活动组（附件 I 该列为 n/a）。"
+      }
+    ],
+    "nabs": [
+      {
+        "c": "奥地利",
+        "n": "Akkreditierung Austria",
+        "a": "AA",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "比利时",
+        "n": "Belgian Accreditation Council",
+        "a": "BELAC",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "保加利亚",
+        "n": "Bulgarian Accreditation Service",
+        "a": "BAS",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "克罗地亚",
+        "n": "Croatian Accreditation Agency",
+        "a": "HAA",
+        "ag": 1,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "已同意，尚未受理"
+      },
+      {
+        "c": "塞浦路斯",
+        "n": "Cyprus Organisation for the promotion of quality",
+        "a": "CYS-CYSAB",
+        "ag": 0,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "不提供 CBAM 认可"
+      },
+      {
+        "c": "捷克",
+        "n": "Czech Accreditation Institute",
+        "a": "CAI",
+        "ag": 1,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "已同意，尚未受理"
+      },
+      {
+        "c": "丹麦",
+        "n": "Danak Den Danske Akkrediteringsfond",
+        "a": "DANAK",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "爱沙尼亚",
+        "n": "Estonian Accreditation Centre",
+        "a": "EAC",
+        "ag": 0,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "不提供 CBAM 认可"
+      },
+      {
+        "c": "芬兰",
+        "n": "Finish Accreditation Service",
+        "a": "FINAS",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "法国",
+        "n": "Comité français d'accréditation",
+        "a": "COFRAC",
+        "ag": 1,
+        "rd": 1,
+        "tc": 1,
+        "tcr": 1,
+        "rm": "第三国通道；尚无公开获批机构"
+      },
+      {
+        "c": "德国",
+        "n": "Deutsche Akkreditierungsstelle GmbH",
+        "a": "DAkkS",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "不受理第三国申请"
+      },
+      {
+        "c": "希腊",
+        "n": "Hellenic Accreditation System",
+        "a": "ESYD",
+        "ag": 1,
+        "rd": 1,
+        "tc": 1,
+        "tcr": 1,
+        "rm": "第三国通道；已出 EmiCert"
+      },
+      {
+        "c": "匈牙利",
+        "n": "National Accreditation Authority",
+        "a": "NAH",
+        "ag": 1,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "已同意，尚未受理"
+      },
+      {
+        "c": "爱尔兰",
+        "n": "Irish National Accreditation Board",
+        "a": "INAB",
+        "ag": 0,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "不提供 CBAM 认可"
+      },
+      {
+        "c": "意大利",
+        "n": "Ente Italiano di Accreditamento",
+        "a": "Accredia",
+        "ag": 1,
+        "rd": 1,
+        "tc": 1,
+        "tcr": 1,
+        "rm": "第三国通道；已出必维/RINA/SGS"
+      },
+      {
+        "c": "拉脱维亚",
+        "n": "Latvian National Accreditation Bureau",
+        "a": "LATAK",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "立陶宛",
+        "n": "Lithuanian National Accreditation Bureau",
+        "a": "LA",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "卢森堡",
+        "n": "ILNAS",
+        "a": "ILNAS",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "马耳他",
+        "n": "National Accreditation Board Malta",
+        "a": "NAB-MALTA",
+        "ag": 0,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "不提供 CBAM 认可"
+      },
+      {
+        "c": "荷兰",
+        "n": "Raad voor Accreditatie",
+        "a": "RvA",
+        "ag": 1,
+        "rd": 1,
+        "tc": 1,
+        "tcr": 1,
+        "rm": "已与土耳其 TÜRKAK 签署安排"
+      },
+      {
+        "c": "挪威",
+        "n": "Norsk akkreditering",
+        "a": "NA",
+        "ag": 1,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "EEA 成员；受理状态未列示"
+      },
+      {
+        "c": "波兰",
+        "n": "Polskie Centrum Akredytacji",
+        "a": "PCA",
+        "ag": 1,
+        "rd": 1,
+        "tc": 1,
+        "tcr": 1,
+        "rm": "第三国通道；尚无公开获批机构"
+      },
+      {
+        "c": "葡萄牙",
+        "n": "Instituto Portugues de Acreditacao",
+        "a": "IPAC",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "罗马尼亚",
+        "n": "Romanian Accreditation Association",
+        "a": "RENAR",
+        "ag": 1,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "预计 2026 年 10 月起受理"
+      },
+      {
+        "c": "斯洛伐克",
+        "n": "Slovak National Accreditation Service",
+        "a": "SNAS",
+        "ag": 1,
+        "rd": 1,
+        "tc": 1,
+        "tcr": 1,
+        "rm": "本版起转为已受理"
+      },
+      {
+        "c": "斯洛文尼亚",
+        "n": "Slovenska Akreditacija",
+        "a": "SA",
+        "ag": 1,
+        "rd": 0,
+        "tc": 0,
+        "tcr": 0,
+        "rm": "预计 2026 年 11 月起受理"
+      },
+      {
+        "c": "西班牙",
+        "n": "Entidad Nacional de Acréditacion",
+        "a": "ENAC",
+        "ag": 1,
+        "rd": 1,
+        "tc": 0,
+        "tcr": 0,
+        "rm": ""
+      },
+      {
+        "c": "瑞典",
+        "n": "Swedish Board for Accreditation and Conformity Assessment",
+        "a": "Swedac",
+        "ag": 1,
+        "rd": 1,
+        "tc": 1,
+        "tcr": 1,
+        "rm": "已与乌克兰 NAAU 签署安排"
+      }
+    ],
+    "timeline": [
+      {
+        "d": "2026-01-01",
+        "t": "CBAM 正式实施期启动",
+        "s": "进口商申请授权 CBAM 申报人资格；非欧盟工厂开始监测与计算隐含排放。",
+        "done": 1
+      },
+      {
+        "d": "2026-04",
+        "t": "各 NAB 陆续开始 CBAM 认可",
+        "s": "认可实战启动。",
+        "done": 1
+      },
+      {
+        "d": "2026-08-24",
+        "t": "《CBAM 核查及认可指南》发布",
+        "s": "141 页，覆盖核查、认可、现场访问与报告要求。",
+        "done": 1
+      },
+      {
+        "d": "2026-08-28",
+        "t": "登记库核查机构接入程序发布",
+        "s": "规定核查机构取得登记库权限的两阶段程序。",
+        "done": 1
+      },
+      {
+        "d": "2026-09-01",
+        "t": "核查机构可申请接入 CBAM 登记库",
+        "s": "欧委会程序文件确定的开放日。",
+        "done": 1
+      },
+      {
+        "d": "2026-09-14",
+        "t": "ESYD 签发证书 No. 874-9（EmiCert）",
+        "s": "全球首例可追溯至 NAB 证书的 CBAM 认可。",
+        "done": 1
+      },
+      {
+        "d": "2026-09-28",
+        "t": "ACCREDIA CSA CI 决议：3 家机构范围扩展",
+        "s": "必维意大利、SGS ICS 意大利、RINA Services 三家获 CBAM 活动组授权，逐组列明。",
+        "done": 1
+      },
+      {
+        "d": "2026-09-30",
+        "t": "已认可机构可获登记库工作权限",
+        "s": "不早于此日。",
+        "done": 1
+      },
+      {
+        "d": "2026-10-07",
+        "t": "欧委会 State-of-play 状态表更新",
+        "s": "受理申请的 NAB 达 18 家，受理第三国申请的达 7 家。",
+        "done": 1
+      },
+      {
+        "d": "2027-01",
+        "t": "登记库内可签发首份核查报告",
+        "s": "只有完成登记的机构才能出具供申报人引用的正式报告。",
+        "done": 0
+      },
+      {
+        "d": "2027-02-01",
+        "t": "CBAM 证书开始销售",
+        "s": "通过 CBAM 共同中央平台统一发售。",
+        "done": 0
+      },
+      {
+        "d": "2027-09-30",
+        "t": "首份 CBAM 年度申报截止",
+        "s": "申报 2026 年度进口，并同步清缴 CBAM 证书。",
+        "done": 0
+      }
+    ],
+    "cases": [
+      {
+        "d": "2026-10-13",
+        "type": "认可里程碑",
+        "t": "Swedac 认可 Intertek Certification AB——北欧首例，全球第 4 例",
+        "s": "瑞典国家认可机构 Swedac 于 2026-10-13 授予 Intertek Certification AB（斯德哥尔摩 Kista）CBAM 核查认可，认可号 1639，有效期 2026-10-13 至 2031-10-13。认可库条目按 (EU) 2025/2551 附件 I 逐组列示：I–VIII、LI、LII，不含 L（CCUS）。",
+        "takeaway": "这是本榜首次收录北欧通道的机构。对出口企业有两个实际价值：Intertek 集团在中国有广泛的本地团队，现场核查的沟通与差旅成本更可控；同时它握有 LI（进口电力）与 LII（间接排放），水泥、化肥这类要报间接排放的货物少一层缺口。但 Swedac 当前优先处理瑞典、乌克兰、英国的申请，中国机构若想走这条线需先确认排队情况。",
+        "tags": [
+          "瑞典 Swedac",
+          "Intertek",
+          "认可号 1639",
+          "北欧通道"
+        ],
+        "src": "Swedac 认可库条目 No.1639（https://ackrediteringar.swedac.se/en/1639）；Swedac 官网新闻《Första svenska organet ackrediterat för CBAM-verifiering》（2026-10-13）"
+      },
+      {
+        "d": "2026-09-28",
+        "type": "NAB 集中批复",
+        "t": "ACCREDIA 一次批复三家，但新闻稿与决议口径不一致",
+        "s": "意大利 ACCREDIA 在同一次 CSA CI 决议中批复 BUREAU VERITAS ITALIA S.P.A.、SGS ICS ITALIA S.R.L.、RINA SERVICES S.P.A. 三家，路径均为「由 EU ETS（(EU) 2018/2067）认可范围扩展」。两份文本的范围并不一致：决议 Rev.01（2026-10-09 签署）中 RINA 含第 VIII 组、SGS 为 I／II／IV／VI／VIII／L／LI／LII；新闻稿（10-06）中 RINA 不含 VIII、SGS 为 I–VIII／L／LII。必维意大利在三份文本中均为 I–VIII、L、LII。ACCREDIA 未说明差异原因，且两份文本均未载明认可证书编号。",
+        "takeaway": "同一家 NAB、同一天批出来的三家，范围都不一样，而且连 NAB 自己对外发布的两份文件都对不上。签约前要做的就一件事：向机构索取认可附件原件，逐组核对自己货物所在的活动组。"
+      },
+      {
+        "d": "2026-09-14",
+        "type": "认可里程碑",
+        "t": "ESYD 签发 No.874-9——第一份可对外的 CBAM 核查认可证书",
+        "s": "希腊认可机构 ESYD 向 EMICERT CERTIFICATION SERVICES S.A. 签发认可证书 No.874-9 及附件 V1/20（2026-09-14）。附件逐组列示全部 11 个 CBAM 活动组，依据 ELOT EN ISO 14065:2022 与 ELOT EN ISO 14064-3:2019；证书有效期至 2030-06-09，该范围附件取代 2026-03-23 的旧版。",
+        "takeaway": "这张证书第一次给出「CBAM 认可长什么样」的实物样本：发证机构、机构名称与唯一编号、认可范围与活动组、设立国、生效与到期日、依据文件——照这六项去核对其他机构，就能分清真认可和宣传稿。"
+      },
+      {
+        "d": "2026-10-07",
+        "type": "格局数据",
+        "t": "欧委会 State-of-play：24 家 NAB 同意提供认可，7 国开放第三国通道",
+        "s": "受理认可申请的 NAB 达 18 家；法国 COFRAC、希腊 ESYD、意大利 ACCREDIA、荷兰 RvA、波兰 PCA、斯洛伐克 SNAS、瑞典 Swedac 共 7 国的 NAB 受理第三国核查机构的申请，其中 5 国已实际开放受理。目前已走出成果的是希腊、意大利、瑞典三条线。",
+        "takeaway": "中国机构要做 CBAM 核查，入口在这 7 国 NAB；对中国出口企业来说，这决定了未来可选机构的国别分布与现场核查成本。"
+      }
+    ],
+    "tips": [
+      {
+        "stage": "签约前",
+        "t": "先定产品落在第几组，再看报价",
+        "risk": "CBAM 认可按活动组逐组授予。报价再便宜，缺你那产品所在的组就等于白做——例如钢铁制紧固件、钢丝与线材制品、五金件、铝型材都落在第 VIII 组，而当前有一家已公示机构恰恰没有 VIII 组。",
+        "do": "先确定 CN 编码 → 回到本榜「11 组活动组覆盖对照」确认组别 → 拿组别去筛机构，最后才谈价格。",
+        "ref": "(EU) 2025/2551 附件 I"
+      },
+      {
+        "stage": "签约前",
+        "t": "核对的是「签发报告的那个法人」，不是集团品牌",
+        "risk": "集团宣传口径与证书上的持证主体不一致是常态。报告由不具资格的关联公司签发，申报环节照样会被退回。",
+        "do": "索要认可证书，核对机构全称、唯一认可标识、生效与到期日三项是否与合同签署主体一致。",
+        "ref": "(EU) 2025/2551 第 6(2) 条"
+      },
+      {
+        "stage": "签约前",
+        "t": "确认报告签发日落在认可有效期内",
+        "risk": "认可有五年有效期上限，但目前多数已公示机构的起止日期并未随公告公开，无法从外部判断。",
+        "do": "把有效期写进合同：报告签发日必须落在认可有效期内，并要求机构提供证书证明。",
+        "ref": "(EU) 2025/2551 第 6(3) 条"
+      },
+      {
+        "stage": "数据准备",
+        "t": "数据拿不到，就只能回退默认值——成本通常高于自己测",
+        "risk": "关键工序缺实测数据时只能使用默认值，默认值往往偏保守，直接抬高证书清缴成本。",
+        "do": "提前把这些工序拆开：能实测的先布计量，测不到的提前与进口商确定数据口径和替代方案。"
+      },
+      {
+        "stage": "数据准备",
+        "t": "多现场、租赁产线、外协工序的定性要提前写死",
+        "risk": "同一条产线，写成自有设施与写成外包工序，在 CBAM 下是两条完全不同的数据路径，后期改口径几乎等于重做。",
+        "do": "生产主体、人员归属、设备权属、物料物权、质量责任五项开工前书面定清，后续所有材料统一口径。"
+      },
+      {
+        "stage": "现场核查",
+        "t": "远程审核与 OB 联合现场核查能力要提前问",
+        "risk": "多数机构尚未公开这两项能力，等到排才发现不支持，差的就不是差旅费而是排期。",
+        "do": "询价阶段就问清：是否支持远程审核、在中国是否有现场团队、能否与已合作的核查伙伴做 OB 联合现场审核。"
+      },
+      {
+        "stage": "报告签发",
+        "t": "确认机构已完成 CBAM 登记库注册",
+        "risk": "拿到认可不等于能在登记库出具可被申报引用的正式报告；两件事之间存在时间差。",
+        "do": "要求机构书面确认登记库注册状态与预计可签发日期，并写进合同交付节点。"
+      },
+      {
+        "stage": "全程",
+        "t": "盯 NAB 公示，不要只盯机构官宣",
+        "risk": "机构官宣是二手信息，且可能早于或晚于 NAB 公示；两者出现偏差时以 NAB 为准。",
+        "do": "每周一对一次 ACCREDIA 决议、ESYD 证书等 NAB 官方渠道，本榜①模块即为该动作的替代品。"
+      }
+    ],
+    "regsGroups": [
+      {
+        "id": "leg",
+        "k": "law",
+        "t": "CBAM 立法和指南",
+        "en": "CBAM legislation and guidance",
+        "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+        "desc": "碳边境调节机制的全部法律文本：基础条例（管\"要不要做\"）、实施细则（管\"怎么算、怎么报\"）、授权条例（管\"谁来查\"），以及欧委会发布的官方指南。",
+        "items": [
+          {
+            "t": "Regulation (EU) 2023/956",
+            "zh": "CBAM 基本条例：创立碳边境调节机制，2023-05-17 生效",
+            "k": "law",
+            "url": "http://data.europa.eu/eli/reg/2023/956/oj"
+          },
+          {
+            "t": "Regulation (EU) 2025/2083",
+            "zh": "简化与强化 CBAM 的修订条例（正式期制度调整）",
+            "k": "law",
+            "url": "http://data.europa.eu/eli/reg/2025/2083/oj"
+          },
+          {
+            "t": "Regulation (EU) 2023/956 并合版（2025-10-20）",
+            "zh": "并入 2025/2083 修订后的基本条例现行有效文本",
+            "k": "law",
+            "url": "http://data.europa.eu/eli/reg/2023/956/2025-10-20"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2023/1773",
+            "zh": "过渡期实施细则：申报方法、排放核算与数据要求",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2023/1773/oj"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2025/2210",
+            "zh": "运抵成员国大陆架 / 专属经济区的货物及加工产品的申报",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/2210/oj"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2025/486",
+            "zh": "授权 CBAM 申报人（Authorised CBAM Declarant）资格规则",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/486/oj"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2025/2549",
+            "zh": "授权申报人资格规则的更正案",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/2549/oj"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2025/2548",
+            "zh": "CBAM 证书价格的计算与公布方法",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/2548/oj"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2025/2619",
+            "zh": "海关部门向 CBAM 主管机关传递信息的数据集",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/2619/oj"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2025/2620",
+            "zh": "免费配额调整量（应清缴证书数量的计算）",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/2620/oj"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2025/2621",
+            "zh": "默认值（default values）的确立",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/2621/oj"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2026/1740",
+            "zh": "默认值确立的更正案（2026 年 7 月更新）",
+            "k": "impl",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AL_202601740"
+          }
+        ]
+      },
+      {
+        "id": "reg",
+        "k": "impl",
+        "t": "CBAM 注册",
+        "en": "CBAM registry",
+        "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+        "desc": "CBAM 登记库（Registry）的设立与运行规则：授权申报人、进口商、海关与核查相关数据在登记库中的登记、查询与管理。",
+        "items": [
+          {
+            "t": "Implementing Regulation (EU) 2024/3210（并合版）",
+            "zh": "CBAM 登记库实施细则：登记库的结构、账户与数据管理（2026-01-01 并合版）",
+            "k": "impl",
+            "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02024R3210-20260101"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2025/2550",
+            "zh": "CBAM 登记库实施细则的修订 / 更正案",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/2550/oj"
+          }
+        ]
+      },
+      {
+        "id": "ver",
+        "k": "del",
+        "t": "CBAM 排放的验证",
+        "en": "Verification of CBAM emissions",
+        "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en",
+        "desc": "排放核查的规则与参与方：核查原则、内嵌排放量计算方法、核查机构认可与核查行为规范，以及欧委会核查指南原文。",
+        "items": [
+          {
+            "t": "Implementing Regulation (EU) 2025/2546",
+            "zh": "核查原则的适用：核查机构执行核查的方法与行为规范",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/2546/oj"
+          },
+          {
+            "t": "Implementing Regulation (EU) 2025/2547",
+            "zh": "货物内嵌排放量的计算方法（核查取数的依据）",
+            "k": "impl",
+            "url": "http://data.europa.eu/eli/reg_impl/2025/2547/oj"
+          },
+          {
+            "t": "Delegated Regulation (EU) 2025/2551",
+            "zh": "认可与核查授权条例：核查机构认可、11 个活动组范围与核查要求",
+            "k": "del",
+            "url": "http://data.europa.eu/eli/reg_del/2025/2551/oj"
+          },
+          {
+            "t": "Guidance on CBAM verification and accreditation",
+            "zh": "欧委会官方指南：核查机构与国家认可机构如何执行 CBAM 核查与认可（2026-08-24 发布，PDF）",
+            "k": "gd",
+            "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+          }
+        ]
+      }
+    ]
+  };
+/* ▲▲▲ 每周更新区结束 ▲▲▲ */
+
+(function(){
+  var D = null;
+  var $ = function(s){ return document.querySelector(s); };
+  var $$ = function(s){ return Array.prototype.slice.call(document.querySelectorAll(s)); };
+  var esc = function(s){ return String(s==null?"":s).replace(/&/g,"&amp;").replace(/</g,"&lt;").replace(/>/g,"&gt;"); };
+
+  /* ==================== 动态更新引擎（新增） ====================
+   * 1) 启动时拉取同目录 data.json（带时间戳防缓存）
+   * 2) 取到就用线上数据渲染；取不到就回退内置快照并提示
+   * 3) 之后每 5 分钟静默复查一次；从后台切回页面、网络恢复时也复查
+   * 4) 发现 data.json 版本变化 → 提示并自动刷新页面
+   * 想改频率：改 REFRESH_MS；想换接口地址：改 DATA_ENDPOINT
+   * ============================================================ */
+  var DATA_ENDPOINT = "data.json";
+  var REFRESH_MS    = 5 * 60 * 1000;
+  var state = { sig:"", checkedAt:null, timer:null, tick:null };
+
+  function pad(n){ return (n < 10 ? "0" : "") + n; }
+  function hhmmss(t){ var x = new Date(t); return pad(x.getHours()) + ":" + pad(x.getMinutes()) + ":" + pad(x.getSeconds()); }
+  function sigOf(d){ return d && d.meta ? String(d.meta.generatedAt || "") + "|" + String(d.meta.dataAsOf || "") : ""; }
+
+  function fetchData(){
+    return fetch(DATA_ENDPOINT + "?_=" + Date.now(), { cache:"no-store" })
+      .then(function(r){ if(!r.ok) throw new Error("HTTP " + r.status); return r.json(); })
+      .then(function(j){
+        if(!j || !j.meta || !j.verifiers) throw new Error("data.json 结构不完整");
+        return { data:j, src:"live", err:null };
+      })
+      .catch(function(e){
+        return { data: window.CBAM_DATA || EMBEDDED_DATA, src:"snapshot", err:String((e && e.message) || e) };
+      });
+  }
+
+  function toast(msg, kind){
+    var el = $("#toast"); if(!el) return;
+    el.textContent = msg;
+    el.className = "toast show" + (kind ? " " + kind : "");
+    clearTimeout(el._t);
+    el._t = setTimeout(function(){ el.className = "toast"; }, 4500);
+  }
+
+  function paintStatus(src){
+    var chip = $("#live-chip"); if(!chip) return;
+    var at = D && D.meta && D.meta.generatedAt ? "（" + String(D.meta.generatedAt).replace("T"," ").slice(0,16) + " 生成）" : "";
+    if(src === "live"){ chip.className = "livechip ok";  chip.innerHTML = '<i></i>已连接线上数据 · 基准日 ' + esc(D.meta.dataAsOf || "") + esc(at); }
+    else             { chip.className = "livechip warn"; chip.innerHTML = '<i></i>本地快照（未取到 data.json）'; }
+    $("#live-checked").textContent = state.checkedAt ? hhmmss(state.checkedAt) : "—";
+  }
+
+  function schedule(){
+    clearTimeout(state.timer);
+    state.timer = setTimeout(function(){ check(true); }, REFRESH_MS);
+    clearInterval(state.tick);
+    var left = Math.round(REFRESH_MS / 1000), el = $("#live-next");
+    state.tick = setInterval(function(){
+      if(el) el.textContent = left > 0 ? left + " 秒" : "检查中";
+      if(left > 0) left--;
+    }, 1000);
+  }
+
+  function check(silent){
+    return fetchData().then(function(r){
+      state.checkedAt = Date.now();
+      var sig = sigOf(r.data);
+      if(!D){
+        boot(r.data, r.src, r.err);
+      } else if(sig !== state.sig){
+        toast("检测到新版本（基准日 " + (r.data.meta && r.data.meta.dataAsOf) + "），正在刷新…", "ok");
+        setTimeout(function(){ location.reload(); }, 1500);
+      } else if(!silent){
+        toast("已是最新，暂无更新", "");
+      }
+      state.sig = sig;
+      paintStatus(r.src);
+      schedule();
+    });
+  }
+
+  document.addEventListener("visibilitychange", function(){
+    if(document.visibilityState === "visible" && state.checkedAt && (Date.now() - state.checkedAt > 60000)) check(true);
+  });
+  window.addEventListener("online", function(){ check(true); });
+
+  function boot(data, src, err){
+  D = data;
+  if(src === "snapshot"){
+    setTimeout(function(){ toast("未能加载 data.json，当前显示的是内置快照" + (err ? "（" + err + "）" : ""), "warn"); }, 500);
+  }
+  $("#m-date").textContent = D.meta.dataAsOf;
+  if($("#side-date")) $("#side-date").textContent = D.meta.dataAsOf;
+  $("#m-sop").textContent = D.meta.sopDate + " 版";
+  $("#f-date").textContent = D.meta.dataAsOf;
+  $("#src-sop").textContent = D.meta.sopDate + " 版";
+  $("#s-official").textContent = D.meta.officialListCount;
+  $("#s-announced").textContent = D.verifiers.length;
+  $("#s-nab").textContent = D.nabs.filter(function(x){return x.ag;}).length;
+  $("#s-tc").textContent = D.nabs.filter(function(x){return x.tcr;}).length;
+
+  function scoreOf(v){
+    var t = 0, max = 0;
+    D.dims.forEach(function(dm){ max += dm.w; t += dm.w * (v.d[dm.k] || 0); });
+    return { score: Math.round(t), max: max, pct: Math.round(t / max * 100) };
+  }
+
+  $$(".tab").forEach(function(btn){
+    btn.addEventListener("click", function(){
+      $$(".tab").forEach(function(x){x.classList.remove("on");});
+      $$(".panel").forEach(function(x){x.classList.remove("on");});
+      $$('.tab[data-t="' + btn.dataset.t + '"]').forEach(function(x){ x.classList.add("on"); });
+      $("#" + btn.dataset.t).classList.add("on");
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    });
+  });
+
+  function fmtD(s){ return s ? s.replace(/^(\d{4})-(\d{2})-(\d{2})$/, "$1.$2.$3") : "—"; }
+
+
+  /* ---------- 机构卡：商务信息 / 附加标签 / 历史回溯 ---------- */
+  function bizBlock(v){
+    var b = v.biz || {};
+    var rows = [
+      ["报价区间", b.price], ["定价模式", b.pricing], ["可服务区域", b.area],
+      ["支持语言", b.langs], ["OB 联合现场核查", b.ob]
+    ];
+    return '<div class="more"><b>商务信息（本榜不代为报价，以下为公开信息或缺口提示）：</b><dl class="kv" style="margin-top:7px">'
+      + rows.map(function(r){
+          var val = r[1] || "未公开";
+          return '<dt>' + esc(r[0]) + '</dt><dd class="' + (/^未公开|未披露|待/.test(val) ? "no" : "") + '">' + esc(val) + '</dd>';
+        }).join("")
+      + '</dl></div>';
+  }
+  function tagBlock(v){
+    var t = v.tags || {};
+    var items = [["欧盟认可签字权", t.sign], ["支持远程审核", t.remote], ["可做年度申报核查", t.annual]];
+    return '<div class="more"><b>附加标签：</b><div class="chips">'
+      + items.map(function(it){
+          var val = it[1] || "未公开";
+          var cls = /^有|具备|可/.test(val) ? "hit" : (/待/.test(val) ? "pend" : "");
+          return '<span class="chip ' + cls + '">' + esc(it[0]) + '：' + esc(val) + '</span>';
+        }).join("")
+      + '</div></div>';
+  }
+  function histBlock(v){
+    var h = v.history || [];
+    if(!h.length) return "";
+    return '<div class="more"><b>历史回溯（本榜记录，非机构官方口径）：</b>'
+      + h.map(function(x){
+          return '<div class="logrow" style="border:0;padding:6px 0"><div class="lg-d">' + esc(x.d) + '</div><div class="lg-t">' + esc(x.t) + '</div></div>';
+        }).join("")
+      + '</div>';
+  }
+
+  /* ---------- 核查机构榜 ---------- */
+  var nabsAll = [];
+  D.verifiers.forEach(function(v){ if(nabsAll.indexOf(v.nab)<0) nabsAll.push(v.nab); });
+  nabsAll.sort().forEach(function(n){
+    var o = document.createElement("option"); o.value = n; o.textContent = n + "（" + D.verifiers.filter(function(v){return v.nab===n;})[0].nabCn + "）";
+    $("#f-nab").appendChild(o);
+  });
+
+  function renderVerifiers(){
+    var q = $("#f-q").value.trim().toLowerCase();
+    var fn = $("#f-nab").value, fg = $("#f-g8").value, fcn = $("#f-cn").value, fs = $("#f-sort").value;
+
+    var list = D.verifiers.filter(function(v){
+      if(fn && v.nab !== fn) return false;
+      if(fg === "1" && v.scopeGroups.indexOf("VIII") < 0) return false;
+      if(fg === "0" && v.scopeGroups.indexOf("VIII") >= 0) return false;
+      if(fcn === "1" && !(v.china.v >= 1)) return false;
+      if(q){
+        var hay = (v.name + " " + v.nameEn + " " + v.group + " " + v.nab + " " + v.nabCn + " " + v.entity).toLowerCase();
+        if(hay.indexOf(q) < 0) return false;
+      }
+      return true;
+    });
+
+    list.forEach(function(v){ v._s = scoreOf(v); });
+    list.sort(function(a,b){
+      if(fs === "date") return a.announced < b.announced ? 1 : -1;
+      if(fs === "name") return a.name.localeCompare(b.name, "zh");
+      if(b._s.score !== a._s.score) return b._s.score - a._s.score;
+      return a.announced < b.announced ? -1 : 1;
+    });
+
+    $("#v-count").textContent = "共 " + list.length + " 家机构 · 数据基准日 " + D.meta.dataAsOf + " · 点击「展开详情」查看证书要素与范围缺口提示";
+    if(!list.length){ $("#v-list").innerHTML = '<div class="empty">没有符合条件的机构，试试清空筛选条件。</div>'; return; }
+
+    var html = "";
+    list.forEach(function(v, i){
+      var s = v._s;
+      var cls = s.pct >= 70 ? "" : (s.pct >= 40 ? "mid" : "low");
+      var starN = Math.max(1, Math.round(s.pct / 20));
+      var stars = "★".repeat(starN) + "☆".repeat(5 - starN);
+
+      var dimHtml = D.dims.map(function(dm){
+        var val = v.d[dm.k] || 0;
+        var c = val === 1 ? "y" : (val > 0 ? "p" : "n");
+        var ic = val === 1 ? "✓" : (val > 0 ? "△" : "✗");
+        return '<div class="dim ' + c + '" title="' + esc(dm.y) + '"><div class="ic">' + ic + '</div><div class="lb">' + esc(dm.lb) + '</div><div class="wt">' + dm.w + '分</div></div>';
+      }).join("");
+
+      var chips = D.groups.map(function(g){
+        var pend = v.scopePending.indexOf(g.id) >= 0;
+        var hit = v.scopeGroups.indexOf(g.id) >= 0;
+        return '<span class="chip ' + (hit ? "hit" : (pend ? "pend" : "miss")) + '">' + esc(g.id) + (pend ? " △" : "") + '</span>';
+      }).join("");
+
+      var has8 = v.scopeGroups.indexOf("VIII") >= 0;
+
+      html += '<article class="vcard' + (i===0?" open":"") + '">'
+        + '<div class="vhead">'
+        +   '<div class="vrank"><div class="rk' + (i===0?" t1":(i===1?" t2":"")) + '">' + (i+1) + '</div></div>'
+        +   '<div class="vmain">'
+        +     '<h3 class="vname">' + esc(v.name) + ' <span class="en">' + esc(v.nameEn) + '</span></h3>'
+        +     '<p class="vgroup">' + esc(v.group) + (v.groupNote ? " · " + esc(v.groupNote) : "") + '</p>'
+        +     '<div class="badges">'
+        +       '<span class="bd bd-nab">发证 ' + esc(v.nab) + '（' + esc(v.nabCn) + '）</span>'
+        +       '<span class="bd bd-date">NAB 决议 ' + fmtD(v.nabDecided) + ' · 官宣 ' + fmtD(v.announced) + '</span>'
+        +       (has8 ? '<span class="bd bd-ok">覆盖 VIII 组</span>' : '<span class="bd bd-warn">未覆盖 VIII 组</span>')
+        +       (v.officialListed ? '<span class="bd bd-ok">欧委会名录已收录</span>' : '<span class="bd bd-warn">欧委会名录未收录</span>')
+        +       (v.china.v >= 1 ? '<span class="bd bd-cn">中文 / 本地服务</span>' : "")
+        +     '</div>'
+        +     '<div class="score">'
+        +       '<div class="scorebar"><i class="' + cls + '" style="width:' + s.pct + '%"></i></div>'
+        +       '<div class="scoreval">' + s.score + '<small>/' + s.max + '</small></div>'
+        +       '<div class="stars" title="该机构的关键要素可核验程度 ' + s.pct + '%">' + stars + '</div>'
+        +     '</div>'
+        +   '</div>'
+        + '</div>'
+        + '<div class="dims">' + dimHtml + '</div>'
+        + '<div class="vbody">'
+        +   '<dl class="kv">'
+        +     '<dt>持证法人实体</dt><dd>' + esc(v.entity) + '</dd>'
+        +     '<dt>认可编号 / 证书号</dt><dd>' + esc(v.certNo) + '</dd>'
+        +     '<dt>依据标准</dt><dd class="' + (/未载明/.test(v.standard) ? "no" : "") + '">' + esc(v.standard) + '</dd>'
+        +     '<dt>证书生效 / 到期</dt><dd class="' + (v.validTo ? "" : "no") + '">' + (v.validTo ? fmtD(v.validFrom) + " — " + fmtD(v.validTo) : "决议未载明，须向机构索取证书") + '</dd>'
+        +     '<dt>获认可路径</dt><dd>' + esc(v.route) + '</dd>'
+        +     '<dt>登记库注册状态</dt><dd class="no">' + esc(v.registry) + '</dd>'
+        +     '<dt>对华服务能力</dt><dd>' + esc(v.china.t) + '</dd>'
+        +     '<dt>认可范围说明</dt><dd>' + esc(v.scopeText) + '</dd>'
+        +     '<dt>欧委会名录</dt><dd class="no">尚未收录（该名录当前为 ' + D.meta.officialListCount + ' 家）</dd>'
+        +   '</dl>'
+        +   bizBlock(v)
+        +   tagBlock(v)
+        +   '<div class="more"><b>活动组覆盖：</b><div class="chips">' + chips + '</div></div>'
+        +   '<div class="more"><b>数据来源：</b><ul style="margin:5px 0 0;padding-left:18px">' + v.srcs.map(function(s2){return "<li>" + esc(s2) + "</li>";}).join("") + '</ul></div>'
+        +   '<div class="more warn">' + v.note + '</div>'
+        +   histBlock(v)
+        +   '<div class="more law">依 <b>(EU) 2025/2551 第 6(2) 条</b>，认可证书应至少载明：发证 NAB 身份、核查机构名称及唯一认可标识、认可范围及活动组、NAB 与核查机构设立国、生效日与到期日、评审所依据的规范性文件——<b>照这六项向机构索要即可</b>。</div>'
+        +   '<div style="margin-top:11px;display:flex;gap:14px;flex-wrap:wrap;font-size:13px">'
+        +     '<a href="' + esc(v.site) + '" target="_blank" rel="noopener">机构官网 ↗</a>'
+        +   '</div>'
+        + '</div>'
+        + '<div style="padding:0 16px 13px"><button class="toggle" type="button">' + (i===0 ? "收起详情" : "展开详情") + '</button></div>'
+        + '</article>';
+    });
+
+    $("#v-list").innerHTML = html;
+
+    $$(".vcard").forEach(function(card){
+      card.querySelectorAll(".toggle").forEach(function(b){
+        b.addEventListener("click", function(){
+          var open = !card.classList.contains("open");
+          card.classList.toggle("open", open);
+          card.querySelectorAll(".toggle").forEach(function(x){
+            x.textContent = open ? "收起详情" : "展开详情";
+          });
+        });
+      });
+    });
+  }
+
+  ["f-q","f-nab","f-g8","f-cn","f-sort"].forEach(function(id){
+    var el = document.getElementById(id);
+    el.addEventListener("input", renderVerifiers);
+    el.addEventListener("change", renderVerifiers);
+  });
+  renderVerifiers();
+
+  /* ---------- 活动组覆盖对照矩阵 ---------- */
+  (function(){
+    var order = ["EMICERT CERTIFICATION SERVICES S.A.","INTERTEK CERTIFICATION AB","BUREAU VERITAS ITALIA S.P.A.","SGS ICS ITALIA S.R.L.","RINA SERVICES S.A."];
+    var vs = order.map(function(e){ return D.verifiers.filter(function(v){ return v.nameEn === e; })[0]; }).filter(Boolean);
+
+    function mark(v, g){
+      if(v.scopeGroups.indexOf(g) >= 0) return '<span class="mk y">✓</span>';
+      if(v.scopePending.indexOf(g) >= 0) return '<span class="mk p">△</span>';
+      return '<span class="mk n">✗</span>';
+    }
+    var rows = D.groups.map(function(g){
+      var cells = vs.map(function(v){ return "<td>" + mark(v, g.id) + "</td>"; }).join("");
+      return (g.id === "VIII" ? '<tr class="keyrow">' : "<tr>")
+        + '<td class="grp">' + esc(g.id) + "</td>"
+        + "<td>" + esc(g.t) + "</td>" + cells + "</tr>";
+    }).join("");
+
+    var head = vs.map(function(v){ return "<th>" + esc(v.nameEn.replace("EMICERT CERTIFICATION SERVICES S.A.","EmiCert S.A.")) + "</th>"; }).join("");
+    $("#mx-table").querySelector("thead tr").innerHTML = "<th>活动组</th><th>覆盖内容</th>" + head;
+    $("#mx-body").innerHTML = rows;
+
+    $("#g-grid").innerHTML = D.groups.map(function(g){
+      return '<div class="gcard"><span class="gid">' + esc(g.id) + '</span><h4>' + esc(g.t) + '</h4><p>' + esc(g.d) + '</p></div>';
+    }).join("");
+  })();
+
+  /* ---------- NAB 表 ---------- */
+  function renderNabs(){
+    var q = $("#n-q").value.trim().toLowerCase();
+    var f = $("#n-tc").value;
+    var list = D.nabs.filter(function(x){
+      if(f === "tc" && !x.tcr) return false;
+      if(f === "ready" && !x.rd) return false;
+      if(f === "notready" && x.rd) return false;
+      if(q && (x.c + " " + x.n + " " + x.a + " " + x.rm).toLowerCase().indexOf(q) < 0) return false;
+      return true;
+    });
+    $("#n-count").textContent = "显示 " + list.length + " / " + D.nabs.length + " 家 NAB · 数据源：欧委会 State-of-play CBAM accreditation（" + D.meta.sopDate + "）";
+    $("#n-body").innerHTML = list.map(function(x){
+      return "<tr>"
+        + '<td class="cnt">' + esc(x.c) + "</td>"
+        + '<td><span class="nabcode">' + esc(x.a) + '</span><br><span style="font-size:12px;color:var(--ink-3)">' + esc(x.n) + "</span></td>"
+        + "<td>" + (x.ag ? '<span class="y">是</span>' : '<span class="n">否</span>') + "</td>"
+        + "<td>" + (x.rd ? '<span class="pill ok">受理中</span>' : '<span class="pill no">未受理</span>') + "</td>"
+        + "<td>" + (x.tc ? '<span class="pill tc">是</span>' : '<span class="n">否</span>') + "</td>"
+        + "<td>" + (x.tcr ? '<span class="pill tc">开放</span>' : '<span class="n">—</span>') + "</td>"
+        + '<td style="font-size:12.5px;color:var(--ink-3)">' + esc(x.rm || "—") + "</td>"
+        + "</tr>";
+    }).join("");
+  }
+  $("#n-q").addEventListener("input", renderNabs);
+  $("#n-tc").addEventListener("change", renderNabs);
+  renderNabs();
+
+  /* ---------- 时间轴 ---------- */
+  $("#tl-list").innerHTML = D.timeline.map(function(t){
+    return '<div class="tli' + (t.done ? " done" : " future") + '"><div class="dt">' + esc(t.d) + '</div><div class="tx">' + esc(t.t) + '</div><div class="ds">' + esc(t.s) + '</div></div>';
+  }).join("");
+
+  /* ---------- ② 法规与指南：三大板块 · 热榜式列表 ---------- */
+  var RG_NO = ["一", "二", "三", "四"];
+  var RG_TAG = { law: ["条例", "rtag-law"], impl: ["实施细则", "rtag-impl"], del: ["授权条例", "rtag-del"], gd: ["指南", "rtag-gd"], case: ["里程碑", "rtag-case"] };
+  function rowHtml(no, href, titleHtml, descHtml, tagKey, sideExtra){
+    var tg = RG_TAG[tagKey] || RG_TAG.impl;
+    return '<a class="rrow" href="' + esc(href) + '" target="_blank" rel="noopener">'
+      + '<span class="no">' + no + "</span>"
+      + '<span class="rmain"><span class="rt">' + titleHtml + "</span>" + (descHtml ? '<span class="rz" style="display:block">' + descHtml + "</span>" : "") + "</span>"
+      + '<span class="rside"><span class="rtag ' + tg[1] + '">' + tg[0] + "</span>" + (sideExtra || "") + '<span class="go">↗</span></span>'
+      + "</a>";
+  }
+  function p2(n){ return (n < 10 ? "0" : "") + n; }
+  $("#reg-list").innerHTML = (D.regsGroups || []).map(function(g, gi){
+    return '<div class="rgroup">'
+      + '<div class="rg-head"><span class="rg-no">板块 ' + RG_NO[gi] + "</span>"
+      + '<span class="rg-t">' + esc(g.t) + '</span><span class="rg-en">' + esc(g.en || "") + "</span>"
+      + '<a class="rg-link" href="' + esc(g.url) + '" target="_blank" rel="noopener">欧盟官方栏目 ↗</a></div>'
+      + (g.desc ? '<p class="rg-desc">' + esc(g.desc) + "</p>" : "")
+      + '<div class="rlist">' + g.items.map(function(it, i){
+          var th = esc(it.t).replace(/(\(EU\)\s*\d{4}\/\d+)/, '<span class="regno">$1</span>');
+          return rowHtml(p2(i + 1), it.url, th, esc(it.zh || ""), it.k || "impl");
+        }).join("") + "</div></div>";
+  }).join("");
+
+  /* ---------- ③ 核查案例：热榜式列表 ---------- */
+  $("#case-list").innerHTML = '<div class="rlist">' + (D.cases || []).map(function(c, i){
+    return rowHtml(p2(i + 1), c.url || "#", esc(c.t),
+      esc(fmtD(c.d)) + " · " + esc(c.type) + " — " + esc(c.s) + " <b>可复用的判断：</b>" + esc(c.takeaway), "case");
+  }).join("") + "</div>";
+
+  /* ---------- ④ 实操经验：热榜式列表 ---------- */
+  $("#tip-list").innerHTML = '<div class="rlist">' + (D.tips || []).map(function(t, i){
+    return '<div class="rrow" style="cursor:default">'
+      + '<span class="no">' + p2(i + 1) + "</span>"
+      + '<span class="rmain"><span class="rt"><span class="rtag rtag-gd" style="margin-right:8px;position:relative;top:-1px">' + esc(t.stage) + "</span>" + esc(t.t) + "</span>"
+      + '<span class="rz" style="display:block"><b>坑在哪：</b>' + esc(t.risk) + "　<b>怎么避：</b>" + esc(t.do) + "</span></span>"
+      + '<span class="rside"></span>'
+      + "</div>";
+  }).join("") + "</div>";
+
+  /* ---------- 更新日志 ---------- */
+  $("#log-list").innerHTML = D.meta.changelog.map(function(l){
+    return '<div class="logrow' + (l.errata ? " errata" : "") + '"><div class="lg-d">' + esc(l.d) + (l.errata ? " · 勘误" : "") + '</div><div class="lg-t">' + esc(l.t) + '</div></div>';
+  }).join("");
+  }
+
+  /* ---------- 启动：拉线上数据 → 渲染 → 进入自动检查循环 ---------- */
+  check(true).then(function(){
+    var b = $("#btn-refresh");
+    if(b) b.addEventListener("click", function(){
+      b.disabled = true; b.textContent = "检查中…";
+      check(false).then(function(){ b.disabled = false; b.textContent = "立即检查更新"; });
+    });
+  });
+})();
+</script>
+<div id="toast" class="toast"></div>
+</body>
+</html>

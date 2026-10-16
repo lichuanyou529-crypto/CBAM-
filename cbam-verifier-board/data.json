@@ -1,0 +1,1092 @@
+{
+  "meta": {
+    "dataAsOf": "2026-10-14",
+    "sopDate": "2026-10-07",
+    "officialListCount": 0,
+    "changelog": [
+      {
+        "d": "2026-10-14",
+        "t": "【V5 法规模块重构】按欧委会 CBAM 官网三大板块重新组织：①CBAM 立法和指南（12 条法律文本）②CBAM 注册（2 条登记库实施细则）③CBAM 排放的验证（核查原则、计算方法、2025/2551 授权条例与官方核查指南）。全部条目抓取并核对自欧委会官网 cbam-legislation-and-guidance 页面，链接直达 EUR-Lex 原文；原 regs 卡片列表下线。同时②③④三个模块的列表改为热榜式行设计（排名序号 + 细分割线 + 悬停高亮）。"
+      },
+      {
+        "d": "2026-10-14",
+        "t": "【V4 布局与口径调整】①站点布局改为左侧固定导航 + 单列信息流（信息流卡片带排名轨道），筛选栏改为胶囊控件；②「信息披露指数」评分维度由 7 项调整为 6 项：删除「证书有效期」维度——CBAM 认可证书均为一年一审核，各机构有效期口径一致，该维度不构成信息披露的区分度；权重重排为 nab15 / entity15 / cert15 / scope30 / registry20 / china5，合计仍为 100，各机构指数相应重算（证书有效期信息仍在卡片详情中展示，只是不再计分）；③应读者反馈，「⑤招标与商机信息」模块下线，页面聚焦机构库、法规、案例、实操经验四模块，案例模块新增「里程碑日历」视图（案例日期 + NAB 决议 / 官宣 / 认可生效与到期节点）；④应反馈移除页面顶部「欧委会名录」横幅、案例模块的里程碑日历与案例卡的「依据」来源行，页面更聚焦榜单本身。"
+      },
+      {
+        "d": "2026-10-14",
+        "errata": true,
+        "t": "【V3 重要更正】①新增第 5 家：INTERTEK CERTIFICATION AB（瑞典 Swedac，认可号 1639，2026-10-13 授予，有效期至 2031-10-13，活动组 I–VIII、LI、LII，不含 L/CCUS）——数据源为 Swedac 官方认可库条目与官网新闻。②撤回 V2「RINA 未获第 VIII 组」的结论：ACCREDIA 决议 Rev.01（2026-10-09 签署）明确含第 VIII 组，本榜以决议为准，并将新闻稿口径并列记录。③更正 SGS ICS 意大利范围：按决议 Rev.01 为 I、II、IV、VI、VIII、L、LI、LII（缺 III／V／VII，含 LI），与新闻稿口径不一致。④更正 EmiCert：已从 ESYD 官网直接下载证书附件（No.874-9，附件 V1/20）核对，确认为 11 组全覆盖，此前标注的 LI／LII「待核验项」系误读附件中「对应 EU ETS 活动组」列的 n/a，予以更正。⑤机构卡新增「商务信息」「附加标签」「历史回溯」三块，全部缺口与未知项一律显式标注，不做估算。"
+      },
+      {
+        "d": "2026-10-14",
+        "t": "站点升级为《Trade Free HOT》五模块：①核查机构榜（新增商务信息、附加标签、每家机构的历史回溯）②核查法规与认证规则指南 ③核查案例集锦 ④实操经验与风险避坑 ⑤招标与商机信息。页头统一为 Trade Free HOT「你身边的合规专家」；页脚按规范展示本榜编制方服务范围、企业微信二维码位、公众号「听碳的声音」与免责声明。所有非官方内容已做显著标注。"
+      },
+      {
+        "d": "2026-10-13",
+        "errata": true,
+        "t": "【V2 重要更正】①V1 称必维、SGS、RINA 三家「活动组范围未公开1」——错误。ACCREDIA《CSA CI 决议》2026-09-28 已逐条公示三家持证法人与活动组范围，三家得分由 28/28/33 大幅上调至 75/75/65。②V1 误读证书附件中的「n/a」列——该列为「对应 EU ETS 活动组」列，并非「未获授权」，关于 LI／LII 的表述已更正。③更正持证法人：必维为 BUREAU VERITAS ITALIA S.P.A.、SGS 为 SGS ICS ITALIA S.R.L.、RINA 为 RINA SERVICES S.A.（非 RINA S.p.A.）。④V1 所引「LII 不可单独授予」「禁止包干价」「首席核查员 5 年轮换」三项，经核对在 (EU) 2025/2551 正文中均无依据，已删除。⑤新增「11 个活动组覆盖对照矩阵」，并首次披露：RINA SERVICES S.A. 未获第 VIII 组（下游钢铁／铝制品）授权，必维与 SGS 未获 LI 组（进口电力）授权。"
+      },
+      {
+        "d": "2026-10-12",
+        "t": "首版发布（V1）。欧委会官方名录仍为 0 家；同步欧委会 10 月 7 日版 State-of-play：受理申请的 NAB 18 家、受理第三国申请的 7 家。"
+      }
+    ],
+    "generatedAt": "2026-10-14T16:35:13+08:00"
+  },
+  "dims": [
+    {
+      "k": "nab",
+      "lb": "NAB 公示可查",
+      "w": 15,
+      "y": "能否在发证 NAB 的官方决议/名录中检索到"
+    },
+    {
+      "k": "entity",
+      "lb": "持证法人",
+      "w": 15,
+      "y": "决定报告由谁签发、能否被申报引用"
+    },
+    {
+      "k": "cert",
+      "lb": "认可编号",
+      "w": 15,
+      "y": "唯一认可标识，无编号即无从核实"
+    },
+    {
+      "k": "scope",
+      "lb": "活动组逐组",
+      "w": 30,
+      "y": "决定能不能核查你的具体产品，权重最高"
+    },
+    {
+      "k": "registry",
+      "lb": "登记库注册",
+      "w": 20,
+      "y": "无 Verifier ID 出不了正式报告"
+    },
+    {
+      "k": "china",
+      "lb": "对华服务",
+      "w": 5,
+      "y": "影响现场核查成本与沟通效率"
+    }
+  ],
+  "verifiers": [
+    {
+      "name": "Intertek 天祥（瑞典）",
+      "nameEn": "INTERTEK CERTIFICATION AB",
+      "group": "Intertek 集团（英国）",
+      "groupNote": "瑞典实体位于斯德哥尔摩 Kista",
+      "nab": "Swedac",
+      "nabCn": "瑞典",
+      "announced": "2026-10-13",
+      "nabDecided": "2026-10-13",
+      "entity": "INTERTEK CERTIFICATION AB（瑞典 Kista）",
+      "certNo": "Swedac 认可号 1639",
+      "standard": "认可库条目按 (EU) 2025/2551 附件 I 逐组列示；具体依据标准以认可证书原件为准",
+      "validFrom": "2026-10-13",
+      "validTo": "2031-10-13",
+      "scopeGroups": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII",
+        "LI",
+        "LII"
+      ],
+      "scopePending": [],
+      "scopeText": "瑞典 Swedac 认可库条目（No. 1639）按 (EU) 2025/2551 附件 I 逐组列示：I 煅烧粘土／水泥熟料／水泥／高铝水泥、II 氢／氨、III 硝酸、IV 尿素／混合肥料、V 烧结矿／生铁／DRI／粗钢、VI 铁合金、VII 未锻轧铝、VIII 钢铁及铝制品、LI 进口到欧盟关境的电力、LII 间接排放。",
+      "route": "由 Swedac 按 ISO/IEC 17029 受理并授予（瑞方当前优先处理瑞典、乌克兰、英国的申请）",
+      "registry": "未公开，须在取得认可后两个月内完成 CBAM 登记库注册",
+      "officialListed": false,
+      "china": {
+        "v": 1,
+        "t": "Intertek 集团在中国设有广泛的分支与实验室网络（集团公开宣介口径）。但本次获认可的持证主体为瑞典法人，能否由中国团队执行现场核查，须向机构书面确认。"
+      },
+      "site": "https://www.intertek.com/",
+      "srcs": [
+        "Swedac 认可库条目 No. 1639（认可日 2026-10-13，有效期至 2031-10-13）",
+        "Swedac 官网新闻《Första svenska organet ackrediterat för CBAM-verifiering》（2026-10-13）"
+      ],
+      "note": "<b>范围缺口提示：</b>所列条目<b>不含 L 组（CCUS）</b>。若你的申报涉及碳捕集、利用与封存相关的排放扣减，需在签约前书面确认。",
+      "d": {
+        "nab": 1,
+        "entity": 1,
+        "cert": 1,
+        "scope": 1,
+        "registry": 0,
+        "china": 1
+      },
+      "biz": {
+        "price": "未公开",
+        "pricing": "未公开（签约前须向机构索取书面报价）",
+        "area": "瑞典法人持证；集团口径为全球服务网络（具体国别服务能力须确认）",
+        "langs": "英文 / 瑞典文；中文服务能力须向机构确认",
+        "ob": "未公开（可否做 OB 联合现场核查须向机构确认）"
+      },
+      "tags": {
+        "sign": "有（已获 Swedac 认可，具签发资格；CBAM 登记库注册状态未公开）",
+        "remote": "未公开",
+        "annual": "待向机构确认"
+      },
+      "history": [
+        {
+          "d": "2026-10-14",
+          "t": "本榜首次收录（V3）。依据 Swedac 认可库条目 No.1639：认可日 2026-10-13，有效期至 2031-10-13，活动组 I–VIII、LI、LII。"
+        }
+      ]
+    },
+    {
+      "name": "Bureau Veritas 必维（意大利）",
+      "nameEn": "BUREAU VERITAS ITALIA S.P.A.",
+      "group": "必维集团（法国）",
+      "groupNote": "全球 140 余国服务网络",
+      "nab": "Accredia",
+      "nabCn": "意大利",
+      "announced": "2026-09-29",
+      "nabDecided": "2026-09-28",
+      "entity": "BUREAU VERITAS ITALIA S.P.A.",
+      "certNo": "ACCREDIA 决议正文未载明认可证书编号（名录中另见注册号，以认可证书原件为准）",
+      "standard": "决议未载明（以认可证书原件为准）",
+      "validFrom": null,
+      "validTo": null,
+      "scopeGroups": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII",
+        "L",
+        "LII"
+      ],
+      "scopePending": [],
+      "scopeText": "ACCREDIA 决议在 V&V 框架下列明：碳边境调节机制（CBAM），适用于活动类别 I、II、III、IV、V、VI、VII、VIII、L 及 LII。",
+      "route": "由 EU ETS（(EU) 2018/2067）认可范围扩展而来（第 4 条路径）",
+      "registry": "未公开",
+      "officialListed": false,
+      "china": {
+        "v": 1,
+        "t": "中文稿件 2026-10-08 正式发布（美通社），中国市场服务网络成熟。"
+      },
+      "site": "https://www.bureauveritas.com/",
+      "srcs": [
+        "ACCREDIA《行业认证、认证与检验专业委员会（CSA CI）决议》2026-09-28，「授信额度延长」条目（电子签署 2026-10-06）",
+        "Bureau Veritas 官网公告 2026-09-29 / 美通社中文稿 2026-10-08"
+      ],
+      "note": "<b>范围缺口提示：</b>未获 <b>LI 组（进口到欧盟关境的电力）</b>授权。必维意大利的范围在三份 ACCREDIA 文本（新闻稿 10-06、决议 Rev.00、决议 Rev.01）中表述一致，可放心按此比对。",
+      "d": {
+        "nab": 1,
+        "entity": 1,
+        "cert": 0.5,
+        "scope": 1,
+        "registry": 0,
+        "china": 1
+      },
+      "biz": {
+        "price": "未公开",
+        "pricing": "未公开（签约前须向机构索取书面报价）",
+        "area": "集团口径为全球服务网络（公开宣介，具体国别能力须确认）",
+        "langs": "中文 / 英文（2026-10-08 已发布中文稿件）",
+        "ob": "未公开（可否与中国本地机构做 OB 联合现场核查，须向机构确认）"
+      },
+      "tags": {
+        "sign": "有（已获 ACCREDIA 认可，具备签发资格；CBAM 登记库注册状态未公开）",
+        "remote": "未公开",
+        "annual": "待向机构确认"
+      },
+      "history": [
+        {
+          "d": "2026-10-14",
+          "t": "V3：三份 ACCREDIA 文本范围表述一致（I–VIII、L、LII；缺 LI）。因 ACCREDIA 未在决议正文列明认可证书编号，「认可编号」一项由满分下调为半分，披露指数由 75 调整为 68。"
+        },
+        {
+          "d": "2026-10-13",
+          "t": "本榜 V2 更正：活动组范围已在 ACCREDIA 2026-09-28 决议中逐组列明，此前标注「未公开」有误，披露指数由 28 上调至 75。"
+        },
+        {
+          "d": "2026-10-12",
+          "t": "本榜首次收录。"
+        }
+      ]
+    },
+    {
+      "name": "SGS 通标（意大利）",
+      "nameEn": "SGS ICS ITALIA S.R.L.",
+      "group": "SGS 集团（瑞士）",
+      "groupNote": "115 国、2,500 余个分支与实验室",
+      "nab": "Accredia",
+      "nabCn": "意大利",
+      "announced": "2026-10-06",
+      "nabDecided": "2026-09-28",
+      "entity": "SGS ICS ITALIA S.R.L.",
+      "certNo": "ACCREDIA 决议正文未载明认可证书编号（以认可证书原件为准）",
+      "standard": "决议未载明（以认可证书原件为准）",
+      "validFrom": null,
+      "validTo": null,
+      "scopeGroups": [
+        "I",
+        "II",
+        "IV",
+        "VI",
+        "VIII",
+        "L",
+        "LI",
+        "LII"
+      ],
+      "scopePending": [],
+      "scopeText": "ACCREDIA 决议 Rev.01（2026-10-09 签署）列明：CBAM，适用于活动组 I、II、IV、VI、VIII、L、LI、LII。新闻稿（10-06）口径为 I–VIII、L、LII。两份文本不一致，以认可证书附件为准。",
+      "route": "由 EU ETS（(EU) 2018/2067）认可范围扩展而来（第 4 条路径）",
+      "registry": "未公开",
+      "officialListed": false,
+      "china": {
+        "v": 1,
+        "t": "SGS 通标标准技术服务有限公司发布中文公告，中国市场服务网络成熟。"
+      },
+      "site": "https://www.sgs.com/",
+      "srcs": [
+        "ACCREDIA《CSA CI 决议》2026-09-28，「授信额度延长」条目（电子签署 2026-10-06）",
+        "SGS 官网新闻 2026-10《Achieving CBAM Verifier Accreditation》/ 通标中文公告"
+      ],
+      "note": "<b>⚠ 范围缺口提示（本次更正）：</b>按 ACCREDIA 决议 Rev.01，SGS ICS 意大利<b>未获 III 组（硝酸）、V 组（烧结矿／生铁／DRI／粗钢）、VII 组（未锻轧铝）</b>授权；但<b>含 LI 组（进口电力）</b>——与新闻稿口径相反。<b>硝酸、粗钢及上游铁水、未锻轧铝这类货物，签约前必须索取认可附件原件逐组核对。</b>",
+      "d": {
+        "nab": 1,
+        "entity": 1,
+        "cert": 0.5,
+        "scope": 1,
+        "registry": 0,
+        "china": 1
+      },
+      "biz": {
+        "price": "未公开",
+        "pricing": "未公开（签约前须向机构索取书面报价）",
+        "area": "集团口径为多国服务网络（公开宣介，具体国别能力须确认）",
+        "langs": "中文 / 英文（通标已发布中文公告）",
+        "ob": "未公开（可否做 OB 联合现场核查，须向机构确认）"
+      },
+      "tags": {
+        "sign": "有（已获 ACCREDIA 认可，具备签发资格；CBAM 登记库注册状态未公开）",
+        "remote": "未公开",
+        "annual": "待向机构确认"
+      },
+      "history": [
+        {
+          "d": "2026-10-14",
+          "t": "V3 更正：以 ACCREDIA 决议 Rev.01 为准，范围由「I–VIII、L、LII」更正为「I、II、IV、VI、VIII、L、LI、LII」（缺 III／V／VII，含 LI）。ACCREDIA 新闻稿与决议两版口径不一致，本榜已并列记录。"
+        },
+        {
+          "d": "2026-10-13",
+          "t": "本榜 V2 更正：活动组范围已在 ACCREDIA 决议中逐组列明；同时更正持证法人为 SGS ICS ITALIA S.R.L.，披露指数由 28 上调至 75。"
+        },
+        {
+          "d": "2026-10-12",
+          "t": "本榜首次收录。"
+        }
+      ]
+    },
+    {
+      "name": "EmiCert（华测检测控股）",
+      "nameEn": "EMICERT CERTIFICATION SERVICES S.A.",
+      "group": "CTI 华测检测集团（300012）控股",
+      "groupNote": "2025-11-24 完成股权交割",
+      "nab": "ESYD",
+      "nabCn": "希腊",
+      "announced": "2026-09-23",
+      "nabDecided": "2026-09-14",
+      "entity": "EMICERT CERTIFICATION SERVICES SOCIETE ANONYME（希腊雅典）",
+      "certNo": "874-9（附件 Annex V1/20）",
+      "standard": "ELOT EN ISO 14065:2022 + ELOT EN ISO 14064-3:2019（认可证书 No.874-9 依 ELOT EN ISO/IEC 17029:2019 签发）",
+      "validFrom": "2026-09-14",
+      "validTo": "2030-06-09",
+      "scopeGroups": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII",
+        "L",
+        "LI",
+        "LII"
+      ],
+      "scopePending": [],
+      "scopeText": "ESYD 证书 No.874-9 附件 V1/20（2026-09-14）逐组列示 CBAM 全部 11 个活动组：I–VIII 及 L、LI、LII。附件中 LI／LII 行的「n/a」仅出现在「对应 (EU) 2018/2067 活动组」列，表示 EU ETS 中无对应组，不代表未获授权。该范围附件取代 2026-03-23 的旧版。",
+      "route": "在既有 EU ETS 温室气体核查认可基础上扩展",
+      "registry": "未公开",
+      "officialListed": false,
+      "china": {
+        "v": 1,
+        "t": "CTI 华测中国碳团队执行本地现场核查，EmiCert 欧盟法人签发报告，「中国现场核查 + 欧盟签发」一体化模式，设有中文服务页。"
+      },
+      "site": "https://emicert.com/",
+      "srcs": [
+        "ESYD 认可证书 No. 874-9 及附件 Annex V1/20（2026-09-14）",
+        "EmiCert 官网公告 2026-09-23 / 华测检测认证集团公告",
+        "CTI 华测检测官方服务页《CBAM 核查/预核查服务》"
+      ],
+      "note": "<b>更正说明：</b>V2 版把 LI／LII 列为「待核验项」，系误读附件中「对应 EU ETS 活动组」列的 n/a。现已从 ESYD 官网直接下载附件核对，确认为 <b>11 组全覆盖</b>，披露指数回调至 85。<br><b>提示：</b>ESYD 在线认可名录的可访问性曾出现波动，建议以证书附件原件为最终依据。",
+      "d": {
+        "nab": 1,
+        "entity": 1,
+        "cert": 1,
+        "scope": 1,
+        "registry": 0,
+        "china": 1
+      },
+      "biz": {
+        "price": "未公开",
+        "pricing": "未公开（签约前须向机构索取书面报价）",
+        "area": "希腊法人签发，中国现场由 CTI 华测团队执行（「中国现场核查 + 欧盟签发」模式）",
+        "langs": "中文 / 英文 / 希腊文（设有中文服务页）",
+        "ob": "可与 CTI 华测中国碳团队配合执行本地现场核查"
+      },
+      "tags": {
+        "sign": "有（已获 ESYD 认可，具备签发资格；CBAM 登记库注册状态未公开）",
+        "remote": "未公开",
+        "annual": "待向机构确认"
+      },
+      "history": [
+        {
+          "d": "2026-10-14",
+          "t": "V3 更正：已从 ESYD 官网直接下载认可证书附件（No.874-9，Annex V1/20）原样核对，确认为 11 组全覆盖；V2 标注的 LI／LII「待核验项」系误读附件中「对应 EU ETS 活动组」列的 n/a，予以撤回。披露指数由 65 回调至 85。"
+        },
+        {
+          "d": "2026-10-13",
+          "t": "本榜 V2 更正：附件中的「n/a」实为「对应 EU ETS 活动组」列，并非未获授权；据此重算，披露指数由 85 调整至 65（该结论已于 V3 撤回）。"
+        },
+        {
+          "d": "2026-10-12",
+          "t": "本榜首次收录。"
+        }
+      ]
+    },
+    {
+      "name": "RINA 意大利船级社",
+      "nameEn": "RINA SERVICES S.A.",
+      "group": "RINA 集团（意大利热那亚）",
+      "groupNote": "全球 70 余国服务网络",
+      "nab": "Accredia",
+      "nabCn": "意大利",
+      "announced": "2026-09-30",
+      "nabDecided": "2026-09-28",
+      "entity": "RINA SERVICES S.A.（注意：不是 RINA S.p.A.）",
+      "certNo": "决议未列 V&V 编号（名录中仅见管理体系认证编号 00005，仅作参考）",
+      "standard": "决议未载明（以认可证书原件为准）",
+      "validFrom": null,
+      "validTo": null,
+      "scopeGroups": [
+        "I",
+        "II",
+        "III",
+        "IV",
+        "V",
+        "VI",
+        "VII",
+        "VIII",
+        "L",
+        "LI",
+        "LII"
+      ],
+      "scopePending": [],
+      "scopeText": "ACCREDIA 决议 Rev.01（2026-10-09 签署）列明：CBAM，适用于活动组 I、II、III、IV、V、VI、VII、VIII、L、LI、LII（11 组全覆盖）。新闻稿（10-06）口径为 I–VII、L、LI、LII，不含 VIII。",
+      "route": "由 EU ETS（(EU) 2018/2067）认可范围扩展而来（第 4 条路径）",
+      "registry": "未公开",
+      "officialListed": false,
+      "china": {
+        "v": 0.5,
+        "t": "RINA 在中国设有分支机构；2025-09 与韩国生产力中心认证院（KPC Certification）签署 MOU 提供 CBAM 预核查服务。截至本期未检索到面向中国客户的中文 CBAM 服务宣介。"
+      },
+      "site": "https://www.rina.org/",
+      "srcs": [
+        "ACCREDIA《CSA CI 决议》2026-09-28，「授信额度延长」条目（电子签署 2026-10-06）",
+        "RINA 官网新闻 2026-09-30《RINA obtains ACCREDIA accreditation for CBAM verification》"
+      ],
+      "note": "<b>⚠ 更正说明：</b>V2 版依据 ACCREDIA 新闻稿判断「RINA 未获第 VIII 组授权」——<b>该结论已撤回</b>。ACCREDIA 决议 Rev.01 明确含第 VIII 组（钢铁制品与铝制品），本榜以决议为准记录为 11 组全覆盖；新闻稿口径仍缺 VIII，两份文本不一致的原因 ACCREDIA 未作说明。<b>涉及钢铁／铝下游制品的，仍建议签约前索取认可附件原件确认。</b>",
+      "d": {
+        "nab": 1,
+        "entity": 1,
+        "cert": 0.5,
+        "scope": 1,
+        "registry": 0,
+        "china": 0.5
+      },
+      "biz": {
+        "price": "未公开",
+        "pricing": "未公开（签约前须向机构索取书面报价）",
+        "area": "集团口径覆盖多国（公开宣介，具体国别能力须确认）",
+        "langs": "英文为主；截至本期未检索到面向中国客户的中文 CBAM 服务宣介",
+        "ob": "未公开（可否做 OB 联合现场核查，须向机构确认）"
+      },
+      "tags": {
+        "sign": "有（已获 ACCREDIA 认可，具备签发资格；CBAM 登记库注册状态未公开）",
+        "remote": "未公开",
+        "annual": "待向机构确认"
+      },
+      "history": [
+        {
+          "d": "2026-10-14",
+          "t": "V3 更正：撤回「未获第 VIII 组」结论，按 ACCREDIA 决议 Rev.01 更正为 11 组全覆盖（新闻稿口径仍缺 VIII，本榜并列记录）。披露指数由 65 调整为 68。"
+        },
+        {
+          "d": "2026-10-13",
+          "t": "本榜 V2 更正：持证法人更正为 RINA SERVICES S.A.（非 RINA S.p.A.）；活动组范围已在 ACCREDIA 决议中逐组列明，披露指数由 33 上调至 65。同时首次披露其未获第 VIII 组授权。"
+        },
+        {
+          "d": "2026-10-12",
+          "t": "本榜首次收录。"
+        }
+      ]
+    }
+  ],
+  "groups": [
+    {
+      "id": "I",
+      "t": "煅烧粘土 · 水泥熟料 · 水泥 · 高铝水泥",
+      "d": "对应 EU ETS 活动组 1a/1b/6/98。"
+    },
+    {
+      "id": "II",
+      "t": "氢 · 氨",
+      "d": "对应 EU ETS 活动组 1a/1b/8/98。氢与氨在法规中同属第 II 组，是同一份授权范围。"
+    },
+    {
+      "id": "III",
+      "t": "硝酸",
+      "d": "对应活动组 1a/1b/9/98。与 II 组（氢/氨）是分开的两份授权。"
+    },
+    {
+      "id": "IV",
+      "t": "尿素 · 混合肥料",
+      "d": "对应活动组 1a/1b/98。与 III 组硝酸相互独立。"
+    },
+    {
+      "id": "V",
+      "t": "烧结矿 · 生铁 · DRI（直接还原铁）· 粗钢",
+      "d": "对应活动组 1a/1b/3/98。钢铁链最上游。"
+    },
+    {
+      "id": "VI",
+      "t": "铁合金（FeMn · FeCr · FeNi）",
+      "d": "对应活动组 1a/1b/4/98。常被遗漏的一组。"
+    },
+    {
+      "id": "VII",
+      "t": "未锻轧铝",
+      "d": "对应活动组 1a/1b/4/5/98。"
+    },
+    {
+      "id": "VIII",
+      "t": "钢铁制品 · 铝制品",
+      "d": "对应活动组 1a/1b/4/98。中国出口的紧固件、线材制品、五金件、铝型材均在此组。拿到 VIII 组不等于能核查上游粗钢环节。"
+    },
+    {
+      "id": "L",
+      "t": "碳捕集、利用与封存（CCUS）",
+      "d": "对应 EU ETS 活动组 10/11。"
+    },
+    {
+      "id": "LI",
+      "t": "进口到欧盟关境的电力",
+      "d": "在 EU ETS 中无对应活动组（附件 I 该列为 n/a）。"
+    },
+    {
+      "id": "LII",
+      "t": "间接排放",
+      "d": "在 EU ETS 中无对应活动组（附件 I 该列为 n/a）。"
+    }
+  ],
+  "nabs": [
+    {
+      "c": "奥地利",
+      "n": "Akkreditierung Austria",
+      "a": "AA",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "比利时",
+      "n": "Belgian Accreditation Council",
+      "a": "BELAC",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "保加利亚",
+      "n": "Bulgarian Accreditation Service",
+      "a": "BAS",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "克罗地亚",
+      "n": "Croatian Accreditation Agency",
+      "a": "HAA",
+      "ag": 1,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "已同意，尚未受理"
+    },
+    {
+      "c": "塞浦路斯",
+      "n": "Cyprus Organisation for the promotion of quality",
+      "a": "CYS-CYSAB",
+      "ag": 0,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "不提供 CBAM 认可"
+    },
+    {
+      "c": "捷克",
+      "n": "Czech Accreditation Institute",
+      "a": "CAI",
+      "ag": 1,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "已同意，尚未受理"
+    },
+    {
+      "c": "丹麦",
+      "n": "Danak Den Danske Akkrediteringsfond",
+      "a": "DANAK",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "爱沙尼亚",
+      "n": "Estonian Accreditation Centre",
+      "a": "EAC",
+      "ag": 0,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "不提供 CBAM 认可"
+    },
+    {
+      "c": "芬兰",
+      "n": "Finish Accreditation Service",
+      "a": "FINAS",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "法国",
+      "n": "Comité français d'accréditation",
+      "a": "COFRAC",
+      "ag": 1,
+      "rd": 1,
+      "tc": 1,
+      "tcr": 1,
+      "rm": "第三国通道；尚无公开获批机构"
+    },
+    {
+      "c": "德国",
+      "n": "Deutsche Akkreditierungsstelle GmbH",
+      "a": "DAkkS",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "不受理第三国申请"
+    },
+    {
+      "c": "希腊",
+      "n": "Hellenic Accreditation System",
+      "a": "ESYD",
+      "ag": 1,
+      "rd": 1,
+      "tc": 1,
+      "tcr": 1,
+      "rm": "第三国通道；已出 EmiCert"
+    },
+    {
+      "c": "匈牙利",
+      "n": "National Accreditation Authority",
+      "a": "NAH",
+      "ag": 1,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "已同意，尚未受理"
+    },
+    {
+      "c": "爱尔兰",
+      "n": "Irish National Accreditation Board",
+      "a": "INAB",
+      "ag": 0,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "不提供 CBAM 认可"
+    },
+    {
+      "c": "意大利",
+      "n": "Ente Italiano di Accreditamento",
+      "a": "Accredia",
+      "ag": 1,
+      "rd": 1,
+      "tc": 1,
+      "tcr": 1,
+      "rm": "第三国通道；已出必维/RINA/SGS"
+    },
+    {
+      "c": "拉脱维亚",
+      "n": "Latvian National Accreditation Bureau",
+      "a": "LATAK",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "立陶宛",
+      "n": "Lithuanian National Accreditation Bureau",
+      "a": "LA",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "卢森堡",
+      "n": "ILNAS",
+      "a": "ILNAS",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "马耳他",
+      "n": "National Accreditation Board Malta",
+      "a": "NAB-MALTA",
+      "ag": 0,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "不提供 CBAM 认可"
+    },
+    {
+      "c": "荷兰",
+      "n": "Raad voor Accreditatie",
+      "a": "RvA",
+      "ag": 1,
+      "rd": 1,
+      "tc": 1,
+      "tcr": 1,
+      "rm": "已与土耳其 TÜRKAK 签署安排"
+    },
+    {
+      "c": "挪威",
+      "n": "Norsk akkreditering",
+      "a": "NA",
+      "ag": 1,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "EEA 成员；受理状态未列示"
+    },
+    {
+      "c": "波兰",
+      "n": "Polskie Centrum Akredytacji",
+      "a": "PCA",
+      "ag": 1,
+      "rd": 1,
+      "tc": 1,
+      "tcr": 1,
+      "rm": "第三国通道；尚无公开获批机构"
+    },
+    {
+      "c": "葡萄牙",
+      "n": "Instituto Portugues de Acreditacao",
+      "a": "IPAC",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "罗马尼亚",
+      "n": "Romanian Accreditation Association",
+      "a": "RENAR",
+      "ag": 1,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "预计 2026 年 10 月起受理"
+    },
+    {
+      "c": "斯洛伐克",
+      "n": "Slovak National Accreditation Service",
+      "a": "SNAS",
+      "ag": 1,
+      "rd": 1,
+      "tc": 1,
+      "tcr": 1,
+      "rm": "本版起转为已受理"
+    },
+    {
+      "c": "斯洛文尼亚",
+      "n": "Slovenska Akreditacija",
+      "a": "SA",
+      "ag": 1,
+      "rd": 0,
+      "tc": 0,
+      "tcr": 0,
+      "rm": "预计 2026 年 11 月起受理"
+    },
+    {
+      "c": "西班牙",
+      "n": "Entidad Nacional de Acréditacion",
+      "a": "ENAC",
+      "ag": 1,
+      "rd": 1,
+      "tc": 0,
+      "tcr": 0,
+      "rm": ""
+    },
+    {
+      "c": "瑞典",
+      "n": "Swedish Board for Accreditation and Conformity Assessment",
+      "a": "Swedac",
+      "ag": 1,
+      "rd": 1,
+      "tc": 1,
+      "tcr": 1,
+      "rm": "已与乌克兰 NAAU 签署安排"
+    }
+  ],
+  "timeline": [
+    {
+      "d": "2026-01-01",
+      "t": "CBAM 正式实施期启动",
+      "s": "进口商申请授权 CBAM 申报人资格；非欧盟工厂开始监测与计算隐含排放。",
+      "done": 1
+    },
+    {
+      "d": "2026-04",
+      "t": "各 NAB 陆续开始 CBAM 认可",
+      "s": "认可实战启动。",
+      "done": 1
+    },
+    {
+      "d": "2026-08-24",
+      "t": "《CBAM 核查及认可指南》发布",
+      "s": "141 页，覆盖核查、认可、现场访问与报告要求。",
+      "done": 1
+    },
+    {
+      "d": "2026-08-28",
+      "t": "登记库核查机构接入程序发布",
+      "s": "规定核查机构取得登记库权限的两阶段程序。",
+      "done": 1
+    },
+    {
+      "d": "2026-09-01",
+      "t": "核查机构可申请接入 CBAM 登记库",
+      "s": "欧委会程序文件确定的开放日。",
+      "done": 1
+    },
+    {
+      "d": "2026-09-14",
+      "t": "ESYD 签发证书 No. 874-9（EmiCert）",
+      "s": "全球首例可追溯至 NAB 证书的 CBAM 认可。",
+      "done": 1
+    },
+    {
+      "d": "2026-09-28",
+      "t": "ACCREDIA CSA CI 决议：3 家机构范围扩展",
+      "s": "必维意大利、SGS ICS 意大利、RINA Services 三家获 CBAM 活动组授权，逐组列明。",
+      "done": 1
+    },
+    {
+      "d": "2026-09-30",
+      "t": "已认可机构可获登记库工作权限",
+      "s": "不早于此日。",
+      "done": 1
+    },
+    {
+      "d": "2026-10-07",
+      "t": "欧委会 State-of-play 状态表更新",
+      "s": "受理申请的 NAB 达 18 家，受理第三国申请的达 7 家。",
+      "done": 1
+    },
+    {
+      "d": "2027-01",
+      "t": "登记库内可签发首份核查报告",
+      "s": "只有完成登记的机构才能出具供申报人引用的正式报告。",
+      "done": 0
+    },
+    {
+      "d": "2027-02-01",
+      "t": "CBAM 证书开始销售",
+      "s": "通过 CBAM 共同中央平台统一发售。",
+      "done": 0
+    },
+    {
+      "d": "2027-09-30",
+      "t": "首份 CBAM 年度申报截止",
+      "s": "申报 2026 年度进口，并同步清缴 CBAM 证书。",
+      "done": 0
+    }
+  ],
+  "cases": [
+    {
+      "d": "2026-10-13",
+      "type": "认可里程碑",
+      "t": "Swedac 认可 Intertek Certification AB——北欧首例，全球第 4 例",
+      "s": "瑞典国家认可机构 Swedac 于 2026-10-13 授予 Intertek Certification AB（斯德哥尔摩 Kista）CBAM 核查认可，认可号 1639，有效期 2026-10-13 至 2031-10-13。认可库条目按 (EU) 2025/2551 附件 I 逐组列示：I–VIII、LI、LII，不含 L（CCUS）。",
+      "takeaway": "这是本榜首次收录北欧通道的机构。对出口企业有两个实际价值：Intertek 集团在中国有广泛的本地团队，现场核查的沟通与差旅成本更可控；同时它握有 LI（进口电力）与 LII（间接排放），水泥、化肥这类要报间接排放的货物少一层缺口。但 Swedac 当前优先处理瑞典、乌克兰、英国的申请，中国机构若想走这条线需先确认排队情况。",
+      "tags": [
+        "瑞典 Swedac",
+        "Intertek",
+        "认可号 1639",
+        "北欧通道"
+      ],
+      "src": "Swedac 认可库条目 No.1639（https://ackrediteringar.swedac.se/en/1639）；Swedac 官网新闻《Första svenska organet ackrediterat för CBAM-verifiering》（2026-10-13）"
+    },
+    {
+      "d": "2026-09-28",
+      "type": "NAB 集中批复",
+      "t": "ACCREDIA 一次批复三家，但新闻稿与决议口径不一致",
+      "s": "意大利 ACCREDIA 在同一次 CSA CI 决议中批复 BUREAU VERITAS ITALIA S.P.A.、SGS ICS ITALIA S.R.L.、RINA SERVICES S.P.A. 三家，路径均为「由 EU ETS（(EU) 2018/2067）认可范围扩展」。两份文本的范围并不一致：决议 Rev.01（2026-10-09 签署）中 RINA 含第 VIII 组、SGS 为 I／II／IV／VI／VIII／L／LI／LII；新闻稿（10-06）中 RINA 不含 VIII、SGS 为 I–VIII／L／LII。必维意大利在三份文本中均为 I–VIII、L、LII。ACCREDIA 未说明差异原因，且两份文本均未载明认可证书编号。",
+      "takeaway": "同一家 NAB、同一天批出来的三家，范围都不一样，而且连 NAB 自己对外发布的两份文件都对不上。签约前要做的就一件事：向机构索取认可附件原件，逐组核对自己货物所在的活动组。"
+    },
+    {
+      "d": "2026-09-14",
+      "type": "认可里程碑",
+      "t": "ESYD 签发 No.874-9——第一份可对外的 CBAM 核查认可证书",
+      "s": "希腊认可机构 ESYD 向 EMICERT CERTIFICATION SERVICES S.A. 签发认可证书 No.874-9 及附件 V1/20（2026-09-14）。附件逐组列示全部 11 个 CBAM 活动组，依据 ELOT EN ISO 14065:2022 与 ELOT EN ISO 14064-3:2019；证书有效期至 2030-06-09，该范围附件取代 2026-03-23 的旧版。",
+      "takeaway": "这张证书第一次给出「CBAM 认可长什么样」的实物样本：发证机构、机构名称与唯一编号、认可范围与活动组、设立国、生效与到期日、依据文件——照这六项去核对其他机构，就能分清真认可和宣传稿。"
+    },
+    {
+      "d": "2026-10-07",
+      "type": "格局数据",
+      "t": "欧委会 State-of-play：24 家 NAB 同意提供认可，7 国开放第三国通道",
+      "s": "受理认可申请的 NAB 达 18 家；法国 COFRAC、希腊 ESYD、意大利 ACCREDIA、荷兰 RvA、波兰 PCA、斯洛伐克 SNAS、瑞典 Swedac 共 7 国的 NAB 受理第三国核查机构的申请，其中 5 国已实际开放受理。目前已走出成果的是希腊、意大利、瑞典三条线。",
+      "takeaway": "中国机构要做 CBAM 核查，入口在这 7 国 NAB；对中国出口企业来说，这决定了未来可选机构的国别分布与现场核查成本。"
+    }
+  ],
+  "tips": [
+    {
+      "stage": "签约前",
+      "t": "先定产品落在第几组，再看报价",
+      "risk": "CBAM 认可按活动组逐组授予。报价再便宜，缺你那产品所在的组就等于白做——例如钢铁制紧固件、钢丝与线材制品、五金件、铝型材都落在第 VIII 组，而当前有一家已公示机构恰恰没有 VIII 组。",
+      "do": "先确定 CN 编码 → 回到本榜「11 组活动组覆盖对照」确认组别 → 拿组别去筛机构，最后才谈价格。",
+      "ref": "(EU) 2025/2551 附件 I"
+    },
+    {
+      "stage": "签约前",
+      "t": "核对的是「签发报告的那个法人」，不是集团品牌",
+      "risk": "集团宣传口径与证书上的持证主体不一致是常态。报告由不具资格的关联公司签发，申报环节照样会被退回。",
+      "do": "索要认可证书，核对机构全称、唯一认可标识、生效与到期日三项是否与合同签署主体一致。",
+      "ref": "(EU) 2025/2551 第 6(2) 条"
+    },
+    {
+      "stage": "签约前",
+      "t": "确认报告签发日落在认可有效期内",
+      "risk": "认可有五年有效期上限，但目前多数已公示机构的起止日期并未随公告公开，无法从外部判断。",
+      "do": "把有效期写进合同：报告签发日必须落在认可有效期内，并要求机构提供证书证明。",
+      "ref": "(EU) 2025/2551 第 6(3) 条"
+    },
+    {
+      "stage": "数据准备",
+      "t": "数据拿不到，就只能回退默认值——成本通常高于自己测",
+      "risk": "关键工序缺实测数据时只能使用默认值，默认值往往偏保守，直接抬高证书清缴成本。",
+      "do": "提前把这些工序拆开：能实测的先布计量，测不到的提前与进口商确定数据口径和替代方案。"
+    },
+    {
+      "stage": "数据准备",
+      "t": "多现场、租赁产线、外协工序的定性要提前写死",
+      "risk": "同一条产线，写成自有设施与写成外包工序，在 CBAM 下是两条完全不同的数据路径，后期改口径几乎等于重做。",
+      "do": "生产主体、人员归属、设备权属、物料物权、质量责任五项开工前书面定清，后续所有材料统一口径。"
+    },
+    {
+      "stage": "现场核查",
+      "t": "远程审核与 OB 联合现场核查能力要提前问",
+      "risk": "多数机构尚未公开这两项能力，等到排才发现不支持，差的就不是差旅费而是排期。",
+      "do": "询价阶段就问清：是否支持远程审核、在中国是否有现场团队、能否与已合作的核查伙伴做 OB 联合现场审核。"
+    },
+    {
+      "stage": "报告签发",
+      "t": "确认机构已完成 CBAM 登记库注册",
+      "risk": "拿到认可不等于能在登记库出具可被申报引用的正式报告；两件事之间存在时间差。",
+      "do": "要求机构书面确认登记库注册状态与预计可签发日期，并写进合同交付节点。"
+    },
+    {
+      "stage": "全程",
+      "t": "盯 NAB 公示，不要只盯机构官宣",
+      "risk": "机构官宣是二手信息，且可能早于或晚于 NAB 公示；两者出现偏差时以 NAB 为准。",
+      "do": "每周一对一次 ACCREDIA 决议、ESYD 证书等 NAB 官方渠道，本榜①模块即为该动作的替代品。"
+    }
+  ],
+  "regsGroups": [
+    {
+      "id": "leg",
+      "k": "law",
+      "t": "CBAM 立法和指南",
+      "en": "CBAM legislation and guidance",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "desc": "碳边境调节机制的全部法律文本：基础条例（管\"要不要做\"）、实施细则（管\"怎么算、怎么报\"）、授权条例（管\"谁来查\"），以及欧委会发布的官方指南。",
+      "items": [
+        {
+          "t": "Regulation (EU) 2023/956",
+          "zh": "CBAM 基本条例：创立碳边境调节机制，2023-05-17 生效",
+          "k": "law",
+          "url": "http://data.europa.eu/eli/reg/2023/956/oj"
+        },
+        {
+          "t": "Regulation (EU) 2025/2083",
+          "zh": "简化与强化 CBAM 的修订条例（正式期制度调整）",
+          "k": "law",
+          "url": "http://data.europa.eu/eli/reg/2025/2083/oj"
+        },
+        {
+          "t": "Regulation (EU) 2023/956 并合版（2025-10-20）",
+          "zh": "并入 2025/2083 修订后的基本条例现行有效文本",
+          "k": "law",
+          "url": "http://data.europa.eu/eli/reg/2023/956/2025-10-20"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2023/1773",
+          "zh": "过渡期实施细则：申报方法、排放核算与数据要求",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2023/1773/oj"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2025/2210",
+          "zh": "运抵成员国大陆架 / 专属经济区的货物及加工产品的申报",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/2210/oj"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2025/486",
+          "zh": "授权 CBAM 申报人（Authorised CBAM Declarant）资格规则",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/486/oj"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2025/2549",
+          "zh": "授权申报人资格规则的更正案",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/2549/oj"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2025/2548",
+          "zh": "CBAM 证书价格的计算与公布方法",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/2548/oj"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2025/2619",
+          "zh": "海关部门向 CBAM 主管机关传递信息的数据集",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/2619/oj"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2025/2620",
+          "zh": "免费配额调整量（应清缴证书数量的计算）",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/2620/oj"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2025/2621",
+          "zh": "默认值（default values）的确立",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/2621/oj"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2026/1740",
+          "zh": "默认值确立的更正案（2026 年 7 月更新）",
+          "k": "impl",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ%3AL_202601740"
+        }
+      ]
+    },
+    {
+      "id": "reg",
+      "k": "impl",
+      "t": "CBAM 注册",
+      "en": "CBAM registry",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en",
+      "desc": "CBAM 登记库（Registry）的设立与运行规则：授权申报人、进口商、海关与核查相关数据在登记库中的登记、查询与管理。",
+      "items": [
+        {
+          "t": "Implementing Regulation (EU) 2024/3210（并合版）",
+          "zh": "CBAM 登记库实施细则：登记库的结构、账户与数据管理（2026-01-01 并合版）",
+          "k": "impl",
+          "url": "https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A02024R3210-20260101"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2025/2550",
+          "zh": "CBAM 登记库实施细则的修订 / 更正案",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/2550/oj"
+        }
+      ]
+    },
+    {
+      "id": "ver",
+      "k": "del",
+      "t": "CBAM 排放的验证",
+      "en": "Verification of CBAM emissions",
+      "url": "https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-verification_en",
+      "desc": "排放核查的规则与参与方：核查原则、内嵌排放量计算方法、核查机构认可与核查行为规范，以及欧委会核查指南原文。",
+      "items": [
+        {
+          "t": "Implementing Regulation (EU) 2025/2546",
+          "zh": "核查原则的适用：核查机构执行核查的方法与行为规范",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/2546/oj"
+        },
+        {
+          "t": "Implementing Regulation (EU) 2025/2547",
+          "zh": "货物内嵌排放量的计算方法（核查取数的依据）",
+          "k": "impl",
+          "url": "http://data.europa.eu/eli/reg_impl/2025/2547/oj"
+        },
+        {
+          "t": "Delegated Regulation (EU) 2025/2551",
+          "zh": "认可与核查授权条例：核查机构认可、11 个活动组范围与核查要求",
+          "k": "del",
+          "url": "http://data.europa.eu/eli/reg_del/2025/2551/oj"
+        },
+        {
+          "t": "Guidance on CBAM verification and accreditation",
+          "zh": "欧委会官方指南：核查机构与国家认可机构如何执行 CBAM 核查与认可（2026-08-24 发布，PDF）",
+          "k": "gd",
+          "url": "https://taxation-customs.ec.europa.eu/document/download/030fe146-38e5-46b8-82b5-5f72da089a7b_en?filename=GUIDANCE%20ON%20CBAM%20VERIFICATION%20AND%20ACCREDITATION%20FOR%20VERIFIERS%20AND%20NATIONAL%20ACCREDITATION%20BODIES.pdf"
+        }
+      ]
+    }
+  ]
+}
