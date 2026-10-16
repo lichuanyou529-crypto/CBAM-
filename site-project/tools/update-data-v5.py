@@ -4,7 +4,7 @@
 （2026-10-14 抓取核对）。"""
 import json, io, os
 
-P = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data.json'))
+P = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'data.json'))
 d = json.load(io.open(P, encoding='utf-8'))
 
 SRC = 'https://taxation-customs.ec.europa.eu/carbon-border-adjustment-mechanism/cbam-legislation-and-guidance_en'

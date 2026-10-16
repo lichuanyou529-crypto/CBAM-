@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 const { JSDOM } = require('jsdom');
 
-const file = path.join(__dirname, '..', 'index.html');
+const file = path.join(__dirname, '..', '..', 'index.html');
 const html = fs.readFileSync(file, 'utf-8');
 const dom = new JSDOM(html, { runScripts: 'outside-only' });
 const d = dom.window.document;

@@ -3,7 +3,7 @@
 """V3 补录：案例模块新增 Intertek/Swedac 里程碑，法规模块补两个核验入口。"""
 import json, os
 
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 P = os.path.join(HERE, "data.json")
 d = json.load(open(P, encoding="utf-8"))
 

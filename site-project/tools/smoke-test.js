@@ -2,7 +2,7 @@ const { JSDOM, VirtualConsole } = require("jsdom");
 const fs = require("fs");
 const path = require("path");
 
-const DIR = "C:/Users/lichuanyou/WorkBuddy/2026-10-12-12-56-48/cbam-verifier-board";
+const DIR = "C:/Users/lichuanyou/WorkBuddy/2026-10-12-12-56-48";
 const HTML = fs.readFileSync(path.join(DIR, "index.html"), "utf8");
 
 function run(label, mode, cb) {

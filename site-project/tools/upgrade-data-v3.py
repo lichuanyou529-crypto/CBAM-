@@ -5,7 +5,7 @@
 """
 import json, os, sys
 
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 P = os.path.join(HERE, "data.json")
 d = json.load(open(P, encoding="utf-8"))
 

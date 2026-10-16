@@ -9,7 +9,7 @@
 """
 import os, re, json, sys, datetime
 
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 HTML = os.path.join(HERE, "index.html")
 JSONF = os.path.join(HERE, "data.json")
 

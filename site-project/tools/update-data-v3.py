@@ -8,7 +8,7 @@ V3 数据更新：补录瑞典 Swedac 认可的 Intertek Certification AB，
 """
 import json, os
 
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 P = os.path.join(HERE, "data.json")
 d = json.load(open(P, encoding="utf-8"))
 

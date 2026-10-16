@@ -3,7 +3,7 @@
 """去重 data.json 里的 regs / cases / tips / verifiers，并补一条 Swedac 认可库入口。"""
 import json, os
 
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 P = os.path.join(HERE, "data.json")
 d = json.load(open(P, encoding="utf-8"))
 

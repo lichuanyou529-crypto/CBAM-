@@ -8,7 +8,7 @@
 """
 import json, io, os
 
-P = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data.json'))
+P = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'data.json'))
 d = json.load(io.open(P, encoding='utf-8'))
 
 # 1) dims

@@ -7,7 +7,7 @@
 """
 import os, re, subprocess, sys, json, datetime
 
-HERE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+HERE = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 NODE = r"C:\Users\lichuanyou\.workbuddy\binaries\node\versions\22.22.2-3\node.exe"
 HTML = os.path.join(HERE, "index.html")
 OUT = os.path.join(HERE, "data.json")

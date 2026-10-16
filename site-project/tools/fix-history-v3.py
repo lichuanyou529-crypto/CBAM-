@@ -5,7 +5,7 @@
 """
 import json, io, os
 
-P = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'data.json')
+P = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', 'data.json')
 P = os.path.normpath(P)
 
 d = json.load(io.open(P, encoding='utf-8'))
