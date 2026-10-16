@@ -1,0 +1,15 @@
+# GitHub Pages（Jekyll）配置
+#
+# 站点本身只需要根目录的三个文件：index.html / data.json / qrcode.png。
+# 下面这些是内部工程文档与源素材，**不能**被发布成网页，否则会出现在
+# https://lichuanyou529-crypto.github.io/CBAM-/ 下被任意访问。
+#
+# 注意：不要在这里放 .nojekyll —— 那会关掉 Jekyll，下面的排除规则随之失效。
+
+exclude:
+  - TradeFreeHOT-方案/
+  - site-project/
+  - _src/
+  - _tmp/
+  - dist/
+  - _config.yml
