@@ -724,12 +724,20 @@ window.BAIDU_TONGJI_ID = "";
  *  因此日常更新只需重写 data.json，不必改本文件。
  *  需要把 data.json 同步回快照时，运行：python tools/embed-snapshot.py
  * ========================================================================= */
-var EMBEDDED_DATA =                     {
+var EMBEDDED_DATA =                         {
     "meta": {
-      "dataAsOf": "2026-10-14",
-      "sopDate": "2026-10-07",
+      "dataAsOf": "2026-10-26",
+      "sopDate": "2026-10-21",
       "officialListCount": 0,
       "changelog": [
+        {
+          "d": "2026-10-26",
+          "t": "【本周核验】欧委会官方名录仍为 <b>0 家</b>——CBAM verification 专页原文仍为「The list of accredited CBAM verifiers will be published on this page」；该页现有两个可用地址（/cbam-verification_en 已失效，现有效路径为 /carbon-border-adjustment-mechanism/cbam-verification_en）。《State-of-play CBAM accreditation》<b>换版至 2026-10-21</b>（上期为 10-07 版，本次重新下载比对 SHA1 不同）：四列合计由 <b>24 / 18 / 7 / 7</b> 变为 <b>24 / 20 / 7 / 7</b>——克罗地亚 HAA、斯洛文尼亚 SA 由「已同意、尚未受理」转为<b>已受理申请</b>，逐行统计与合计行<b>相符</b>；瑞典 Swedac 备注新增「已与英国 UKAS 签署安排」（上期仅列乌克兰 NAAU）；罗马尼亚 RENAR 仍为「已同意、尚未受理」，上期表中标注的「(Oct 2026)」受理时点已被新版删除。<br>逐条复核 7 家已开放第三国通道的 NAB（COFRAC、ESYD、ACCREDIA、RvA、PCA、SNAS、Swedac）官网与在线名录：ACCREDIA 官网《CBAM: first accreditations》新闻仍为 <b>2026-10-06</b> 版、未更新，CSA CI 决议最新仍为 <b>Rev.01（2026-10-09 签署）</b>；Swedac 认可库 <b>No.1639</b> 条目逐组复核，Intertek Certification AB 的 V&V 活动组（I–VIII、LI、LII，不含 L／CCUS）与有效期（2026-10-13 至 2031-10-13）<b>维持不变</b>；ESYD 官网新闻区<b>未见 CBAM 新条目</b>；COFRAC、RvA、PCA、SNAS 官网<b>未见 CBAM 认可公告</b>。机构数维持 <b>5 家</b>，六维打分与排名<b>均无变化</b>（80／80／72.5／72.5／70）。<br>二手源交叉比对（cbamguide.com 核查机构追踪页，更新至 2026-10-23）同为 <b>5 家</b>，未超过已收录数，<b>无漏采</b>。<br>本期新增一条<b>待核验线索</b>并已写入案例模块：有中文行业公众号（2026-10 中旬）称「DNV SE（德国）经 DAkkS 获 CBAM 认可」，但 DAkkS 官网未检索到对应的认可名录条目或公告，本榜<b>未收录</b>，标为待核验项。"
+        },
+        {
+          "d": "2026-10-19",
+          "t": "【本周核验】欧委会官方名录仍为 <b>0 家</b>——CBAM verification 专页原文仍为「The list of accredited CBAM verifiers will be published on this page」。《State-of-play CBAM accreditation》仍为 <b>2026-10-07 版</b>：本次重新下载比对，文件与 10-07 版<b>字节完全一致</b>（SHA1 相同），四列合计 <b>24 / 18 / 7 / 7</b>，逐行统计与合计行<b>相符</b>，本版未出现分项勾选数与合计不符的情况。逐条复核 7 家已开放第三国通道的 NAB（COFRAC、ESYD、ACCREDIA、RvA、PCA、SNAS、Swedac）在线名录与已公示认可文件，<b>未发现新增含 CBAM 活动组的认可条目</b>；机构数维持 5 家。二手源交叉比对（cbamguide.com 核查机构追踪页，更新至 2026-10-13）同为 5 家且活动组口径一致，<b>无漏采</b>。本期新增两项事实记录：①2026-10-15 欧委会与业界对话会上，多名业界代表提出经认可的 CBAM 核查机构<b>供给不足</b>（来源 Carbon Pulse 每日快讯 2026-10-16，属行业媒体二手源，欧委会尚未发布正式文件，本榜标为待核验项）；②Swedac 认可库 No.1639 条目复核，Intertek Certification AB 的 V&V 依据标准补充确认为 <b>SS-EN ISO/IEC 17029:2019</b>，活动组与有效期维持不变；其官网新闻称覆盖「全部六大行业」，与认可库条目不含 L 组（CCUS）存在口径差异，本榜以认可库为准并已并列说明。五家机构六维打分与排名<b>均无变化</b>。"
+        },
         {
           "d": "2026-10-14",
           "t": "【V5 法规模块重构】按欧委会 CBAM 官网三大板块重新组织：①CBAM 立法和指南（12 条法律文本）②CBAM 注册（2 条登记库实施细则）③CBAM 排放的验证（核查原则、计算方法、2025/2551 授权条例与官方核查指南）。全部条目抓取并核对自欧委会官网 cbam-legislation-and-guidance 页面，链接直达 EUR-Lex 原文；原 regs 卡片列表下线。同时②③④三个模块的列表改为热榜式行设计（排名序号 + 细分割线 + 悬停高亮）。"
@@ -757,7 +765,7 @@ var EMBEDDED_DATA =                     {
           "t": "首版发布（V1）。欧委会官方名录仍为 0 家；同步欧委会 10 月 7 日版 State-of-play：受理申请的 NAB 18 家、受理第三国申请的 7 家。"
         }
       ],
-      "generatedAt": "2026-10-14T16:35:13+08:00"
+      "generatedAt": "2026-10-26T09:29:44+08:00"
     },
     "dims": [
       {
@@ -809,7 +817,7 @@ var EMBEDDED_DATA =                     {
         "nabDecided": "2026-10-13",
         "entity": "INTERTEK CERTIFICATION AB（瑞典 Kista）",
         "certNo": "Swedac 认可号 1639",
-        "standard": "认可库条目按 (EU) 2025/2551 附件 I 逐组列示；具体依据标准以认可证书原件为准",
+        "standard": "Swedac 认可库 No.1639「验证与确认（V&V）」条目载明依据 SS-EN ISO/IEC 17029:2019（配套 SS-EN ISO 14064-3:2019、SS-EN ISO 14065:2021、SS-ISO 14066:2025）；CBAM 活动组依据 (EU) 2025/2551 附件 I 逐组列示",
         "validFrom": "2026-10-13",
         "validTo": "2031-10-13",
         "scopeGroups": [
@@ -836,9 +844,10 @@ var EMBEDDED_DATA =                     {
         "site": "https://www.intertek.com/",
         "srcs": [
           "Swedac 认可库条目 No. 1639（认可日 2026-10-13，有效期至 2031-10-13）",
-          "Swedac 官网新闻《Första svenska organet ackrediterat för CBAM-verifiering》（2026-10-13）"
+          "Swedac 官网新闻《Första svenska organet ackrediterat för CBAM-verifiering》（2026-10-13）",
+          "Intertek 官网新闻 2026-10《Intertek among the first globally accredited bodies to provide CBAM verification across all six regulated sectors》"
         ],
-        "note": "<b>范围缺口提示：</b>所列条目<b>不含 L 组（CCUS）</b>。若你的申报涉及碳捕集、利用与封存相关的排放扣减，需在签约前书面确认。",
+        "note": "<b>范围缺口提示：</b>所列条目<b>不含 L 组（CCUS）</b>。若你的申报涉及碳捕集、利用与封存相关的排放扣减，需在签约前书面确认。<br><b>口径差异提示：</b>Intertek 官网新闻（2026-10）称其认可覆盖「全部六大行业：钢铁、铝、化肥、水泥、氢、电力」，该表述<b>未提及 L 组</b>；Swedac 认可库条目逐组列示为 I–VIII、LI、LII，<b>确认不含 L 组</b>。本榜以发证机构认可库条目为准，两份口径并列记录。",
         "d": {
           "nab": 1,
           "entity": 1,
@@ -860,6 +869,10 @@ var EMBEDDED_DATA =                     {
           "annual": "待向机构确认"
         },
         "history": [
+          {
+            "d": "2026-10-19",
+            "t": "本期复核：Swedac 认可库 No.1639 条目逐组核对，活动组（I–VIII、LI、LII）与有效期（2026-10-13 至 2031-10-13）维持不变；依据标准补充确认为 SS-EN ISO/IEC 17029:2019。同时记录其官网新闻「全部六大行业」口径与认可库不含 L 组的差异，本榜以认可库为准。披露指数维持 80。"
+          },
           {
             "d": "2026-10-14",
             "t": "本榜首次收录（V3）。依据 Swedac 认可库条目 No.1639：认可日 2026-10-13，有效期至 2031-10-13，活动组 I–VIII、LI、LII。"
@@ -1265,10 +1278,10 @@ var EMBEDDED_DATA =                     {
         "n": "Croatian Accreditation Agency",
         "a": "HAA",
         "ag": 1,
-        "rd": 0,
+        "rd": 1,
         "tc": 0,
         "tcr": 0,
-        "rm": "已同意，尚未受理"
+        "rm": "本版起转为已受理"
       },
       {
         "c": "塞浦路斯",
@@ -1348,7 +1361,7 @@ var EMBEDDED_DATA =                     {
         "rd": 1,
         "tc": 1,
         "tcr": 1,
-        "rm": "第三国通道；已出 EmiCert"
+        "rm": "第三国通道；已出 EmiCert（证书 No.874-9）"
       },
       {
         "c": "匈牙利",
@@ -1468,7 +1481,7 @@ var EMBEDDED_DATA =                     {
         "rd": 0,
         "tc": 0,
         "tcr": 0,
-        "rm": "预计 2026 年 10 月起受理"
+        "rm": "已同意，尚未受理（新版已删除原先标注的 10 月受理时点）"
       },
       {
         "c": "斯洛伐克",
@@ -1485,10 +1498,10 @@ var EMBEDDED_DATA =                     {
         "n": "Slovenska Akreditacija",
         "a": "SA",
         "ag": 1,
-        "rd": 0,
+        "rd": 1,
         "tc": 0,
         "tcr": 0,
-        "rm": "预计 2026 年 11 月起受理"
+        "rm": "本版起转为已受理"
       },
       {
         "c": "西班牙",
@@ -1508,7 +1521,7 @@ var EMBEDDED_DATA =                     {
         "rd": 1,
         "tc": 1,
         "tcr": 1,
-        "rm": "已与乌克兰 NAAU 签署安排"
+        "rm": "第三国通道；已与乌克兰 NAAU、英国 UKAS 签署安排；已出 Intertek"
       }
     ],
     "timeline": [
@@ -1587,6 +1600,46 @@ var EMBEDDED_DATA =                     {
     ],
     "cases": [
       {
+        "d": "2026-10-26",
+        "type": "待核验线索",
+        "t": "有中文行业公众号称「DNV SE 已获德国 DAkkS 的 CBAM 认可」——本榜未检索到一手依据，暂不收录",
+        "s": "本期新机构扫描中检索到一条中文行业公众号（2026-10 中旬）发布的「CBAM 已获认可核查机构清单」，其中列有「DNV SE：德国，认可机构 DAkkS，含水泥、钢铁、铝、化肥及其他行业」。本榜据此回查：DAkkS 官网未检索到对应的认可名录条目或认可公告，欧委会名录仍为空，其他二手源（cbamguide.com，更新至 2026-10-23）列出的已获认可机构同为 5 家、不含 DNV。",
+        "takeaway": "这类清单在国内公众号里流转很快，但缺三样东西就没法用：发证 NAB 的一手公示、持证法人全称、逐组列明的活动组。缺任何一样，都不能写进合同依据。企业若被这类名单影响判断，做法只有一个：向对方索要认可证书附件原件，对照 (EU) 2025/2551 附件 I 的 11 个活动组逐组核；拿不出原件的，先按未获认可处理。",
+        "tags": [
+          "待核验项",
+          "DNV",
+          "DAkkS",
+          "新机构扫描"
+        ],
+        "src": "中文行业公众号《CBAM 正式收费期已来…》（2026-10 中旬，非一手源）；DAkkS 官网未检索到对应公示"
+      },
+      {
+        "d": "2026-10-21",
+        "type": "格局数据",
+        "t": "欧委会 State-of-play 换版：已受理申请的 NAB 由 18 家增至 20 家",
+        "s": "欧委会《State-of-play CBAM accreditation》更新至 2026-10-21 版（上期为 10-07 版）。四列合计由 24 / 18 / 7 / 7 变为 <b>24 / 20 / 7 / 7</b>：克罗地亚 HAA、斯洛文尼亚 SA 由「已同意、尚未受理」转为已受理；同意认可第三国与已受理第三国申请两列维持 7 / 7。逐行统计与合计行相符。瑞典 Swedac 备注新增「已与英国 UKAS 签署安排」。",
+        "takeaway": "第三国通道的 7 家 NAB 名单没有变化，变的是欧盟内部受理面在扩大——对中国出口企业没有直接影响，但意味着中国机构若想在欧设立主体走本国 NAB，可选项多了两个。真正要盯的仍是那 7 家：法国 COFRAC、希腊 ESYD、意大利 ACCREDIA、荷兰 RvA、波兰 PCA、斯洛伐克 SNAS、瑞典 Swedac。另外，罗马尼亚 RENAR 上期表中标注的「10 月起受理」在新版里被删掉了，仍为「已同意、尚未受理」，别按旧时点排计划。",
+        "tags": [
+          "State-of-play",
+          "2026-10-21 版",
+          "24/20/7/7"
+        ],
+        "src": "欧委会《State-of-play CBAM accreditation》2026-10-21 版 PDF"
+      },
+      {
+        "d": "2026-10-15",
+        "type": "业界动态",
+        "t": "业界在与欧委会对话会上提出：经认可的 CBAM 核查机构不够用",
+        "s": "据 Carbon Pulse 每日快讯（2026-10-16 发布），在 2026-10-15 欧盟委员会与业界的对话会上，多名业界代表表示关切：可为非欧盟生产商排放数据出具核查意见的经认可核查机构数量不足。欧委会官方名录截至 2026-10-19 仍未上线，可查证的已获认可机构仍为本榜收录的 5 家。",
+        "takeaway": "这条动态印证了本榜一直强调的判断：目前能查到的合规核查产能确实稀缺，且集中在希腊、意大利、瑞典三条线。对出口企业的实际含义是——锁定机构要提前，等到 2027 年上半年核查需求集中释放再找，排期与差旅成本都会失控。需说明的是，该消息来自行业媒体转述，欧委会尚未就此发布正式文件，本榜标注为待核验项。",
+        "tags": [
+          "欧委会对话会",
+          "核查产能",
+          "待核验项"
+        ],
+        "src": "Carbon Pulse 每日快讯（2026-10-16）"
+      },
+      {
         "d": "2026-10-13",
         "type": "认可里程碑",
         "t": "Swedac 认可 Intertek Certification AB——北欧首例，全球第 4 例",
@@ -1601,6 +1654,13 @@ var EMBEDDED_DATA =                     {
         "src": "Swedac 认可库条目 No.1639（https://ackrediteringar.swedac.se/en/1639）；Swedac 官网新闻《Första svenska organet ackrediterat för CBAM-verifiering》（2026-10-13）"
       },
       {
+        "d": "2026-10-07",
+        "type": "格局数据",
+        "t": "欧委会 State-of-play：24 家 NAB 同意提供认可，7 国开放第三国通道",
+        "s": "截至 2026-10-21 版：同意提供认可的 NAB 24 家、已受理认可申请的 20 家（克罗地亚 HAA、斯洛文尼亚 SA 于本版起转为已受理）；法国 COFRAC、希腊 ESYD、意大利 ACCREDIA、荷兰 RvA、波兰 PCA、斯洛伐克 SNAS、瑞典 Swedac 共 7 国的 NAB 受理第三国核查机构的申请，且 7 国均已实际开放受理。目前已走出成果的是希腊、意大利、瑞典三条线。",
+        "takeaway": "中国机构要做 CBAM 核查，入口在这 7 国 NAB；对中国出口企业来说，这决定了未来可选机构的国别分布与现场核查成本。"
+      },
+      {
         "d": "2026-09-28",
         "type": "NAB 集中批复",
         "t": "ACCREDIA 一次批复三家，但新闻稿与决议口径不一致",
@@ -1613,13 +1673,6 @@ var EMBEDDED_DATA =                     {
         "t": "ESYD 签发 No.874-9——第一份可对外的 CBAM 核查认可证书",
         "s": "希腊认可机构 ESYD 向 EMICERT CERTIFICATION SERVICES S.A. 签发认可证书 No.874-9 及附件 V1/20（2026-09-14）。附件逐组列示全部 11 个 CBAM 活动组，依据 ELOT EN ISO 14065:2022 与 ELOT EN ISO 14064-3:2019；证书有效期至 2030-06-09，该范围附件取代 2026-03-23 的旧版。",
         "takeaway": "这张证书第一次给出「CBAM 认可长什么样」的实物样本：发证机构、机构名称与唯一编号、认可范围与活动组、设立国、生效与到期日、依据文件——照这六项去核对其他机构，就能分清真认可和宣传稿。"
-      },
-      {
-        "d": "2026-10-07",
-        "type": "格局数据",
-        "t": "欧委会 State-of-play：24 家 NAB 同意提供认可，7 国开放第三国通道",
-        "s": "受理认可申请的 NAB 达 18 家；法国 COFRAC、希腊 ESYD、意大利 ACCREDIA、荷兰 RvA、波兰 PCA、斯洛伐克 SNAS、瑞典 Swedac 共 7 国的 NAB 受理第三国核查机构的申请，其中 5 国已实际开放受理。目前已走出成果的是希腊、意大利、瑞典三条线。",
-        "takeaway": "中国机构要做 CBAM 核查，入口在这 7 国 NAB；对中国出口企业来说，这决定了未来可选机构的国别分布与现场核查成本。"
       }
     ],
     "tips": [
