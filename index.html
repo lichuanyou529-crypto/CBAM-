@@ -724,12 +724,21 @@ window.BAIDU_TONGJI_ID = "";
  *  因此日常更新只需重写 data.json，不必改本文件。
  *  需要把 data.json 同步回快照时，运行：python tools/embed-snapshot.py
  * ========================================================================= */
-var EMBEDDED_DATA =                         {
+var EMBEDDED_DATA =                           {
     "meta": {
-      "dataAsOf": "2026-10-26",
+      "dataAsOf": "2026-11-02",
       "sopDate": "2026-10-21",
       "officialListCount": 0,
       "changelog": [
+        {
+          "d": "2026-11-02",
+          "errata": true,
+          "t": "【勘误】上期写「机构数维持 <b>5 家</b>」「二手源同为 5 家，<b>无漏采</b>」。实际荷兰 RvA 已于 <b>2026-10-22</b> 向埃及法人 Integrated Sustainable Solutions Company (ISSC) GHG Verification 授予 CBAM 认可（认可号 <b>V118</b>）。漏采原因：RvA「新认可」月度名单与新闻页 <b>2026-10-27</b> 才发布，二手源（cbamguide.com）更新至 10-23 时亦未收录，而上期只依新闻稿与二手源计数、未逐条比对 RvA 名录。依据：RvA《Nieuwe accreditaties oktober 2026》（2026-10-27）与认可附件 V118 英文版（签发日 2026-10-22）。"
+        },
+        {
+          "d": "2026-11-02",
+          "t": "【本周新机构】荷兰 RvA 于 <b>2026-10-22</b> 向埃及法人 <b>Integrated Sustainable Solutions Company (ISSC) GHG Verification</b> 授予 CBAM 认可，认可号 <b>V118</b>，范围 <b>I、II、III、IV、V、VII、VIII、LII 共 8 组</b>（<b>不含 VI、L、LI</b>），附件有效期 <b>2026-10-22 至 2027-11-01</b>，且附件原文标明为「<b>附限制条件的临时认可</b>」（granted 22-10-2026, valid up to 1 year）。这是本榜首次收录<b>非欧洲持证法人</b>，也是首家经<b>第三国通道</b>取得 CBAM 认可的机构；机构数由 <b>5 家增至 6 家</b>，披露指数 <b>75</b>，排名第 3（EmiCert 80、Intertek 80 并列第 1）。<br>官方名录仍为 <b>0 家</b>——CBAM verification 专页原文仍为「The list of accredited CBAM verifiers will be published on this page」。《State-of-play CBAM accreditation》仍为 <b>2026-10-21 版</b>，本期重新下载比对<b>字节完全一致</b>（SHA1 d88a479d…），四列合计 <b>24 / 20 / 7 / 7</b>，逐行统计与合计行相符。<br>通道侧两项进展：①斯洛伐克 <b>SNAS 自 2026-10-20 起正式受理</b> CBAM 认可申请，同步发布认可准则 <b>MSA-V/05</b>（引用 EA 的 CBAM 认可文件与 <b>EA-6/05 INF:2026</b>），明确可受理欧盟/欧洲经济区<b>境外</b>申请人，目前尚无获批机构；②ACCREDIA 2026-10-22 新闻披露：EA 于 <b>2026-10-05</b> 发布 <b>EA-6/05 INF</b>（欧洲 NAB 与第三国 NAB 的合作方式，含把评估工作外包给当地机构、由欧洲 NAB 承担认可责任），该工作组由 Accredia 牵头；Accredia 已与韩国 <b>NIER</b> 签署合作，可采用「意大利评审员远程 + 当地合格评审员在场」的混合模式。<br>瑞典 Swedac 认可库 <b>No.1639</b> 复核：Intertek Certification AB 活动组（I–VIII、LI、LII，不含 L）与有效期（2026-10-13 至 2031-10-13）<b>维持不变</b>；ESYD、COFRAC、PCA 官网<b>未见 CBAM 新公告</b>；DAkkS 站内检索 CBAM <b>0 条结果</b>，上期「DNV SE 经 DAkkS 获认可」的线索<b>仍无法核实</b>，继续列为待核验项。<br>二手源交叉比对：cbamguide.com 核查页（更新至 2026-10-23）仍为 <b>5 家</b>，<b>低于</b>本榜一手名录的 6 家——本期首次出现二手源滞后于一手名录，不再以二手源计数作为漏采判据，改以各 NAB 名录逐条比对为准。"
+        },
         {
           "d": "2026-10-26",
           "t": "【本周核验】欧委会官方名录仍为 <b>0 家</b>——CBAM verification 专页原文仍为「The list of accredited CBAM verifiers will be published on this page」；该页现有两个可用地址（/cbam-verification_en 已失效，现有效路径为 /carbon-border-adjustment-mechanism/cbam-verification_en）。《State-of-play CBAM accreditation》<b>换版至 2026-10-21</b>（上期为 10-07 版，本次重新下载比对 SHA1 不同）：四列合计由 <b>24 / 18 / 7 / 7</b> 变为 <b>24 / 20 / 7 / 7</b>——克罗地亚 HAA、斯洛文尼亚 SA 由「已同意、尚未受理」转为<b>已受理申请</b>，逐行统计与合计行<b>相符</b>；瑞典 Swedac 备注新增「已与英国 UKAS 签署安排」（上期仅列乌克兰 NAAU）；罗马尼亚 RENAR 仍为「已同意、尚未受理」，上期表中标注的「(Oct 2026)」受理时点已被新版删除。<br>逐条复核 7 家已开放第三国通道的 NAB（COFRAC、ESYD、ACCREDIA、RvA、PCA、SNAS、Swedac）官网与在线名录：ACCREDIA 官网《CBAM: first accreditations》新闻仍为 <b>2026-10-06</b> 版、未更新，CSA CI 决议最新仍为 <b>Rev.01（2026-10-09 签署）</b>；Swedac 认可库 <b>No.1639</b> 条目逐组复核，Intertek Certification AB 的 V&V 活动组（I–VIII、LI、LII，不含 L／CCUS）与有效期（2026-10-13 至 2031-10-13）<b>维持不变</b>；ESYD 官网新闻区<b>未见 CBAM 新条目</b>；COFRAC、RvA、PCA、SNAS 官网<b>未见 CBAM 认可公告</b>。机构数维持 <b>5 家</b>，六维打分与排名<b>均无变化</b>（80／80／72.5／72.5／70）。<br>二手源交叉比对（cbamguide.com 核查机构追踪页，更新至 2026-10-23）同为 <b>5 家</b>，未超过已收录数，<b>无漏采</b>。<br>本期新增一条<b>待核验线索</b>并已写入案例模块：有中文行业公众号（2026-10 中旬）称「DNV SE（德国）经 DAkkS 获 CBAM 认可」，但 DAkkS 官网未检索到对应的认可名录条目或公告，本榜<b>未收录</b>，标为待核验项。"
@@ -765,7 +774,7 @@ var EMBEDDED_DATA =                         {
           "t": "首版发布（V1）。欧委会官方名录仍为 0 家；同步欧委会 10 月 7 日版 State-of-play：受理申请的 NAB 18 家、受理第三国申请的 7 家。"
         }
       ],
-      "generatedAt": "2026-10-26T09:29:44+08:00"
+      "generatedAt": "2026-11-02T09:42:50+08:00"
     },
     "dims": [
       {
@@ -876,6 +885,73 @@ var EMBEDDED_DATA =                         {
           {
             "d": "2026-10-14",
             "t": "本榜首次收录（V3）。依据 Swedac 认可库条目 No.1639：认可日 2026-10-13，有效期至 2031-10-13，活动组 I–VIII、LI、LII。"
+          }
+        ]
+      },
+      {
+        "name": "ISSC 综合可持续解决方案（埃及）",
+        "nameEn": "INTEGRATED SUSTAINABLE SOLUTIONS COMPANY (ISSC) GHG VERIFICATION",
+        "group": "ISSC（埃及达米埃塔）",
+        "groupNote": "2025-07-03 起持 EGAC 的 V&V 认可（ISO 14064-1/-2、ISO 14067），本项为其首个 CBAM 认可",
+        "nab": "RvA",
+        "nabCn": "荷兰",
+        "announced": "2026-10-27",
+        "nabDecided": "2026-10-22",
+        "entity": "INTEGRATED SUSTAINABLE SOLUTIONS COMPANY (ISSC) GHG VERIFICATION（埃及达米埃塔）",
+        "certNo": "RvA 认可号 V118",
+        "standard": "EN ISO/IEC 17029:2019（附件同时载明 ISO 14065:2020、ISO 14066:2023、ISO 14064-3:2019）",
+        "validFrom": "2026-10-22",
+        "validTo": "2027-11-01",
+        "scopeGroups": [
+          "I",
+          "II",
+          "III",
+          "IV",
+          "V",
+          "VII",
+          "VIII",
+          "LII"
+        ],
+        "scopePending": [],
+        "scopeText": "RvA 认可附件（英文版，V118，2026-10-22 签发）逐组列明：I 煅烧粘土／水泥熟料／水泥／高铝水泥、II 氢／氨、III 硝酸、IV 尿素／混合肥料、V 烧结矿／生铁／DRI／粗钢、VII 未锻轧铝、VIII 钢铁制品／铝制品，LII 间接排放（作为上述各组项下的间接排放项逐条列出）。<b>未列 VI（铁合金）、L（CCUS）、LI（进口电力）</b>。",
+        "route": "非欧盟法人经 RvA 第三国通道取得（(EU) 2025/2551 第 3(2) 条路径）；附件原文标注为「临时认可、附限制条件」，授予日 2026-10-22，有效期 1 年",
+        "registry": "未公开，须在取得认可后两个月内完成 CBAM 登记库注册",
+        "officialListed": false,
+        "china": {
+          "v": 0,
+          "t": "认可附件载明的活动场所仅埃及达米埃塔（Sror Street 62）一处；截至本期未检索到面向中国客户的中文服务宣介、中国境内分支或中国项目案例。"
+        },
+        "site": "https://theissc.com/",
+        "srcs": [
+          "RvA 认可附件 V118（英文版，2026-10-22 签发，有效期至 2027-11-01）",
+          "RvA《Nieuwe accreditaties oktober 2026》2026-10-27（列明 V118 与工作领域 CBAM）",
+          "EGAC 名录：Integrated Sustainable Solutions Company（2025-07-03 认可）"
+        ],
+        "note": "<b>⚠ 临时认可：</b>附件原文写明「temporary accreditation with restrictive conditions」，授予日 2026-10-22，仅有效<b>至 2027-11-01</b>。这意味着<b>报告签发日必须落在这段窗口内</b>，且转正常规认可前仍受限制条件约束——签约时把这两点写进合同，不要按五年有效期的常规假设排计划。<br><b>范围缺口提示：</b>未获 <b>VI 组（铁合金）</b>、<b>L 组（CCUS）</b>、<b>LI 组（进口电力）</b>授权。紧固件、钢丝线材、五金件、铝型材所在的<b>第 VIII 组已覆盖</b>；但铁合金、进口电力、碳捕集相关排放扣减须另找机构。<br><b>意义提示：</b>这是首个经第三国通道获批、且法人不在欧洲的机构，说明第 3(2) 条路径已实际跑通——对中国机构而言，先例已存在，但持证主体必须是申请认可的法人本身，集团品牌不顶用。",
+        "d": {
+          "nab": 1,
+          "entity": 1,
+          "cert": 1,
+          "scope": 1,
+          "registry": 0,
+          "china": 0
+        },
+        "biz": {
+          "price": "未公开",
+          "pricing": "未公开（签约前须向机构索取书面报价）",
+          "area": "附件载明活动场所仅埃及达米埃塔一处",
+          "langs": "阿拉伯语 / 英文（官网与认可文件均为英文）",
+          "ob": "未公开（可否与中国本地机构做 OB 联合现场核查，须向机构确认）"
+        },
+        "tags": {
+          "sign": "有条件（临时认可，附限制条件；报告须在 2027-11-01 前签发）",
+          "remote": "未公开",
+          "annual": "待向机构确认"
+        },
+        "history": [
+          {
+            "d": "2026-11-02",
+            "t": "本榜首次收录。RvA 认可号 V118，2026-10-22 授予，附件有效期至 2027-11-01，标注为附限制条件的临时认可；范围 I、II、III、IV、V、VII、VIII、LII 共 8 组，缺 VI、L、LI。披露指数 75。"
           }
         ]
       },
@@ -1071,7 +1147,7 @@ var EMBEDDED_DATA =                         {
           "EmiCert 官网公告 2026-09-23 / 华测检测认证集团公告",
           "CTI 华测检测官方服务页《CBAM 核查/预核查服务》"
         ],
-        "note": "<b>更正说明：</b>V2 版把 LI／LII 列为「待核验项」，系误读附件中「对应 EU ETS 活动组」列的 n/a。现已从 ESYD 官网直接下载附件核对，确认为 <b>11 组全覆盖</b>，披露指数回调至 85。<br><b>提示：</b>ESYD 在线认可名录的可访问性曾出现波动，建议以证书附件原件为最终依据。",
+        "note": "<b>更正说明：</b>V2 版把 LI／LII 列为「待核验项」，系误读附件中「对应 EU ETS 活动组」列的 n/a。现已从 ESYD 官网直接下载附件核对，确认为 <b>11 组全覆盖</b>，披露指数回调至 80。<br><b>提示：</b>ESYD 在线认可名录的可访问性曾出现波动，建议以证书附件原件为最终依据。",
         "d": {
           "nab": 1,
           "entity": 1,
@@ -1391,7 +1467,7 @@ var EMBEDDED_DATA =                         {
         "rd": 1,
         "tc": 1,
         "tcr": 1,
-        "rm": "第三国通道；已出必维/RINA/SGS"
+        "rm": "第三国通道；已出必维/RINA/SGS；2026-10-22 与韩国 NIER 签署合作"
       },
       {
         "c": "拉脱维亚",
@@ -1441,7 +1517,7 @@ var EMBEDDED_DATA =                         {
         "rd": 1,
         "tc": 1,
         "tcr": 1,
-        "rm": "已与土耳其 TÜRKAK 签署安排"
+        "rm": "第三国通道；已出 ISSC（V118，埃及法人，2026-10-22，临时认可至 2027-11-01）"
       },
       {
         "c": "挪威",
@@ -1491,7 +1567,7 @@ var EMBEDDED_DATA =                         {
         "rd": 1,
         "tc": 1,
         "tcr": 1,
-        "rm": "本版起转为已受理"
+        "rm": "第三国通道；2026-10-20 起正式受理申请，尚无获批机构"
       },
       {
         "c": "斯洛文尼亚",
@@ -1580,6 +1656,18 @@ var EMBEDDED_DATA =                         {
         "done": 1
       },
       {
+        "d": "2026-10-20",
+        "t": "SNAS 开放 CBAM 认可受理",
+        "s": "斯洛伐克 SNAS 自该日起受理申请，并发布认可准则 MSA-V/05。",
+        "done": 1
+      },
+      {
+        "d": "2026-10-22",
+        "t": "RvA 向埃及 ISSC 授予 CBAM 认可（V118）",
+        "s": "首个经第三国通道获批的非欧洲法人；附限制条件的临时认可，有效期至 2027-11-01。",
+        "done": 1
+      },
+      {
         "d": "2027-01",
         "t": "登记库内可签发首份核查报告",
         "s": "只有完成登记的机构才能出具供申报人引用的正式报告。",
@@ -1599,6 +1687,49 @@ var EMBEDDED_DATA =                         {
       }
     ],
     "cases": [
+      {
+        "d": "2026-10-22",
+        "type": "新机构",
+        "t": "RvA 把 CBAM 认可发给了埃及法人：V118，8 个活动组，有效期只有 1 年",
+        "s": "荷兰 RvA 于 2026-10-22 向 Integrated Sustainable Solutions Company (ISSC) GHG Verification（埃及达米埃塔）授予 CBAM 认可，认可号 V118，范围 I、II、III、IV、V、VII、VIII、LII 共 8 组，附件有效期 2026-10-22 至 2027-11-01。附件原文标注「temporary accreditation with restrictive conditions」。RvA 的月度新认可名单于 2026-10-27 公布。",
+        "takeaway": "三件事值得记住：①<b>第三国通道跑通了</b>——非欧盟法人可以直接向 RvA 申请并拿到 CBAM 认可，不必在欧盟设主体；②<b>别把「临时」当「永久」</b>——这份认可只到 2027-11-01，报告签发日必须落在这个窗口内，拿去套五年有效期的合同条款会出事；③<b>范围不是全组</b>——缺 VI 铁合金、L CCUS、LI 进口电力，紧固件与钢铝制品（VIII）在内。签之前把这三条逐条问清。",
+        "tags": [
+          "新机构",
+          "RvA",
+          "V118",
+          "埃及",
+          "临时认可"
+        ],
+        "src": "RvA 认可附件 V118（英文版，2026-10-22）；RvA《Nieuwe accreditaties oktober 2026》2026-10-27"
+      },
+      {
+        "d": "2026-10-20",
+        "type": "通道进展",
+        "t": "斯洛伐克 SNAS 开始受理 CBAM 认可申请，并明确对欧盟外申请人开放",
+        "s": "SNAS 公告自 2026-10-20 起受理 CBAM 认可申请，对象为核查与确认机构；公告明确「已获认可的核查机构与新申请人、包括注册在欧盟与欧洲经济区之外的机构」均可申请。同步发布认可准则 MSA-V/05《核查机构用于 EU CBAM 条例的认可》（引用 EA-X/XX M:2026 与 EA-6/05 INF:2026）。截至本期 SNAS 尚无获批机构。",
+        "takeaway": "七家第三国通道 NAB 里，此前真正「已受理」的只有五家在动，SNAS 这次把「已受理」从状态表上的一个勾变成了可核对的日期。对中国机构的意义：多了一个可以递材料的窗口；对出口企业的意义：短期内不增加可选机构，别把「开放受理」误读成「已有持证机构」。",
+        "tags": [
+          "SNAS",
+          "第三国通道",
+          "受理",
+          "2026-10-20"
+        ],
+        "src": "SNAS 官网公告《SNAS rozširuje akreditačné služby o regulovanú oblasť CBAM》（生效 2026-10-20）"
+      },
+      {
+        "d": "2026-10-22",
+        "type": "机制变化",
+        "t": "EA 发布 EA-6/05 INF：欧洲 NAB 可以把评估工作外包给第三国 NAB，但认可责任留在欧洲",
+        "s": "EA 于 2026-10-05 发布 EA-6/05 INF《EU CBAM：欧洲 NAB 与第三国 NAB 的合作》（2026-09-15 批准）。ACCREDIA 2026-10-22 新闻说明：该文件由 Accredia 牵头的 EA 工作组起草，允许欧洲 NAB 与第三国 NAB 合作，包括把部分评估活动交给当地机构、邀请当地技术人员参与，但认可责任仍由欧洲 NAB 承担；Accredia 已与韩国 NIER 签署合作，可采用「意大利评审员远程 + 经 Accredia 资格确认的 NIER 评审员现场」混合模式。",
+        "takeaway": "这条对中国的意义不是「马上多一家机构」，而是<b>路径变清楚了</b>：第三国机构申请 CBAM 认可，现场评估可以由本国认可机构的人来做，欧洲 NAB 远程把关。对出口企业，短期只体现为一件事——未来可能出现持证主体在境外、现场核查由本国团队执行的组合，签约前要问清「谁来现场、谁签字」。",
+        "tags": [
+          "EA-6/05",
+          "ACCREDIA",
+          "NIER",
+          "合作机制"
+        ],
+        "src": "EA-6/05 INF（2026-10-05 发布）；ACCREDIA 新闻 2026-10-22《CBAM, documenti della Commissione europea e di EA e accordo con la Corea del Sud》"
+      },
       {
         "d": "2026-10-26",
         "type": "待核验线索",
