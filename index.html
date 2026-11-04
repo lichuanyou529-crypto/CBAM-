@@ -131,7 +131,7 @@ tbody tr:hover{background:#fafcfb}
 td.cnt{font-weight:700}
 td.grp{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-weight:800;white-space:nowrap}
 .mk{font-weight:800;font-size:14px}
-.mk.y{color:var(--green-2)} .mk.n{color:var(--red)} .mk.p{color:var(--amber)}
+.mk.y{color:var(--green-2)} .mk.n{color:var(--red)} .mk.p{color:var(--amber)} .mk.u{color:var(--t2,#8a94a6)}
 .nabcode{font-weight:800;color:var(--green-2)}
 .y{color:var(--green-2);font-weight:800}
 .n{color:#a9b5b0}
@@ -489,7 +489,7 @@ window.BAIDU_TONGJI_ID = "";
 
     <div class="alert">
       <span class="a-title">🔑 本期最实操的一条结论</span>
-      <b>第 VIII 组 = 钢铁制品与铝制品</b>，中国出口的紧固件、钢丝与线材制品、五金件、铝型材等下游制品<b>都落在这一组</b>。已公示的 5 家中，<b>没有任何两家的活动组完全一致</b>：EmiCert 与 RINA 覆盖全部 11 组；必维意大利缺 LI（进口电力）；SGS ICS 意大利缺 III（硝酸）、V（粗钢及前体）、VII（未锻轧铝）；Intertek 缺 L（CCUS）。
+      <b>第 VIII 组 = 钢铁制品与铝制品</b>，中国出口的紧固件、钢丝与线材制品、五金件、铝型材等下游制品<b>都落在这一组</b>。已公示的 7 家中，<b>没有任何两家的活动组完全一致</b>：EmiCert 与 RINA 覆盖全部 11 组；必维意大利缺 LI（进口电力）；SGS ICS 意大利缺 III（硝酸）、V（粗钢及前体）、VII（未锻轧铝）；Intertek 缺 L（CCUS）；ISSC（埃及）缺 VI、L、LI；<b>TÜV Austria（希腊）尚未逐组披露</b>——官宣只到「获 ESYD 认可」，逐组范围须待认可附件核验。
       <br><b>⚠ 特别注意：</b>ACCREDIA 对 RINA 与 SGS 的<b>新闻稿与决议 Rev.01 两份文本范围不一致</b>，且均未载明认可证书编号。这两家的<b>最终范围必须索取认可附件原件确认</b>。<b>选错机构，等于报告做完了却报不上去。</b>
     </div>
 
@@ -501,7 +501,7 @@ window.BAIDU_TONGJI_ID = "";
         <tbody id="mx-body"></tbody>
       </table>
     </div>
-    <p class="hint">✓ 已获授权　△ 官方口径称覆盖、逐组证据待补　✗ 未获授权。<b>本表依据 ESYD 证书附件（No.874-9）、Swedac 认可库条目（No.1639）、ACCREDIA 决议 Rev.01（2026-10-09 签署）整理，最终以认可证书原件为准。</b></p>
+    <p class="hint">✓ 已获授权　△ 官方口径称覆盖、逐组证据待补　✗ 未获授权　— 未逐组披露（机构仅官宣获认可，待认可附件核验）。<b>本表依据 ESYD 证书附件（No.874-9）、Swedac 认可库条目（No.1639）、RvA 认可附件（V118）、ACCREDIA 决议 Rev.01（2026-10-09 签署）及 TÜV Austria 官宣（2026-10-30）整理，最终以认可证书原件为准。</b></p>
 
     <div class="ggrid" id="g-grid" style="margin-top:18px"></div>
 
@@ -589,7 +589,7 @@ window.BAIDU_TONGJI_ID = "";
       </div>
       <div class="step">
         <h4>核活动组覆盖，这一步最容易被跳过</h4>
-        <p>拿自己的产品清单，对照「活动组覆盖对照矩阵」逐组比对。<b>重点先看 VIII 组</b>（下游钢铁／铝制品）与 LI 组（进口电力）——目前 5 家已公示机构的覆盖并不一致。只要有一个环节不在范围内，整份报告就有问题——不是"少报一点"，是客户那边<b>报不上去</b>。</p>
+        <p>拿自己的产品清单，对照「活动组覆盖对照矩阵」逐组比对。<b>重点先看 VIII 组</b>（下游钢铁／铝制品）与 LI 组（进口电力）——已公示机构的覆盖并不一致，个别机构尚未逐组披露。只要有一个环节不在范围内，整份报告就有问题——不是"少报一点"，是客户那边<b>报不上去</b>。</p>
       </div>
       <div class="step">
         <h4>核 CBAM 登记库注册状态</h4>
@@ -724,12 +724,16 @@ window.BAIDU_TONGJI_ID = "";
  *  因此日常更新只需重写 data.json，不必改本文件。
  *  需要把 data.json 同步回快照时，运行：python tools/embed-snapshot.py
  * ========================================================================= */
-var EMBEDDED_DATA =                           {
+var EMBEDDED_DATA =                               {
     "meta": {
-      "dataAsOf": "2026-11-02",
+      "dataAsOf": "2026-11-04",
       "sopDate": "2026-10-21",
       "officialListCount": 0,
       "changelog": [
+        {
+          "d": "2026-11-04",
+          "t": "【本周新机构】TÜV Austria 集团 <b>2026-10-30</b> 官宣：旗下希腊公司 <b>TÜV AUSTRIA HELLAS LTD.</b>（雅典）经希腊 <b>ESYD</b> 授予 CBAM 核查（CBAM Verification）认可，自称「欧洲首批获认可的 CBAM 核查机构之一」；机构数由 <b>6 家增至 7 家</b>（ESYD 2 家、ACCREDIA 3 家、Swedac 1 家、RvA 1 家）。<br><b>披露缺口提示：</b>官宣与机构服务页均未载明认可编号、认可决定日期、有效期与<b>逐组活动组范围</b>——其宣传覆盖钢铁、铝、水泥、化肥等行业系<b>项目经验口径，非认可范围</b>；本榜检索 ESYD 公开名录暂未获取到对应条目。上述各项已全部列为待核验项，其披露指数 <b>28</b>，排名第 7。对中国企业的现实意义：TÜV 奥地利集团在华设有成熟本地团队（上海、宁波、苏州、广州等地，法人含奥煌检测技术服务（上海）有限公司），上海团队已以中文发布 CBAM 核查差距评估与准备度评估服务，属于<b>官宣口径明确、一手文件未齐</b>的典型——签约前务必索取 ESYD 认可证书附件原件，对照 11 个活动组逐组核对。<br>欧委会官方名录仍为 <b>0 家</b>（本期复核 CBAM verification 专页，原文仍为「The list of accredited CBAM verifiers will be published on this page」）；《State-of-play CBAM accreditation》仍为 <b>2026-10-21 版</b>（专页挂载文件未换版）。二手源 cbamguide.com 核查页更新至 2026-10-23 仍为 <b>5 家</b>，继续滞后于本榜一手口径。"
+        },
         {
           "d": "2026-11-02",
           "errata": true,
@@ -774,7 +778,7 @@ var EMBEDDED_DATA =                           {
           "t": "首版发布（V1）。欧委会官方名录仍为 0 家；同步欧委会 10 月 7 日版 State-of-play：受理申请的 NAB 18 家、受理第三国申请的 7 家。"
         }
       ],
-      "generatedAt": "2026-11-02T09:42:50+08:00"
+      "generatedAt": "2026-11-04T13:26:32+08:00"
     },
     "dims": [
       {
@@ -1259,6 +1263,64 @@ var EMBEDDED_DATA =                           {
             "t": "本榜首次收录。"
           }
         ]
+      },
+      {
+        "name": "TÜV 奥地利（希腊）",
+        "nameEn": "TÜV AUSTRIA HELLAS LTD.",
+        "group": "TÜV Austria 集团（奥地利）",
+        "groupNote": "持证主体为集团希腊公司，总部雅典（Mesogeion Avenue 429, Agia Paraskevi）；集团官网称服务网络覆盖 40 余国，TIC Council 成员",
+        "nab": "ESYD",
+        "nabCn": "希腊",
+        "announced": "2026-10-30",
+        "nabDecided": null,
+        "entity": "TÜV AUSTRIA HELLAS LTD.（希腊雅典）",
+        "certNo": "未公开（机构口径载明经 ESYD 认可，官宣未载明认可编号）",
+        "standard": "未公开（官宣称「按适用的欧洲要求」提供 CBAM 核查服务；CBAM 认可统一依据 EN ISO/IEC 17029:2019，该机构对应条目待 ESYD 名录核验）",
+        "validFrom": null,
+        "validTo": null,
+        "scopeGroups": [],
+        "scopePending": [],
+        "scopeText": "官宣与机构服务页均<b>未逐组披露</b>活动组授权范围；宣传中「钢铁、铝、水泥、化肥等行业」为项目经验口径，<b>非认可范围</b>。逐组范围以 ESYD 认可证书附件原件为准。",
+        "route": "由 ESYD 授予（与 EmiCert 同一发证 NAB）；官宣未载明认可决定日期与是否涉及第三国安排",
+        "registry": "未公开，须在取得认可后两个月内完成 CBAM 登记库注册",
+        "officialListed": false,
+        "china": {
+          "v": 1,
+          "t": "集团在华设有多家法人（含奥煌检测技术服务（上海）有限公司），覆盖上海、宁波、金华、苏州、无锡、合肥、广州、深圳等城市；上海团队已以中文公开发布 CBAM 核查差距评估与准备度评估服务并宣介本次认可。持证主体为希腊法人，中国团队能否执行现场核查须向机构书面确认。"
+        },
+        "site": "https://gr.tuvaustria.com/en/956-2023-cbam-verification",
+        "srcs": [
+          "TÜV AUSTRIA 集团官网新闻《TÜV AUSTRIA Among the First Accredited CBAM Verifiers in Europe》（2026-10-30）",
+          "TÜV AUSTRIA Hellas 官网 CBAM Verification 服务页（载明为经 ESYD 认可的服务，覆盖 2026 年及以后数据的强制核查）",
+          "TÜV 奥地利中国官方公众号官宣（2026-11 初，含上海团队联系方式）"
+        ],
+        "note": "<b>待核验项：</b>①ESYD 认可库条目及认可编号——本榜检索 ESYD 公开名录暂未获取到对应条目；②逐组活动组范围；③认可附件及有效期。三样缺任何一样都不能作为合同依据，签约前须索取 ESYD 认可证书附件原件，对照 (EU) 2025/2551 附件 I 的 11 个活动组逐组核对。<br><b>口径提示：</b>官宣称「欧洲首批获认可的 CBAM 核查机构之一」，但未公开认可日期与编号；「覆盖钢铁、铝、水泥、化肥等」系<b>项目经验口径，非认可范围</b>，两者不可混用。",
+        "d": {
+          "nab": 0.5,
+          "entity": 1,
+          "cert": 0,
+          "scope": 0,
+          "registry": 0,
+          "china": 1
+        },
+        "biz": {
+          "price": "未公开",
+          "pricing": "未公开（签约前须向机构索取书面报价）",
+          "area": "希腊法人持证；集团口径为 40 余国服务网络（含中国多个城市）",
+          "langs": "英文 / 希腊文 / 德文；集团中国团队提供中文服务",
+          "ob": "未公开（可否做 OB 联合现场核查须向机构确认）"
+        },
+        "tags": {
+          "sign": "有（机构官宣已获 ESYD 认可；认可编号与登记库注册状态未公开）",
+          "remote": "未公开",
+          "annual": "待向机构确认"
+        },
+        "history": [
+          {
+            "d": "2026-11-04",
+            "t": "本榜首次收录。依据 TÜV Austria 集团官网 2026-10-30 官宣：TÜV AUSTRIA HELLAS LTD. 经 ESYD 授予 CBAM Verification 认可。ESYD 名录条目、认可编号与逐组活动组范围均为待核验项，披露指数 27.5。"
+          }
+        ]
       }
     ],
     "groups": [
@@ -1687,6 +1749,20 @@ var EMBEDDED_DATA =                           {
       }
     ],
     "cases": [
+      {
+        "d": "2026-10-30",
+        "type": "新机构",
+        "t": "TÜV 奥地利经希腊 ESYD 拿到 CBAM 认可，但编号、范围、有效期均未公开",
+        "s": "TÜV Austria 集团 2026-10-30 官宣：旗下希腊公司 TÜV AUSTRIA HELLAS LTD.（雅典）经 ESYD 授予 CBAM 核查认可，自称欧洲首批获认可的 CBAM 核查机构之一。官宣与机构服务页均未载明认可编号、认可决定日期、有效期与逐组活动组范围。集团称已在多个 CBAM 行业交付大量核查项目、服务网络覆盖 40 余国；中国子公司（上海等地）同步以中文宣介，并推出 CBAM 核查差距评估与准备度评估服务。",
+        "takeaway": "这家机构的看点在<b>中国本地服务能力</b>：欧洲持证法人 + 中国本地团队的组合，对需要中文现场沟通的中国出口企业有实际价值。但按本榜口径，它目前只有「官宣」这一层证据——认可编号、逐组范围、ESYD 名录条目三样都没有。正确姿势：可以列入候选并开始接触，但<b>签约前必须拿到 ESYD 认可附件原件</b>，对照 11 个活动组逐组核对你的产品所在组（尤其 VIII 组紧固件/钢铝制品）；拿不出原件之前，先按「未核实」处理，别把官宣当认可证书用。",
+        "tags": [
+          "TÜV Austria",
+          "ESYD",
+          "官宣",
+          "待核验"
+        ],
+        "src": "TÜV AUSTRIA 集团官网新闻（2026-10-30）；TÜV AUSTRIA Hellas CBAM Verification 服务页；TÜV 奥地利中国公众号官宣"
+      },
       {
         "d": "2026-10-22",
         "type": "新机构",
@@ -2283,10 +2359,16 @@ var EMBEDDED_DATA =                           {
 
   /* ---------- 活动组覆盖对照矩阵 ---------- */
   (function(){
-    var order = ["EMICERT CERTIFICATION SERVICES S.A.","INTERTEK CERTIFICATION AB","BUREAU VERITAS ITALIA S.P.A.","SGS ICS ITALIA S.R.L.","RINA SERVICES S.A."];
+    var order = ["EMICERT CERTIFICATION SERVICES S.A.","INTERTEK CERTIFICATION AB","BUREAU VERITAS ITALIA S.P.A.","SGS ICS ITALIA S.R.L.","RINA SERVICES S.A.","INTEGRATED SUSTAINABLE SOLUTIONS COMPANY (ISSC) GHG VERIFICATION","TÜV AUSTRIA HELLAS LTD."];
+    var shortNames = {
+      "EMICERT CERTIFICATION SERVICES S.A.":"EmiCert S.A.",
+      "INTEGRATED SUSTAINABLE SOLUTIONS COMPANY (ISSC) GHG VERIFICATION":"ISSC（埃及）",
+      "TÜV AUSTRIA HELLAS LTD.":"TÜV Austria（希腊）"
+    };
     var vs = order.map(function(e){ return D.verifiers.filter(function(v){ return v.nameEn === e; })[0]; }).filter(Boolean);
 
     function mark(v, g){
+      if(v.scopeGroups.length === 0 && v.scopePending.length === 0) return '<span class="mk u">—</span>';
       if(v.scopeGroups.indexOf(g) >= 0) return '<span class="mk y">✓</span>';
       if(v.scopePending.indexOf(g) >= 0) return '<span class="mk p">△</span>';
       return '<span class="mk n">✗</span>';
@@ -2298,7 +2380,7 @@ var EMBEDDED_DATA =                           {
         + "<td>" + esc(g.t) + "</td>" + cells + "</tr>";
     }).join("");
 
-    var head = vs.map(function(v){ return "<th>" + esc(v.nameEn.replace("EMICERT CERTIFICATION SERVICES S.A.","EmiCert S.A.")) + "</th>"; }).join("");
+    var head = vs.map(function(v){ return "<th>" + esc(shortNames[v.nameEn] || v.nameEn) + "</th>"; }).join("");
     $("#mx-table").querySelector("thead tr").innerHTML = "<th>活动组</th><th>覆盖内容</th>" + head;
     $("#mx-body").innerHTML = rows;
 
