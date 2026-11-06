@@ -299,9 +299,20 @@ footer strong{color:#fff;display:block;margin-bottom:5px;font-size:13.5px}
   .vrank .rk{width:44px;height:44px;margin-left:20px;font-size:17px}
   .vcard .dims,.vcard .vbody{border-bottom-left-radius:13px;border-bottom-right-radius:13px}
 }
+/* === 右上角漂浮联系电话 === */
+.float-tel{position:fixed;top:14px;right:14px;z-index:90;display:inline-flex;align-items:center;gap:7px;
+  background:linear-gradient(135deg,#0b6b52,#128464);color:#fff;text-decoration:none;
+  padding:8px 14px;border-radius:999px;font-size:13.5px;font-weight:700;line-height:1;
+  box-shadow:0 6px 18px -4px rgba(11,107,82,.55);border:1px solid rgba(255,255,255,.35);
+  animation:ftel 2.8s ease-in-out infinite}
+.float-tel:hover{background:linear-gradient(135deg,#0e5b49,#0b6b52);color:#fff;transform:translateY(-1px)}
+.float-tel svg{width:15px;height:15px;flex:0 0 auto}
+.float-tel b{font-weight:800;letter-spacing:.02em}
+@keyframes ftel{0%,100%{box-shadow:0 6px 18px -4px rgba(11,107,82,.5)}50%{box-shadow:0 6px 26px -2px rgba(11,107,82,.9)}}
+@media(max-width:640px){.float-tel{top:10px;right:10px;padding:7px 12px;font-size:12px;gap:5px}.float-tel svg{width:13px;height:13px}}
 </style>
 
-<!-- =========================================================================
+<!--
      浏览数据统计（百度统计 + 不蒜子）
      ─ 百度统计：到 https://tongji.baidu.com 新增网站，复制形如 hm.js?xxxxxxxxxxxx
        的代码，把下面 BAIDU_TONGJI_ID 换成那串 32 位 ID 即可生效。
@@ -325,6 +336,11 @@ window.BAIDU_TONGJI_ID = "";
 </script>
 </head>
 <body>
+
+<a class="float-tel" href="tel:15195871861" title="CBAM 合规咨询 · 李老师" aria-label="电话咨询：李老师 15195871861">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"></path></svg>
+  <span>李老师 <b>15195871861</b></span>
+</a>
 
 <div class="shell">
 
