@@ -1,9 +1,18 @@
 {
   "meta": {
-    "dataAsOf": "2026-11-04",
+    "dataAsOf": "2026-11-09",
     "sopDate": "2026-10-21",
     "officialListCount": 0,
     "changelog": [
+      {
+        "d": "2026-11-09",
+        "t": "【本周核验：口径差异消失，机构数维持 7 家】① 欧委会官方名录连续第 7 期为空——CBAM verification 专页原文仍为「The list of accredited CBAM verifiers <b>will be published</b> on this page」；《State-of-play CBAM accreditation》仍为 <b>2026-10-21 版</b>，本期重新下载比对<b>与上期字节完全一致</b>（SHA1 d88a479d…），四列合计 <b>24 / 20 / 7 / 7</b>，逐行统计与合计行相符。② <b>ACCREDIA 两版文本的差异已消失</b>：本期复核发现 ACCREDIA 新闻稿（意大利文与英文两版，页面日期仍标 2026-10-06）已改为与决议 Rev.01 <b>逐组一致</b>——RINA 为 I–VIII、L、LI、LII（<b>11 组全覆盖</b>），SGS 为 I、II、IV、VI、VIII、L、LI、LII（<b>8 组，缺 III／V／VII</b>）。此前本榜并列记录的「新闻稿缺 VIII／SGS 为 I–VIII、L、LII」表述<b>予以撤回</b>，RINA 与 SGS 两张卡片的 note 与 scopeText 同步改写（打分不变）。二手源 cbamguide.com（2026-10-13 记录）保留的仍是旧口径，可反证该稿曾被修订，修订时点无法确认，故本榜只按「现状一致」记录，不推断修订时间。③ SoP 备注补记：RvA 行标注「<b>Agreement with TK's TURKAK</b>」（土耳其），与 Swedac 的「UA's NAAU &amp; UK UKAS」并列；该项为<b>本期逐行复核时补记</b>，此前各期未录（文件本身未换版）。④ TÜV Austria：ESYD 官网《LIST OF ACCREDITED VERIFICATION BODIES OF GREENHOUSE GASES EMISSIONS》确认 <b>TÜV-AUSTRIA-HELLAS LTD</b> 在列（依据 (EU) 2018/2067 与 ΕΛΟΤ EN ISO 14064-1 两项），可作为其为 ESYD 在册核查机构的旁证；但该名录<b>无 CBAM 专项栏目</b>，CBAM 认可编号与逐组附件仍未公示——其在榜披露指数维持 <b>27.5</b>，nab 项仍记 0.5。⑤ 本周<b>无新增机构</b>，逐项复核：Swedac 认可库 No.1639（Intertek，最新决定日 2026-10-13，I–VIII、LI、LII，有效期至 2031-10-13）未变；RvA「Nieuwe accreditaties」10 月仅一条 CBAM（V118），11 月未发；ACCREDIA 新闻仍为 3 家、无第 4 家；PCA 最新公告为 11-05 收费表修订；SNAS 11-03 发布 MSA-E/01（环境核查机构认可范围准则），仍无获批机构；EmiCert、RINA 官网新闻区未见新披露。⑥ 下一节点：<b>2026-11-15</b>——在册核查机构须向发证 NAB 报送次年核查计划（<b>第 22 条</b>）。"
+      },
+      {
+        "d": "2026-11-09",
+        "errata": true,
+        "t": "【勘误】上期「可直接引用的法规要点」表把「核查机构须于每年 <b>11 月 15 日</b>前向 NAB 报送次年核查计划」记为<b>第 15 条</b>。实际为 <b>第 22 条</b>（Article 22 <i>Notifications by verifiers</i>）：原文「By <b>15 November</b> of each year, verifiers shall send the following information covering the next calendar year to the national accreditation body that has accredited them」，须报备的是核查计划的时间与地点（含实地或远程）、被核查运营者与设施标识、核查组成员及所依据的认可范围。<b>第 15 条实为「临时评估」</b>（<i>extraordinary assessment</i>）：认可证书有效期内，NAB 可随时对核查机构能力或活动的任何方面开展临时评估。依据：(EU) 2025/2551 第 22 条、第 15 条原文（EUR-Lex OJ L, 2025/2551）；欧委会《核查与认可指南》第 10.1 节亦引作「Article 22 of the AVR-DA」。其余条目（第 3(1)、3(2)、3(6)、4、5(1)、6(2)、6(3)、14 条）本期逐条复核，与原文一致。"
+      },
       {
         "d": "2026-11-04",
         "t": "【本周新机构】TÜV Austria 集团 <b>2026-10-30</b> 官宣：旗下希腊公司 <b>TÜV AUSTRIA HELLAS LTD.</b>（雅典）经希腊 <b>ESYD</b> 授予 CBAM 核查（CBAM Verification）认可，自称「欧洲首批获认可的 CBAM 核查机构之一」；机构数由 <b>6 家增至 7 家</b>（ESYD 2 家、ACCREDIA 3 家、Swedac 1 家、RvA 1 家）。<br><b>披露缺口提示：</b>官宣与机构服务页均未载明认可编号、认可决定日期、有效期与<b>逐组活动组范围</b>——其宣传覆盖钢铁、铝、水泥、化肥等行业系<b>项目经验口径，非认可范围</b>；本榜检索 ESYD 公开名录暂未获取到对应条目。上述各项已全部列为待核验项，其披露指数 <b>28</b>，排名第 7。对中国企业的现实意义：TÜV 奥地利集团在华设有成熟本地团队（上海、宁波、苏州、广州等地，法人含奥煌检测技术服务（上海）有限公司），上海团队已以中文发布 CBAM 核查差距评估与准备度评估服务，属于<b>官宣口径明确、一手文件未齐</b>的典型——签约前务必索取 ESYD 认可证书附件原件，对照 11 个活动组逐组核对。<br>欧委会官方名录仍为 <b>0 家</b>（本期复核 CBAM verification 专页，原文仍为「The list of accredited CBAM verifiers will be published on this page」）；《State-of-play CBAM accreditation》仍为 <b>2026-10-21 版</b>（专页挂载文件未换版）。二手源 cbamguide.com 核查页更新至 2026-10-23 仍为 <b>5 家</b>，继续滞后于本榜一手口径。"
@@ -52,7 +61,7 @@
         "t": "首版发布（V1）。欧委会官方名录仍为 0 家；同步欧委会 10 月 7 日版 State-of-play：受理申请的 NAB 18 家、受理第三国申请的 7 家。"
       }
     ],
-    "generatedAt": "2026-11-04T13:26:32+08:00"
+    "generatedAt": "2026-11-09T09:25:56+08:00"
   },
   "dims": [
     {
@@ -334,7 +343,7 @@
         "LII"
       ],
       "scopePending": [],
-      "scopeText": "ACCREDIA 决议 Rev.01（2026-10-09 签署）列明：CBAM，适用于活动组 I、II、IV、VI、VIII、L、LI、LII。新闻稿（10-06）口径为 I–VIII、L、LII。两份文本不一致，以认可证书附件为准。",
+      "scopeText": "ACCREDIA 决议 Rev.01（2026-10-09 签署）列明：CBAM，适用于活动组 I、II、IV、VI、VIII、L、LI、LII（缺 III／V／VII，含 LI）。ACCREDIA 新闻稿（页面日期 2026-10-06）经本榜 <b>2026-11-09 复核已与决议逐组一致</b>，上期记录的「新闻稿为 I–VIII、L、LII」差异已不存在。",
       "route": "由 EU ETS（(EU) 2018/2067）认可范围扩展而来（第 4 条路径）",
       "registry": "未公开",
       "officialListed": false,
@@ -345,9 +354,9 @@
       "site": "https://www.sgs.com/",
       "srcs": [
         "ACCREDIA《CSA CI 决议》2026-09-28，「授信额度延长」条目（电子签署 2026-10-06）",
-        "SGS 官网新闻 2026-10《Achieving CBAM Verifier Accreditation》/ 通标中文公告"
+        "SGS 官网新闻 2026-10《Achieving CBAM Verifier Accreditation》/ 通标中文公告；ACCREDIA 新闻（页面日期 2026-10-06，2026-11-09 复核：范围表述已与决议一致）"
       ],
-      "note": "<b>⚠ 范围缺口提示（本次更正）：</b>按 ACCREDIA 决议 Rev.01，SGS ICS 意大利<b>未获 III 组（硝酸）、V 组（烧结矿／生铁／DRI／粗钢）、VII 组（未锻轧铝）</b>授权；但<b>含 LI 组（进口电力）</b>——与新闻稿口径相反。<b>硝酸、粗钢及上游铁水、未锻轧铝这类货物，签约前必须索取认可附件原件逐组核对。</b>",
+      "note": "<b>⚠ 范围缺口提示：</b>按 ACCREDIA 决议 Rev.01，SGS ICS 意大利<b>未获 III 组（硝酸）、V 组（烧结矿／生铁／DRI／粗钢）、VII 组（未锻轧铝）</b>授权；但<b>含 LI 组（进口电力）</b>。2026-11-09 复核时 ACCREDIA 新闻稿已与决议同口径，此前「两份文本方向相反」的情形不再成立。<b>硝酸、粗钢及上游铁水、未锻轧铝这类货物，签约前必须索取认可附件原件逐组核对。</b><br><b>编号提示：</b>第三方源称其证书编号为 02242，本榜未能在 ACCREDIA 一手文件中定位，仍按<b>部分披露</b>计分（0.5）。",
       "d": {
         "nab": 1,
         "entity": 1,
@@ -369,6 +378,10 @@
         "annual": "待向机构确认"
       },
       "history": [
+        {
+          "d": "2026-11-09",
+          "t": "本期复核：ACCREDIA 新闻稿已修订为与决议 Rev.01 同口径（I、II、IV、VI、VIII、L、LI、LII），上期「新闻稿为 I–VIII、L、LII」的并列表述撤回；范围结论不变，披露指数 72.5。"
+        },
         {
           "d": "2026-10-14",
           "t": "V3 更正：以 ACCREDIA 决议 Rev.01 为准，范围由「I–VIII、L、LII」更正为「I、II、IV、VI、VIII、L、LI、LII」（缺 III／V／VII，含 LI）。ACCREDIA 新闻稿与决议两版口径不一致，本榜已并列记录。"
@@ -489,7 +502,7 @@
         "LII"
       ],
       "scopePending": [],
-      "scopeText": "ACCREDIA 决议 Rev.01（2026-10-09 签署）列明：CBAM，适用于活动组 I、II、III、IV、V、VI、VII、VIII、L、LI、LII（11 组全覆盖）。新闻稿（10-06）口径为 I–VII、L、LI、LII，不含 VIII。",
+      "scopeText": "ACCREDIA 决议 Rev.01（2026-10-09 签署）列明：CBAM，适用于活动组 I、II、III、IV、V、VI、VII、VIII、L、LI、LII（11 组全覆盖）。ACCREDIA 新闻稿（页面日期 2026-10-06）经本榜 <b>2026-11-09 复核已与决议逐组一致</b>，上期记录的「新闻稿不含 VIII」差异已不存在。",
       "route": "由 EU ETS（(EU) 2018/2067）认可范围扩展而来（第 4 条路径）",
       "registry": "未公开",
       "officialListed": false,
@@ -500,9 +513,9 @@
       "site": "https://www.rina.org/",
       "srcs": [
         "ACCREDIA《CSA CI 决议》2026-09-28，「授信额度延长」条目（电子签署 2026-10-06）",
-        "RINA 官网新闻 2026-09-30《RINA obtains ACCREDIA accreditation for CBAM verification》"
+        "RINA 官网新闻 2026-09-30《RINA obtains ACCREDIA accreditation for CBAM verification》；ACCREDIA 新闻《CBAM: primi accreditamenti》（页面日期 2026-10-06，2026-11-09 复核：范围表述已与决议一致）"
       ],
-      "note": "<b>⚠ 更正说明：</b>V2 版依据 ACCREDIA 新闻稿判断「RINA 未获第 VIII 组授权」——<b>该结论已撤回</b>。ACCREDIA 决议 Rev.01 明确含第 VIII 组（钢铁制品与铝制品），本榜以决议为准记录为 11 组全覆盖；新闻稿口径仍缺 VIII，两份文本不一致的原因 ACCREDIA 未作说明。<b>涉及钢铁／铝下游制品的，仍建议签约前索取认可附件原件确认。</b>",
+      "note": "<b>更正说明：</b>V2 版依据 ACCREDIA 新闻稿判断「RINA 未获第 VIII 组授权」——<b>该结论已撤回</b>。决议 Rev.01 明确含第 VIII 组；2026-11-09 复核时新闻稿亦已改为同一口径（11 组全覆盖），<b>两份文本不再存在差异</b>。涉及钢铁／铝下游制品的，仍建议签约前索取认可附件原件逐组确认。<br><b>编号提示：</b>ACCREDIA 决议正文未载明 V&amp;V 认可编号；第三方源（cbamguide.com）称其证书编号为 00005，本榜未能在 ACCREDIA 一手文件中把该编号与 CBAM 范围对应起来，故「认可编号」项仍按<b>部分披露</b>计分（0.5）。",
       "d": {
         "nab": 1,
         "entity": 1,
@@ -524,6 +537,10 @@
         "annual": "待向机构确认"
       },
       "history": [
+        {
+          "d": "2026-11-09",
+          "t": "本期复核：ACCREDIA 新闻稿已修订为与决议 Rev.01 同口径（I–VIII、L、LI、LII，11 组），上期「新闻稿缺 VIII」的表述撤回；分数不变，披露指数 70。"
+        },
         {
           "d": "2026-10-14",
           "t": "V3 更正：撤回「未获第 VIII 组」结论，按 ACCREDIA 决议 Rev.01 更正为 11 组全覆盖（新闻稿口径仍缺 VIII，本榜并列记录）。披露指数由 65 调整为 68。"
@@ -566,9 +583,10 @@
       "srcs": [
         "TÜV AUSTRIA 集团官网新闻《TÜV AUSTRIA Among the First Accredited CBAM Verifiers in Europe》（2026-10-30）",
         "TÜV AUSTRIA Hellas 官网 CBAM Verification 服务页（载明为经 ESYD 认可的服务，覆盖 2026 年及以后数据的强制核查）",
-        "TÜV 奥地利中国官方公众号官宣（2026-11 初，含上海团队联系方式）"
+        "TÜV 奥地利中国官方公众号官宣（2026-11 初，含上海团队联系方式）",
+        "ESYD 官网《LIST OF ACCREDITED VERIFICATION BODIES OF GREENHOUSE GASES EMISSIONS》（2026-11-09 复核：TÜV-AUSTRIA-HELLAS LTD 列于 (EU) 2018/2067 与 ΕΛΟΤ EN ISO 14064-1 两栏，无 CBAM 栏目）"
       ],
-      "note": "<b>待核验项：</b>①ESYD 认可库条目及认可编号——本榜检索 ESYD 公开名录暂未获取到对应条目；②逐组活动组范围；③认可附件及有效期。三样缺任何一样都不能作为合同依据，签约前须索取 ESYD 认可证书附件原件，对照 (EU) 2025/2551 附件 I 的 11 个活动组逐组核对。<br><b>口径提示：</b>官宣称「欧洲首批获认可的 CBAM 核查机构之一」，但未公开认可日期与编号；「覆盖钢铁、铝、水泥、化肥等」系<b>项目经验口径，非认可范围</b>，两者不可混用。",
+      "note": "<b>待核验项：</b>①ESYD 认可库中的 <b>CBAM 专项条目及认可编号</b>——本榜 2026-11-09 复核，ESYD 官网《LIST OF ACCREDITED VERIFICATION BODIES OF GREENHOUSE GASES EMISSIONS》已列 <b>TÜV-AUSTRIA-HELLAS LTD</b>（依据 (EU) 2018/2067 与 ΕΛΟΤ EN ISO 14064-1 两项），可作其为 ESYD 在册核查机构的旁证；但该名录<b>无 CBAM 栏目</b>，且站内检索「CBAM」返回 0 条，CBAM 认可编号仍未公示。②逐组活动组范围。③认可附件及有效期。三者缺任何一项都不能作为合同依据，签约前须索取 ESYD 认可证书附件原件，对照 (EU) 2025/2551 附件 I 的 11 个活动组逐组核对。<br><b>口径提示：</b>官宣称「欧洲首批获认可的 CBAM 核查机构之一」，未公开认可日期与编号；「覆盖钢铁、铝、水泥、化肥等」系<b>项目经验口径，非认可范围</b>，两者不可混用。",
       "d": {
         "nab": 0.5,
         "entity": 1,
@@ -590,6 +608,10 @@
         "annual": "待向机构确认"
       },
       "history": [
+        {
+          "d": "2026-11-09",
+          "t": "本期复核：ESYD 官网温室气体核查机构名录已列 TÜV-AUSTRIA-HELLAS LTD（2018/2067、ISO 14064-1），但无 CBAM 专项条目，ESYD 站内检索「CBAM」0 条结果；认可编号、逐组范围、有效期仍为待核验项，披露指数维持 27.5。"
+        },
         {
           "d": "2026-11-04",
           "t": "本榜首次收录。依据 TÜV Austria 集团官网 2026-10-30 官宣：TÜV AUSTRIA HELLAS LTD. 经 ESYD 授予 CBAM Verification 认可。ESYD 名录条目、认可编号与逐组活动组范围均为待核验项，披露指数 27.5。"
@@ -773,7 +795,7 @@
       "rd": 1,
       "tc": 1,
       "tcr": 1,
-      "rm": "第三国通道；已出 EmiCert（证书 No.874-9）"
+      "rm": "第三国通道；已出 EmiCert（证书 No.874-9）；TÜV Austria Hellas 官宣获认可，ESYD 公示名录暂无 CBAM 条目"
     },
     {
       "c": "匈牙利",
@@ -803,7 +825,7 @@
       "rd": 1,
       "tc": 1,
       "tcr": 1,
-      "rm": "第三国通道；已出必维/RINA/SGS；2026-10-22 与韩国 NIER 签署合作"
+      "rm": "第三国通道；已出必维/RINA/SGS（3 家）；2026-10-22 与韩国 NIER 签署合作；新闻稿已与决议 Rev.01 同口径"
     },
     {
       "c": "拉脱维亚",
@@ -853,7 +875,7 @@
       "rd": 1,
       "tc": 1,
       "tcr": 1,
-      "rm": "第三国通道；已出 ISSC（V118，埃及法人，2026-10-22，临时认可至 2027-11-01）"
+      "rm": "第三国通道；已出 ISSC（V118，埃及法人，2026-10-22，临时认可至 2027-11-01）；SoP 备注另载「与土耳其 TURKAK 的协议」"
     },
     {
       "c": "挪威",
@@ -903,7 +925,7 @@
       "rd": 1,
       "tc": 1,
       "tcr": 1,
-      "rm": "第三国通道；2026-10-20 起正式受理申请，尚无获批机构"
+      "rm": "第三国通道；2026-10-20 起受理申请，2026-11-03 发布 MSA-E/01；尚无获批机构"
     },
     {
       "c": "斯洛文尼亚",
@@ -1004,6 +1026,12 @@
       "done": 1
     },
     {
+      "d": "2026-11-15",
+      "t": "核查机构向 NAB 报送次年核查计划（第 22 条）",
+      "s": "每年 11 月 15 日前报送下一年度核查的时间与地点（含实地或远程）、被核查运营者与设施、核查组成员及所依据的认可范围。",
+      "done": 0
+    },
+    {
       "d": "2027-01",
       "t": "登记库内可签发首份核查报告",
       "s": "只有完成登记的机构才能出具供申报人引用的正式报告。",
@@ -1023,6 +1051,20 @@
     }
   ],
   "cases": [
+    {
+      "d": "2026-11-09",
+      "type": "机制说明",
+      "t": "欧委会指南写明：CBAM 登记库不对外开放，获认可机构名单由欧委会定期在官网发布",
+      "s": "欧委会《CBAM 核查与认可指南》（2026-08-24，141 页）在登记库章节写明：<i>The CBAM Registry is not available to the general public, nor to operators that have not yet registered. Therefore, the Commission will also publish on a regular basis information on accredited CBAM verifiers on their public website.</i> 同章节另载：每个 NAB 都有义务在其官网公开其已认可的 CBAM 核查机构；核查机构须在取得认可后<b>两个月内</b>向 NAB 所在成员国的 NCA 申请登记库注册，注册信息含名称与唯一认可标识、CBAM 相关范围、设立国、生效与到期日；失去有效认可的机构将<b>丧失生成核查报告的能力</b>。",
+      "takeaway": "这段话解释了本榜连续 7 期「官方名录为空」的原因：名录要等机构完成登记库注册、由欧委会定期汇总发布，而登记库本身不对外。也就是说，<b>在欧委会名录上线之前，发证 NAB 的官网公示是唯一可查的一手源</b>——这正是本榜把评分重心压在 NAB 公示、认可编号与逐组范围上的原因。对企业：现在去欧委会网站等名单没有意义，直接按 NAB 查（本榜①模块即为该动作的替代品）。对机构：两个月注册期是硬门槛，<b>拿证不等于能出报告</b>。",
+      "tags": [
+        "欧委会指南",
+        "登记库",
+        "名录",
+        "两个月"
+      ],
+      "src": "欧委会《Guidance on CBAM verification and accreditation for verifiers and National Accreditation Bodies》（2026-08-24）第 10.1 节与登记库章节（PDF 第 124–125 页）"
+    },
     {
       "d": "2026-10-30",
       "type": "新机构",
